@@ -12,76 +12,31 @@ var KTSignupGeneral = function() {
     var handleForm  = function(e) {
         // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
         validator = FormValidation.formValidation(
-			form,
-			{
-				fields: {
-                    'nic-number': {
+            form,
+            {
+                fields: {
+                    'first-name': {
                         validators: {
                             notEmpty: {
-                                message: 'NIC Number is required'
-                            },
-                            digits: {
-                                message: 'NIC Number must be number'
-                            },
-                            stringLength: {
-                                min: 8,
-                                max: 8,
-                                message: 'Student number must be 8 numbers'
+                                message: 'First Name is required'
                             },
                         }
                     },
-					'first-name': {
-						validators: {
-							notEmpty: {
-								message: 'First Name is required'
-							}
-						}
-                    },
                     'last-name': {
-						validators: {
-							notEmpty: {
-								message: 'Last Name is required'
-							}
-						}
-					},
-					'email': {
                         validators: {
-							notEmpty: {
-								message: 'Email address is required'
-							},
+                            notEmpty: {
+                                message: 'Last Name is required'
+                            }
+                        }
+                    },
+                    'email': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Email address is required'
+                            },
                             emailAddress: {
-								message: 'The value is not a valid email address'
-							}
-						}
-					},
-					'cp_number': {
-                        validators: {
-							
-                            stringLength: {
-                                min: 11,
-                                max: 11,
-                                message: 'Contact number must be 11 numbers'
-                            },
-                            digits: {
-                                message: 'Contact number must be number'
-                            },
-                            notEmpty: {
-                                message: 'Contact number is required'
-                            },
-						}
-					},
-					'b_day': {
-                        validators: {
-							notEmpty: {
-								message: 'Birthday is required'
-							},
-						}
-					},
-                    'address': {
-                        validators: {
-                            notEmpty: {
-                                message: 'Address is required'
-                            },
+                                message: 'The value is not a valid email address'
+                            }
                         }
                     },
                     'password': {
@@ -119,21 +74,21 @@ var KTSignupGeneral = function() {
                             }
                         }
                     }
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger({
+                },
+                plugins: {
+                    trigger: new FormValidation.plugins.Trigger({
                         event: {
                             password: false
                         }  
                     }),
-					bootstrap: new FormValidation.plugins.Bootstrap5({
+                    bootstrap: new FormValidation.plugins.Bootstrap5({
                         rowSelector: '.fv-row',
                         eleInvalidClass: '',
                         eleValidClass: ''
                     })
-				}
-			}
-		);
+                }
+            }
+        );
 
         // Handle form submit
         submitButton.addEventListener('click', function (e) {
@@ -142,7 +97,7 @@ var KTSignupGeneral = function() {
             validator.revalidateField('password');
 
             validator.validate().then(function(status) {
-		        if (status == 'Valid') {
+                if (status == 'Valid') {
                     // Show loading indication
                     submitButton.setAttribute('data-kt-indicator', 'on');
 
@@ -159,7 +114,7 @@ var KTSignupGeneral = function() {
 
                         // Show message popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                         Swal.fire({
-                            text: "You have successfully Register!",
+                            text: "You have successfully reset your password!",
                             icon: "success",
                             buttonsStyling: false,
                             confirmButtonText: "Ok, got it!",
@@ -168,13 +123,12 @@ var KTSignupGeneral = function() {
                             }
                         }).then(function (result) {
                             if (result.isConfirmed) { 
-                            	form.submit();
-                                form.reset();  // reset form                    
+                                //form.reset();  // reset form                    
                                 passwordMeter.reset();  // reset password meter
-                                //form.submit();
+                                form.submit();
                             }
                         });
-                    }, 1500);   						
+                    }, 1500);                           
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                     Swal.fire({
@@ -187,7 +141,7 @@ var KTSignupGeneral = function() {
                         }
                     });
                 }
-		    });
+            });
         });
 
         // Handle password input

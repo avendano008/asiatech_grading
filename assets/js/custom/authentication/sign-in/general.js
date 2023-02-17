@@ -1,4 +1,5 @@
-"use strict";var KTSigninGeneral=function(){
+"use strict";
+var KTSigninGeneral=function(){
 	var t,e,i;
 	return{
 		init:function(){
