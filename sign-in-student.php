@@ -22,11 +22,7 @@
           $_SESSION['f_name']=$row['f_name'];
           $_SESSION['l_name']=$row['l_name'];
           $_SESSION['status']=$row['status'];
-<<<<<<<< HEAD:sign-in-student.php
           header('Location:admin/');
-========
-          header('Location: admin/');
->>>>>>>> 3c18e9764c36283583415555e86ebbb756ae39c2:sign-in-admin.php
         }else{
           ?>
             <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
@@ -82,28 +78,17 @@
                 <!--begin::Heading-->
                 <div class="text-center mb-10">
                   <!--begin::Title-->
-<<<<<<<< HEAD:sign-in-student.php
                   <h1 class="text-dark mb-3">Student Login</h1>
-========
-                  <h1 class="text-dark mb-3">Administrator Login</h1>
->>>>>>>> 3c18e9764c36283583415555e86ebbb756ae39c2:sign-in-admin.php
                   <!--end::Title-->
                 </div>
                 <!--begin::Heading-->
                 <!--begin::Input group-->
                 <div class="fv-row mb-10">
                   <!--begin::Label-->
-<<<<<<<< HEAD:sign-in-student.php
                   <label class="form-label fs-6 fw-bolder text-dark">Student Number</label>
                   <!--end::Label-->
                   <!--begin::Input-->
                   <input class="form-control form-control-lg form-control-solid" type="text" name="student-number" autocomplete="off" />
-========
-                  <label class="form-label fs-6 fw-bolder text-dark">Staff ID</label>
-                  <!--end::Label-->
-                  <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="text" name="staff-id" autocomplete="off" />
->>>>>>>> 3c18e9764c36283583415555e86ebbb756ae39c2:sign-in-admin.php
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->
@@ -134,11 +119,7 @@
                   </button>
                   <!--end::Submit button-->
                   <!--begin::Student Login link-->
-<<<<<<<< HEAD:sign-in-student.php
                   <a href="sign-in-admin.php" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">Administrator Login</a>
-========
-                  <a href="sign-in-student.php" class="btn btn-flex flex-center btn-light btn-lg w-100 mb-5">Student Login</a>
->>>>>>>> 3c18e9764c36283583415555e86ebbb756ae39c2:sign-in-admin.php
                   <!--end::Student Login link-->
                 </div>
                 <!--end::Actions-->
