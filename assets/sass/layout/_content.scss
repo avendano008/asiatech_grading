@@ -7,8 +7,8 @@
 	.content {
 		padding: get($content-spacing, desktop) 0;
 
-		// Toolbar enabled and toolbar fixed mode
-		.toolbar-enabled.toolbar-fixed & {
+		// Toolbar enabled and toolbar not fixed mode
+		.toolbar-enabled:not(.toolbar-fixed) & {
 			padding-top: 0;
 		}
 	}

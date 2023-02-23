@@ -1,43 +1,40 @@
 <?php
-  // include'connect/connect.php';
-  // session_start();
-
+  include'connect/connect.php';
+  session_start();
   //Prevent going back to sign in when authenticated.
-  // if(isset($_SESSION['staff_id'])){
-  //   header('Location:admin/index.php');
-  // }
+  if(isset($_SESSION['email'])){
+    header('Location:admin/index.php');
+  }
 
   //POST method for login
-  // if(isset($_POST['staff-id'])){
+  if(isset($_POST['email'])){
 
-  //   $staffID =$_POST['staff-id'];
-  //   $password=md5($_POST['password']);
-  //   $sql = sprintf("SELECT * FROM admin WHERE staff_id='%s'", $conn->real_escape_string($staffID));
-  //   $result = $conn->query($sql);
+    $email=$_POST['email'];
+    $password=md5($_POST['password']);
+    $sql = sprintf("SELECT * FROM admin WHERE email='%s'", $conn->real_escape_string($email));
+    $result = $conn->query($sql);
 
     //Find email and password from database
-    // if ($result->num_rows > 0) {
-    //   while ($row = $result->fetch_assoc()) {
-    //     if ($row['password']==$password){
-    //       $_SESSION['staff_id']=$row['staff_id'];
-    //       $_SESSION['email']=$row['email'];
-    //       $_SESSION['f_name']=$row['f_name'];
-    //       $_SESSION['l_name']=$row['l_name'];
-    //       $_SESSION['status']=$row['status'];
-
-    //       header('Location: admin/');
-    //     }else{
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) {
+        if ($row['password']==$password){
+          $_SESSION['email']=$row['email'];
+          $_SESSION['f_name']=$row['f_name'];
+          $_SESSION['l_name']=$row['l_name'];
+          $_SESSION['status']=$row['status'];
+          header('Location:admin/');
+        }else{
           ?>
-            <!-- <script type="text/javascript">alert("Incorrect email or password, please try again.");</script> -->
+            <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
           <?php
-    //     }
-    //   }
-    // }else{
+        }
+      }
+    }else{
       ?>
-        <!-- <script type="text/javascript">alert("Incorrect email or password, please try again.");</script> -->
+        <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
       <?php
-  //   }
-  // }
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -77,7 +74,7 @@
             <!--begin::Wrapper-->
             <div class="w-lg-500px p-10 p-lg-15 mx-auto">
               <!--begin::Form-->
-              <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="POST">
+              <form class="form w-100" novalidate="novalidate" id="kt_sign_in_form" method="POST" >
                 <!--begin::Heading-->
                 <div class="text-center mb-10">
                   <!--begin::Title-->
@@ -88,10 +85,10 @@
                 <!--begin::Input group-->
                 <div class="fv-row mb-10">
                   <!--begin::Label-->
-                  <label class="form-label fs-6 fw-bolder text-dark">Staff ID</label>
+                  <label class="form-label fs-6 fw-bolder text-dark">Username</label>
                   <!--end::Label-->
                   <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="text" name="staff-id" autocomplete="off" />
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" placeholder="Email or Staff-Id" />
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->
