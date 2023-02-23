@@ -1,6 +1,7 @@
 <?php
   include'connect/connect.php';
   session_start();
+
   //Prevent going back to sign in when authenticated.
   if(isset($_SESSION['email'])){
     header('Location:admin/index.php');
@@ -9,20 +10,21 @@
   //POST method for login
   if(isset($_POST['email'])){
 
-    $email=$_POST['email'];
+    $email=$conn->real_escape_string($_POST['email']);
     $password=md5($_POST['password']);
-    $sql = sprintf("SELECT * FROM admin WHERE email='%s'", $conn->real_escape_string($email));
+    $sql = "SELECT * FROM student WHERE email='$email' or student_number='$email'";
     $result = $conn->query($sql);
 
     //Find email and password from database
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         if ($row['password']==$password){
+          $_SESSION['student_number']=$row['student_number'];
           $_SESSION['email']=$row['email'];
           $_SESSION['f_name']=$row['f_name'];
           $_SESSION['l_name']=$row['l_name'];
           $_SESSION['status']=$row['status'];
-          header('Location:admin/');
+          header('Location:student/');
         }else{
           ?>
             <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
@@ -85,10 +87,10 @@
                 <!--begin::Input group-->
                 <div class="fv-row mb-10">
                   <!--begin::Label-->
-                  <label class="form-label fs-6 fw-bolder text-dark">Student Number</label>
+                  <label class="form-label fs-6 fw-bolder text-dark">Username</label>
                   <!--end::Label-->
                   <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="text" name="student-number" autocomplete="off" />
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" placeholder="Email or Student No." />
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->
@@ -105,7 +107,7 @@
                   </div>
                   <!--end::Wrapper-->
                   <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+                  <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" placeholder="Password" />
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->

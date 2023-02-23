@@ -1,6 +1,7 @@
 <?php
   include'connect/connect.php';
   session_start();
+
   //Prevent going back to sign in when authenticated.
   if(isset($_SESSION['email'])){
     header('Location:admin/index.php');
@@ -9,15 +10,16 @@
   //POST method for login
   if(isset($_POST['email'])){
 
-    $email=$_POST['email'];
+    $email=$conn->real_escape_string($_POST['email']);
     $password=md5($_POST['password']);
-    $sql = sprintf("SELECT * FROM admin WHERE email='%s'", $conn->real_escape_string($email));
+    $sql = "SELECT * FROM admin WHERE email='$email' or staff_id = '$email'";
     $result = $conn->query($sql);
 
-    //Find email and password from database
+    //Find username and password from database
     if ($result->num_rows > 0) {
       while ($row = $result->fetch_assoc()) {
         if ($row['password']==$password){
+          $_SESSION['staff_id']=$row['staff_id'];
           $_SESSION['email']=$row['email'];
           $_SESSION['f_name']=$row['f_name'];
           $_SESSION['l_name']=$row['l_name'];
@@ -88,7 +90,7 @@
                   <label class="form-label fs-6 fw-bolder text-dark">Username</label>
                   <!--end::Label-->
                   <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" placeholder="Email or Staff-Id" />
+                  <input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off" placeholder="Email or Staff ID" />
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->
@@ -105,7 +107,7 @@
                   </div>
                   <!--end::Wrapper-->
                   <!--begin::Input-->
-                  <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off" />
+                  <input class="form-control form-control-lg form-control-solid" type="password" name="password" autocomplete="off"  placeholder="Password" />
                   <!--end::Input-->
                 </div>
                 <!--end::Input group-->
