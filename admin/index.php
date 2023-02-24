@@ -87,7 +87,7 @@ if(!isset($_SESSION['email'])){
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="session/">
+									<a href="session.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/graphs/gra006.svg-->
@@ -110,7 +110,7 @@ if(!isset($_SESSION['email'])){
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="faculty/">
+									<a href="faculty.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
@@ -128,7 +128,7 @@ if(!isset($_SESSION['email'])){
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="department/">
+									<a href="department.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
@@ -151,7 +151,7 @@ if(!isset($_SESSION['email'])){
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="student/">
+									<a href="student.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
@@ -169,7 +169,7 @@ if(!isset($_SESSION['email'])){
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="courses/">
+									<a href="courses.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
@@ -192,7 +192,7 @@ if(!isset($_SESSION['email'])){
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="result/">
+									<a href="result.php">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
@@ -285,17 +285,17 @@ if(!isset($_SESSION['email'])){
 											<!--end::Menu separator-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="../account/overview.php" class="menu-link px-5">My Profile</a>
+												<a href="overview.php" class="menu-link px-5">My Profile</a>
 											</div>
 											<!-- end::Menu item-- -->
 											<!-- begin::Menu item -->
 											<div class="menu-item px-5 my-1">
-												<a href="../account/settings.php" class="menu-link px-5">Account Settings</a>
+												<a href="settings.php" class="menu-link px-5">Account Settings</a>
 											</div>
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="../account/sign-out.php" class="menu-link px-5">Sign Out</a>
+												<a href="sign-out.php" class="menu-link px-5">Sign Out</a>
 											</div>
 											<!--end::Menu item-->
 										</div>
