@@ -72,21 +72,23 @@ if(!isset($_SESSION['email'])){
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor" />
-													<rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor" />
-													<rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor" />
-													<rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor" />
-												</svg>
+									<a href="../admin">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+												<span class="svg-icon svg-icon-2">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor" />
+														<rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="currentColor" />
+														<rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="currentColor" />
+														<rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="currentColor" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
 											</span>
-											<!--end::Svg Icon-->
+											<span class="menu-title">Dashboard</span>
 										</span>
-										<span class="menu-title">Dashboard</span>
-									</span>
+									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 									<span class="menu-link">
@@ -265,8 +267,7 @@ if(!isset($_SESSION['email'])){
 													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
-														<div class="fw-bolder d-flex align-items-center fs-5">Max Smith
-														<span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
+														<div class="fw-bolder d-flex align-items-center fs-5">Max Smith</div>
 														<a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
 													</div>
 													<!--end::Username-->
@@ -278,12 +279,12 @@ if(!isset($_SESSION['email'])){
 											<!--end::Menu separator-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="../../demo1/dist/account/overview.html" class="menu-link px-5">My Profile</a>
+												<a href="../account/overview.php" class="menu-link px-5">My Profile</a>
 											</div>
-											<!--end::Menu item--
-											<!--begin::Menu item-->
+											<!-- end::Menu item-- -->
+											<!-- begin::Menu item -->
 											<div class="menu-item px-5 my-1">
-												<a href="../../demo1/dist/account/settings.html" class="menu-link px-5">Account Settings</a>
+												<a href="../account/settings.php" class="menu-link px-5">Account Settings</a>
 											</div>
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
