@@ -227,7 +227,7 @@ if(!isset($_SESSION['email'])){
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="../sign-out-student.php" class="menu-link px-5">Sign Out</a>
+												<a href="../account/sign-out.php" class="menu-link px-5">Sign Out</a>
 											</div>
 											<!--end::Menu item-->
 										</div>
