@@ -11,42 +11,42 @@ var KTUsersList = function () {
     // Private functions
     var initUserTable = function () {
         // Set date data order
-        const tableRows = table.querySelectorAll('tbody tr');
+        // const tableRows = table.querySelectorAll('tbody tr');
 
-        tableRows.forEach(row => {
-            const dateRow = row.querySelectorAll('td');
-            const lastLogin = dateRow[3].innerText.toLowerCase(); // Get last login time
-            let timeCount = 0;
-            let timeFormat = 'minutes';
+        // tableRows.forEach(row => {
+            // const dateRow = row.querySelectorAll('td');
+            // const lastLogin = dateRow[3].innerText.toLowerCase(); // Get last login time
+            // let timeCount = 0;
+            // let timeFormat = 'minutes';
 
             // Determine date & time format -- add more formats when necessary
-            if (lastLogin.includes('yesterday')) {
-                timeCount = 1;
-                timeFormat = 'days';
-            } else if (lastLogin.includes('mins')) {
-                timeCount = parseInt(lastLogin.replace(/\D/g, ''));
-                timeFormat = 'minutes';
-            } else if (lastLogin.includes('hours')) {
-                timeCount = parseInt(lastLogin.replace(/\D/g, ''));
-                timeFormat = 'hours';
-            } else if (lastLogin.includes('days')) {
-                timeCount = parseInt(lastLogin.replace(/\D/g, ''));
-                timeFormat = 'days';
-            } else if (lastLogin.includes('weeks')) {
-                timeCount = parseInt(lastLogin.replace(/\D/g, ''));
-                timeFormat = 'weeks';
-            }
+            // if (lastLogin.includes('yesterday')) {
+            //     timeCount = 1;
+            //     timeFormat = 'days';
+            // } else if (lastLogin.includes('mins')) {
+            //     timeCount = parseInt(lastLogin.replace(/\D/g, ''));
+            //     timeFormat = 'minutes';
+            // } else if (lastLogin.includes('hours')) {
+            //     timeCount = parseInt(lastLogin.replace(/\D/g, ''));
+            //     timeFormat = 'hours';
+            // } else if (lastLogin.includes('days')) {
+            //     timeCount = parseInt(lastLogin.replace(/\D/g, ''));
+            //     timeFormat = 'days';
+            // } else if (lastLogin.includes('weeks')) {
+            //     timeCount = parseInt(lastLogin.replace(/\D/g, ''));
+            //     timeFormat = 'weeks';
+            // }
 
             // Subtract date/time from today -- more info on moment datetime subtraction: https://momentjs.com/docs/#/durations/subtract/
-            const realDate = moment().subtract(timeCount, timeFormat).format();
+            // const realDate = moment().subtract(timeCount, timeFormat).format();
 
             // Insert real date to last login attribute
-            dateRow[3].setAttribute('data-order', realDate);
+            // dateRow[3].setAttribute('data-order', realDate);
 
             // Set real date for joined column
-            const joinedDate = moment(dateRow[5].innerHTML, "DD MMM YYYY, LT").format(); // select date from 5th column in table
-            dateRow[5].setAttribute('data-order', joinedDate);
-        });
+            // const joinedDate = moment(dateRow[5].innerHTML, "DD MMM YYYY, LT").format(); // select date from 5th column in table
+            // dateRow[5].setAttribute('data-order', joinedDate);
+        // });
 
         // Init datatable --- more info on datatables: https://datatables.net/manual/
         datatable = $(table).DataTable({
@@ -56,7 +56,7 @@ var KTUsersList = function () {
             "lengthChange": false,
             'columnDefs': [
                 { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox)
-                { orderable: false, targets: 6 }, // Disable ordering on column 6 (actions)                
+                { orderable: false, targets: 4 }, // Disable ordering on column 6 (actions)                
             ]
         });
 
@@ -70,59 +70,59 @@ var KTUsersList = function () {
 
     // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
     var handleSearchDatatable = () => {
-        const filterSearch = document.querySelector('[data-kt-user-table-filter="search"]');
-        filterSearch.addEventListener('keyup', function (e) {
-            datatable.search(e.target.value).draw();
-        });
+        // const filterSearch = document.querySelector('[data-kt-user-table-filter="search"]');
+        // filterSearch.addEventListener('keyup', function (e) {
+        //     datatable.search(e.target.value).draw();
+        // });
     }
 
     // Filter Datatable
     var handleFilterDatatable = () => {
         // Select filter options
-        const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
-        const filterButton = filterForm.querySelector('[data-kt-user-table-filter="filter"]');
-        const selectOptions = filterForm.querySelectorAll('select');
+        // const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
+        // const filterButton = filterForm.querySelector('[data-kt-user-table-filter="filter"]');
+        // const selectOptions = filterForm.querySelectorAll('select');
 
-        // Filter datatable on submit
-        filterButton.addEventListener('click', function () {
-            var filterString = '';
+        // // Filter datatable on submit
+        // filterButton.addEventListener('click', function () {
+        //     var filterString = '';
 
-            // Get filter values
-            selectOptions.forEach((item, index) => {
-                if (item.value && item.value !== '') {
-                    if (index !== 0) {
-                        filterString += ' ';
-                    }
+        //     // Get filter values
+        //     selectOptions.forEach((item, index) => {
+        //         if (item.value && item.value !== '') {
+        //             if (index !== 0) {
+        //                 filterString += ' ';
+        //             }
 
-                    // Build filter value options
-                    filterString += item.value;
-                }
-            });
+        //             // Build filter value options
+        //             filterString += item.value;
+        //         }
+        //     });
 
-            // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
-            datatable.search(filterString).draw();
-        });
+        //     // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
+        //     datatable.search(filterString).draw();
+        // });
     }
 
     // Reset Filter
     var handleResetForm = () => {
         // Select reset button
-        const resetButton = document.querySelector('[data-kt-user-table-filter="reset"]');
+        // const resetButton = document.querySelector('[data-kt-user-table-filter="reset"]');
 
-        // Reset datatable
-        resetButton.addEventListener('click', function () {
-            // Select filter options
-            const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
-            const selectOptions = filterForm.querySelectorAll('select');
+        // // Reset datatable
+        // resetButton.addEventListener('click', function () {
+        //     // Select filter options
+        //     const filterForm = document.querySelector('[data-kt-user-table-filter="form"]');
+        //     const selectOptions = filterForm.querySelectorAll('select');
 
-            // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
-            selectOptions.forEach(select => {
-                $(select).val('').trigger('change');
-            });
+        //     // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
+        //     selectOptions.forEach(select => {
+        //         $(select).val('').trigger('change');
+        //     });
 
-            // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
-            datatable.search('').draw();
-        });
+        //     // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
+        //     datatable.search('').draw();
+        // });
     }
 
 
@@ -140,7 +140,7 @@ var KTUsersList = function () {
                 const parent = e.target.closest('tr');
 
                 // Get user name
-                const userName = parent.querySelectorAll('td')[1].querySelectorAll('a')[1].innerText;
+                const userName = parent.querySelectorAll('td')[1].innerText;
 
                 // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
                 Swal.fire({
@@ -173,7 +173,7 @@ var KTUsersList = function () {
                         });
                     } else if (result.dismiss === 'cancel') {
                         Swal.fire({
-                            text: customerName + " was not deleted.",
+                            text: userName + " was not deleted.",
                             icon: "error",
                             buttonsStyling: false,
                             confirmButtonText: "Ok, got it!",
