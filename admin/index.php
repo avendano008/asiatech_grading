@@ -5,6 +5,10 @@ session_start();
 if(!isset($_SESSION['email'])){
     header('Location:../sign-in-admin.php');
 }
+
+$fullName = $_SESSION['f_name'] . " " . $_SESSION['l_name'];
+$email = $_SESSION['email'];
+
 ?>
 
 <!DOCTYPE html>
@@ -273,8 +277,8 @@ if(!isset($_SESSION['email'])){
 													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
-														<div class="fw-bolder d-flex align-items-center fs-5">Max Smith</div>
-														<a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
+														<div class="fw-bolder d-flex align-items-center fs-5"><?= $fullName ?></div>
+														<a href="#" class="fw-bold text-muted text-hover-primary fs-7"><?= $email ?></a>
 													</div>
 													<!--end::Username-->
 												</div>
