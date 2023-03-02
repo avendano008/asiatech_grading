@@ -155,7 +155,7 @@ $email = $_SESSION['email'];
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="student.php">
+									<a href="?page=student">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
@@ -315,19 +315,81 @@ $email = $_SESSION['email'];
 						<!--end::Container-->
 					</div>
 					<!--end::Header-->
-					<!--begin::Footer-->
-					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<!--begin::Copyright-->
-							<div class="text-dark order-2 order-md-1">
-								<span class="text-muted fw-bold me-1">©</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">2022 Student Grading System</a>
+
+						<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+							<!--begin::Container-->
+							<div id="kt_content_container" style="padding-top: 20px; " class="container-xxl" >
+								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+													
+												</div>
+									<div class="toolbar py-2" id="kt_toolbar">
+										<!--begin::Container-->
+										<div id="kt_toolbar_container" class="container d-flex align-items-center">
+											<!--begin::Page title-->
+											<div class="flex-grow-1 flex-shrink-0 me-5">
+												<!--begin::Page title-->
+												<!-- <i class="bi bi-calendar" style="font-size: 20px;"></i> 
+												2023-03-02 -->
+												<div class="d-flex align-items-center">
+													
+													<input class="form-control form-control-solid" id="from_range" type="text" placeholder="Search here..." value="">
+													<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+													<a href="#print"><i class="bi bi-search fs-2"></i></a>
+													
+												</div>
+												<!--end::Page title-->
+											</div>
+											<!--end::Page title-->
+											<!--begin::Action group-->
+											<div class="d-flex align-items-center flex-wrap">
+												<!--begin::Wrapper-->
+												<div class="flex-shrink-0 me-2">
+													
+												</div>
+												<!--end::Wrapper-->
+												<!--begin::Wrapper-->
+												<!-- <div class="d-flex align-items-center">
+													
+													<input class="form-control form-control-solid" id="from_range" type="text" placeholder="Counselor or Student" value="" >
+													<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
+													<a href="#print"><i class="bi bi-search fs-2"></i></a>
+													
+												</div> -->
+												
+												<!--end::Wrapper-->
+											</div>
+											<!--end::Action group-->
+										</div>
+										<!--end::Container-->
+									</div>
+
+									<div class="row g-5 g-xl-8">
+									<?php
+										if(isset($_GET['page'])){
+											$page=$_GET['page'];
+											include $page.'.php';
+										}else{
+											include'dashboard.php';
+										}
+
+									?>
+								</div>
+								<!--end::Container-->
 							</div>
-							<!--end::Copyright-->
 						</div>
-						<!--end::Container-->
-					</div>
+						<!--begin::Footer-->
+						<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+								<!--begin::Container-->
+								<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+									<!--begin::Copyright-->
+									<div class="text-dark order-2 order-md-1">
+										<span class="text-muted fw-bold me-1">©</span>
+										<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">2022 Student Grading System</a>
+									</div>
+									<!--end::Copyright-->
+								</div>
+								<!--end::Container-->
+							</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
@@ -342,6 +404,13 @@ $email = $_SESSION['email'];
 		<script src="../assets/plugins/global/plugins.bundle.js"></script>
 		<script src="../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
+		<!--begin::Page Vendors Javascript(used by this page)-->
+		<script src="../assets/plugins/custom/datatables/datatables.bundle.js"></script>
+		<!--end::Page Vendors Javascript-->
+		<!--begin::Page Custom Javascript(used by this page)-->
+		<script src="../assets/js/custom/apps/user-management/users/list/table.js"></script>
+	
+		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
 	<!--end::Body-->

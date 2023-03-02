@@ -12,7 +12,7 @@
 
     $email=$conn->real_escape_string($_POST['email']);
     $password=md5($_POST['password']);
-    $sql = "SELECT * FROM admin WHERE email='$email' or staff_id = '$email'";
+    $sql = "SELECT * FROM admin WHERE email='$email'";
     $result = $conn->query($sql);
 
     //Find username and password from database
