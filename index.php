@@ -47,7 +47,7 @@
                   $login=$_GET['login'];
                   include $login.'.php';
                 }else{
-                  include'sign-in-admin.php';
+                  include'sign-in-student.php';
                 }
               ?>
             </div>
