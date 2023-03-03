@@ -38,6 +38,10 @@
     <!--begin::Title-->
     <h1 class="text-dark mb-3">Student Login</h1>
     <!--end::Title-->
+    <!--begin::Link-->
+    <div class="text-gray-400 fw-bold fs-4">New Here?
+    <a href="sign-up-student.php" class="link-primary fw-bolder">Create an Account</a></div>
+    <!--end::Link-->
   </div>
   <!--begin::Heading-->
   <!--begin::Input group-->
