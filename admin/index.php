@@ -299,10 +299,7 @@ $email = $_SESSION['email'];
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="<?php
-													unset($_SESSION['email']);
-													echo '../'
-												?>" class="menu-link px-5">Sign Out</a>
+												<a href="sign-out.php" class="menu-link px-5">Sign Out</a>
 											</div>
 											<!--end::Menu item-->
 										</div>
