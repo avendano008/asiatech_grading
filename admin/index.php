@@ -3,7 +3,7 @@ include'../connect/connect.php';
 session_start();
 
 if(!isset($_SESSION['email'])){
-    header('Location:../sign-in-admin.php');
+    header('Location:../');
 }
 
 $fullName = $_SESSION['f_name'] . " " . $_SESSION['l_name'];
@@ -277,8 +277,8 @@ $email = $_SESSION['email'];
 													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
-														<div class="fw-bolder d-flex align-items-center fs-5"><?= $fullName ?></div>
-														<a href="#" class="fw-bold text-muted text-hover-primary fs-7"><?= $email ?></a>
+														<div class="fw-bolder d-flex align-items-center fs-5"><?=$fullName?></div>
+														<a href="#" class="fw-bold text-muted text-hover-primary fs-7"><?=$email?></a>
 													</div>
 													<!--end::Username-->
 												</div>
@@ -299,7 +299,10 @@ $email = $_SESSION['email'];
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="sign-out.php" class="menu-link px-5">Sign Out</a>
+												<a href="<?php
+													unset($_SESSION['email']);
+													echo '../'
+												?>" class="menu-link px-5">Sign Out</a>
 											</div>
 											<!--end::Menu item-->
 										</div>
