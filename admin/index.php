@@ -361,10 +361,11 @@ $email = $_SESSION['email'];
 		<script src="../assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../assets/js/custom/account/settings/signin-methods.js"></script>
-		<script src="../assets/js/custom/account/settings/deactivate-account.js"></script>
-		<script src="../assets/js/edited/admin/student/student-list.js"></script>
-		<script src="../assets/js/custom/apps/user-management/users/list/table.js"></script>
+		<!-- <script src="../assets/js/custom/account/settings/signin-methods.js"></script> -->
+		<!-- <script src="../assets/js/custom/account/settings/deactivate-account.js"></script> -->
+		<script src="../assets/js/edited/admin/student/table.js"></script>
+		<script src="../assets/js/edited/admin/student/add.js"></script>
+		<script src="../assets/js/edited/admin/student/edit.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
