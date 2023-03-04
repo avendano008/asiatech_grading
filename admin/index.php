@@ -24,6 +24,9 @@ $email = $_SESSION['email'];
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
+		<!--begin::Page Vendor Stylesheets(used by this page)-->
+		<link href="../assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
@@ -42,7 +45,7 @@ $email = $_SESSION['email'];
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../admin">
+						<a href="?page=dashboard">
 							<img alt="Logo" src="../image/asia-tech-logo-3.png" class="h-35px logo" />
 						</a>
 						<!--end::Logo-->
@@ -72,7 +75,7 @@ $email = $_SESSION['email'];
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="../admin">
+									<a href="?page=dashboard">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
@@ -87,11 +90,12 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Dashboard</span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="session.php">
+									<a href="?page=session">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/graphs/gra006.svg-->
@@ -104,7 +108,7 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Session</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
@@ -114,7 +118,7 @@ $email = $_SESSION['email'];
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="faculty.php">
+									<a href="?page=faculty">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/art/art002.svg-->
@@ -127,12 +131,12 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Faculty</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="department.php">
+									<a href="?page=department">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/abstract/abs027.svg-->
@@ -145,7 +149,7 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Department</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
@@ -168,12 +172,12 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Student</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="courses.php">
+									<a href="?page=courses">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/communication/com005.svg-->
@@ -186,7 +190,7 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Courses</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
@@ -196,7 +200,7 @@ $email = $_SESSION['email'];
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="result.php">
+									<a href="?page=result">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
@@ -212,7 +216,7 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Result</span>
-											<span class="menu-arrow"></span>
+											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
 								</div>
@@ -246,7 +250,7 @@ $email = $_SESSION['email'];
 							<!--end::Aside mobile toggle-->
 							<!--begin::Mobile logo-->
 							<div class="d-flex align-items-center flex-grow-1 flex-lg-grow-0">
-								<a href="index.html" class="d-lg-none">
+								<a href="?page=dashboard" class="d-lg-none">
 									<img alt="Logo" src="../image/asia-tech-logo-1.png" class="h-40px" />
 								</a>
 							</div>
@@ -263,22 +267,17 @@ $email = $_SESSION['email'];
 									<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
 										<!--begin::Menu wrapper-->
 										<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
-											<img src="../assets/media/avatars/300-1.jpg" alt="user" />
+											<img src="../image/user-icon.png" alt="user" />
 										</div>
 										<!--begin::User account menu-->
 										<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg menu-state-primary fw-bold py-4 fs-6 w-275px" data-kt-menu="true">
 											<!--begin::Menu item-->
 											<div class="menu-item px-3">
 												<div class="menu-content d-flex align-items-center px-3">
-													<!--begin::Avatar-->
-													<div class="symbol symbol-50px me-5">
-														<img alt="Logo" src="../assets/media/avatars/300-1.jpg" />
-													</div>
-													<!--end::Avatar-->
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
 														<div class="fw-bolder d-flex align-items-center fs-5"><?=$fullName?></div>
-														<a href="#" class="fw-bold text-muted text-hover-primary fs-7"><?=$email?></a>
+														<a href="#" class="fw-bold text-muted fs-7"><?=$email?></a>
 													</div>
 													<!--end::Username-->
 												</div>
@@ -289,12 +288,12 @@ $email = $_SESSION['email'];
 											<!--end::Menu separator-->
 											<!--begin::Menu item-->
 											<div class="menu-item px-5">
-												<a href="overview.php" class="menu-link px-5">My Profile</a>
+												<a href="?page=overview" class="menu-link px-5">My Profile</a>
 											</div>
 											<!-- end::Menu item-- -->
 											<!-- begin::Menu item -->
 											<div class="menu-item px-5 my-1">
-												<a href="settings.php" class="menu-link px-5">Account Settings</a>
+												<a href="?page=settings" class="menu-link px-5">Account Settings</a>
 											</div>
 											<!--end::Menu item-->
 											<!--begin::Menu item-->
@@ -315,81 +314,35 @@ $email = $_SESSION['email'];
 						<!--end::Container-->
 					</div>
 					<!--end::Header-->
-
-						<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-							<!--begin::Container-->
-							<div id="kt_content_container" style="padding-top: 20px; " class="container-xxl" >
-								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-													
-												</div>
-									<div class="toolbar py-2" id="kt_toolbar">
-										<!--begin::Container-->
-										<div id="kt_toolbar_container" class="container d-flex align-items-center">
-											<!--begin::Page title-->
-											<div class="flex-grow-1 flex-shrink-0 me-5">
-												<!--begin::Page title-->
-												<!-- <i class="bi bi-calendar" style="font-size: 20px;"></i> 
-												2023-03-02 -->
-												<div class="d-flex align-items-center">
-													
-													<input class="form-control form-control-solid" id="from_range" type="text" placeholder="Search here..." value="">
-													<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-													<a href="#print"><i class="bi bi-search fs-2"></i></a>
-													
-												</div>
-												<!--end::Page title-->
-											</div>
-											<!--end::Page title-->
-											<!--begin::Action group-->
-											<div class="d-flex align-items-center flex-wrap">
-												<!--begin::Wrapper-->
-												<div class="flex-shrink-0 me-2">
-													
-												</div>
-												<!--end::Wrapper-->
-												<!--begin::Wrapper-->
-												<!-- <div class="d-flex align-items-center">
-													
-													<input class="form-control form-control-solid" id="from_range" type="text" placeholder="Counselor or Student" value="" >
-													<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-													<a href="#print"><i class="bi bi-search fs-2"></i></a>
-													
-												</div> -->
-												
-												<!--end::Wrapper-->
-											</div>
-											<!--end::Action group-->
-										</div>
-										<!--end::Container-->
-									</div>
-
-									<div class="row g-5 g-xl-8">
-									<?php
-										if(isset($_GET['page'])){
-											$page=$_GET['page'];
-											include $page.'.php';
-										}else{
-											include'dashboard.php';
-										}
-
-									?>
-								</div>
-								<!--end::Container-->
-							</div>
+					<!--begin::Content-->
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<!--begin::Container-->
+						<div id="kt_content_container" class="container-xxl">
+							<?php
+								if(isset($_GET['page'])){
+									$page=$_GET['page'];
+									include $page.'.php';
+								}else{
+									include'dashboard.php';
+								}
+							?>
 						</div>
-						<!--begin::Footer-->
-						<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-								<!--begin::Container-->
-								<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-									<!--begin::Copyright-->
-									<div class="text-dark order-2 order-md-1">
-										<span class="text-muted fw-bold me-1">©</span>
-										<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">2022 Student Grading System</a>
-									</div>
-									<!--end::Copyright-->
-								</div>
-								<!--end::Container-->
+						<!--end::Container-->
+					</div>
+					<!--end::Content-->
+					<!--begin::Footer-->
+					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
+						<!--begin::Container-->
+						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
+							<!--begin::Copyright-->
+							<div class="text-dark order-2 order-md-1">
+								<span class="text-muted fw-bold me-1">©</span>
+								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">2022 Student Grading System</a>
 							</div>
+							<!--end::Copyright-->
+						</div>
+						<!--end::Container-->
+					</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
@@ -408,8 +361,9 @@ $email = $_SESSION['email'];
 		<script src="../assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../assets/js/custom/apps/user-management/users/list/table.js"></script>
-	
+		<script src="../assets/js/custom/account/settings/signin-methods.js"></script>
+		<script src="../assets/js/custom/account/settings/deactivate-account.js"></script>
+		<script src="../assets/js/custom/apps/ecommerce/reports/customer-orders/customer-orders.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
