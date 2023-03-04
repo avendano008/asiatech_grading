@@ -381,7 +381,7 @@
 												<option>ABM (Accountancy and Business Management)</option>
 												<option>STEM (Science, Technology, Engineering and Mathematics)</option>
 												<option>HUMSS (Humanities and Social Sciences)</option>
-												<option>GAS (General Academic Strand)B. TECHNICAL VOCATIONAL TRACK</option>
+												<option>GAS (General Academic Strand)</option>
 												<option>ICT (Information and Communications Technology)</option>
 												<option>HE (Home Economics)</option>
 											</select>
