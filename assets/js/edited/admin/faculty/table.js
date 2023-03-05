@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTAppStudentList = function () {
+var KTAppFacultyList = function () {
     // Shared variables
     var table;
     var datatable;
@@ -38,10 +38,10 @@ var KTAppStudentList = function () {
         const checkboxes = table.querySelectorAll('[type="checkbox"]');
 
         // Select elements
-        toolbarBase = document.querySelector('[data-kt-student-list-toolbar="base"]');
-        toolbarSelected = document.querySelector('[data-kt-student-list-toolbar="selected"]');
-        selectedCount = document.querySelector('[data-kt-student-list-select="selected_count"]');
-        const deleteSelected = document.querySelector('[data-kt-student-list-select="delete_selected"]');
+        toolbarBase = document.querySelector('[data-kt-faculty-list-toolbar="base"]');
+        toolbarSelected = document.querySelector('[data-kt-faculty-list-toolbar="selected"]');
+        selectedCount = document.querySelector('[data-kt-faculty-list-select="selected_count"]');
+        const deleteSelected = document.querySelector('[data-kt-faculty-list-select="delete_selected"]');
 
         // Toggle delete selected toolbar
         checkboxes.forEach(c => {
@@ -137,7 +137,7 @@ var KTAppStudentList = function () {
 
     // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
     var handleSearchDatatable = () => {
-        const filterSearch = document.querySelector('[data-kt-student-list-filter="search"]');
+        const filterSearch = document.querySelector('[data-kt-faculty-list-filter="search"]');
         filterSearch.addEventListener('keyup', function (e) {
             datatable.search(e.target.value).draw();
         });
@@ -145,72 +145,70 @@ var KTAppStudentList = function () {
 
     // Filter Datatable
     var handleFilterDatatable = () => {
-        // Select filter options
-        const filterForm = document.querySelector('[data-kt-student-list-filter="form"]');
-        const filterButton = filterForm.querySelector('[data-kt-student-list-filter="filter"]');
-        const selectOptions = filterForm.querySelectorAll('select');
+        // // Select filter options
+        // const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
+        // const filterButton = filterForm.querySelector('[data-kt-faculty-list-filter="filter"]');
+        // const selectOptions = filterForm.querySelectorAll('select');
 
-        // Filter datatable on submit
-        filterButton.addEventListener('click', function () {
-            var filterString = '';
-            var isSecondSelect = false;
-            var secondString = '';
+        // // Filter datatable on submit
+        // filterButton.addEventListener('click', function () {
+        //     var filterString = '';
+        //     var isSecondSelect = false;
+        //     var secondString = '';
 
-            // Get filter values
-            selectOptions.forEach((item, index) => {
-                if (item.value && item.value !== '') {
-                    if (index !== 0) {
-                        filterString += ' ';
-                        isSecondSelect = true;
-                        secondString += item.value;
-                    }
+        //     // Get filter values
+        //     selectOptions.forEach((item, index) => {
+        //         if (item.value && item.value !== '') {
+        //             if (index !== 0) {
+        //                 filterString += ' ';
+        //                 isSecondSelect = true;
+        //                 secondString += item.value;
+        //             }
 
-                    // Build filter value options
-                    filterString += item.value;
-                }
-            });
+        //             // Build filter value options
+        //             filterString += item.value;
+        //         }
+        //     });
 
-            datatable.search('').draw();
-            datatable.column(4).search('').draw();
-            // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
-            if(filterString === ''){
-                datatable.search('').draw();
-                datatable.column(4).search('').draw();
-            }
-            else{
-                datatable.search(filterString).draw();
-                if(isSecondSelect){
-                    datatable.column(4).search(secondString).draw();
-                }
-            }
-        });
+        //     // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
+        //     if(filterString === ''){
+        //         datatable.search('').draw();
+        //         datatable.column(4).search('').draw();
+        //     }
+        //     else{
+        //         datatable.search(filterString).draw();
+        //         if(isSecondSelect){
+        //             datatable.column(4).search(secondString).draw();
+        //         }
+        //     }
+        // });
     }
 
     // Reset Filter
     var handleResetForm = () => {
-        // Select reset button
-        const resetButton = document.querySelector('[data-kt-student-list-filter="reset"]');
+        // // Select reset button
+        // const resetButton = document.querySelector('[data-kt-faculty-list-filter="reset"]');
 
-        // Reset datatable
-        resetButton.addEventListener('click', function () {
-            // Select filter options
-            const filterForm = document.querySelector('[data-kt-student-list-filter="form"]');
-            const selectOptions = filterForm.querySelectorAll('select');
+        // // Reset datatable
+        // resetButton.addEventListener('click', function () {
+        //     // Select filter options
+        //     const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
+        //     const selectOptions = filterForm.querySelectorAll('select');
 
-            // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
-            selectOptions.forEach(select => {
-                $(select).val('').trigger('change');
-            });
+        //     // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
+        //     selectOptions.forEach(select => {
+        //         $(select).val('').trigger('change');
+        //     });
 
-            // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
-            datatable.search('').draw();
-            datatable.column(4).search('').draw();
-        });
+        //     // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
+        //     datatable.search('').draw();
+        //     datatable.column(4).search('').draw();
+        // });
     }
 
     // Hook export buttons
     var exportButtons = () => {
-        const documentTitle = 'Student List Report';
+        const documentTitle = 'Faculty List Report';
         var buttons = new $.fn.dataTable.Buttons(table, {
             buttons: [
                 {
@@ -230,16 +228,16 @@ var KTAppStudentList = function () {
                     title: documentTitle
                 }
             ]
-        }).container().appendTo($('#kt_report_student_list_export'));
+        }).container().appendTo($('#kt_report_faculty_list_export'));
 
         // Hook dropdown menu click event to datatable export buttons
-        const exportButtons = document.querySelectorAll('#kt_report_student_list_export_menu [data-kt-student-export]');
+        const exportButtons = document.querySelectorAll('#kt_report_faculty_list_export_menu [data-kt-faculty-export]');
         exportButtons.forEach(exportButton => {
             exportButton.addEventListener('click', e => {
                 e.preventDefault();
 
                 // Get clicked export value
-                const exportValue = e.target.getAttribute('data-kt-student-export');
+                const exportValue = e.target.getAttribute('data-kt-faculty-export');
                 const target = document.querySelector('.dt-buttons .buttons-' + exportValue);
 
                 // Trigger click event on hidden datatable export buttons
@@ -251,7 +249,7 @@ var KTAppStudentList = function () {
     // Delete subscirption
     var handleDeleteRows = () => {
         // Select all delete buttons
-        const deleteButtons = table.querySelectorAll('[data-kt-student-list-filter="delete_row"]');
+        const deleteButtons = table.querySelectorAll('[data-kt-faculty-list-filter="delete_row"]');
 
         deleteButtons.forEach(d => {
             // Delete button on click
@@ -312,7 +310,7 @@ var KTAppStudentList = function () {
     // Public methods
     return {
         init: function () {
-            table = document.querySelector('#kt_report_student_list_table');
+            table = document.querySelector('#kt_report_faculty_list_table');
 
             if (!table) {
                 return;
@@ -331,5 +329,5 @@ var KTAppStudentList = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
-    KTAppStudentList.init();
+    KTAppFacultyList.init();
 });

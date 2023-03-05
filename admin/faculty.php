@@ -1,16 +1,13 @@
 <?php
-	$student = array (
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
+	$faculty = array (
+			  array("faculty_name"=>"Alicia Wade", 
+			  	"staff_id"=>"FID-15483799",  
 			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789")
+			  	"birth_date"=>"12/17/1996", 
+			  	"age"=>"26", 
+			  	"address"=>"Brgy. Pooc, City of Santa Rosa, Laguna", 
+			  	"contact_email"=>"alice1234@gmail.com", 
+			  	"contact_number"=>"09123498765")
 			);
 ?>
 <!--begin::Toolbar-->
@@ -20,7 +17,7 @@
 		<!--begin::Page title-->
 		<div class="page-title d-flex align-items-center flex-wrap me-3 my-5">
 			<!--begin::Title-->
-			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">STUDENT LIST</h1>
+			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">FACULTY LIST</h1>
 			<!--end::Title-->
 			<!--begin::Separator-->
 			<span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -38,7 +35,7 @@
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">Student List</li>
+				<li class="breadcrumb-item text-muted">Faculty List</li>
 				<!--end::Item-->
 			</ul>
 			<!--end::Breadcrumb-->
@@ -52,7 +49,7 @@
 <div class="post d-flex flex-column-fluid" id="kt_post">
 	<!--begin::Container-->
 	<div id="kt_content_container" class="container-xxl">
-		<!--begin::Students-->
+		<!--begin::Faculty-->
 		<div class="card card-flush">
 			<!--begin::Card header-->
 			<div class="card-header align-items-center py-5 gap-2 gap-md-5">
@@ -68,42 +65,44 @@
 							</svg>
 						</span>
 						<!--end::Svg Icon-->
-						<input type="text" data-kt-student-list-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Student" />
+						<input type="text" data-kt-faculty-list-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Faculty" />
 					</div>
 					<!--end::Search-->
 					<!--begin::Export buttons-->
-					<div id="kt_report_student_list_export" class="d-none"></div>
+					<div id="kt_report_faculty_list_export" class="d-none"></div>
 					<!--end::Export buttons-->
 				</div>
 				<!--end::Card title-->
 				<!--begin::Card toolbar-->
-				<div class="card-toolbar d-flex justify-content-end gap-5" data-kt-student-list-toolbar="base"/>
+				<div class="card-toolbar d-flex justify-content-end gap-5" data-kt-faculty-list-toolbar="base"/>
 					<!--begin::Filter-->
 					<div>
-						<button type="button" class="btn btn-light-primary w-200px" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+						<!-- <button type="button" class="btn btn-light-primary w-200px" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end"> -->
 						<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-						<span class="svg-icon svg-icon-2">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-								<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="currentColor" />
-							</svg>
-						</span>
-						<!--end::Svg Icon-->Filter</button>
+							<!-- <span class="svg-icon svg-icon-2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+									<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="currentColor" />
+								</svg>
+							</span> -->
+							<!--end::Svg Icon-->
+							<!-- Filter
+						</button> -->
 						<!--begin::Menu 1-->
-						<div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
+						<!-- <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true"> -->
 							<!--begin::Header-->
-							<div class="px-7 py-5">
+							<!-- <div class="px-7 py-5">
 								<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-							</div>
+							</div> -->
 							<!--end::Header-->
 							<!--begin::Separator-->
-							<div class="separator border-gray-200"></div>
+							<!-- <div class="separator border-gray-200"></div> -->
 							<!--end::Separator-->
 							<!--begin::Content-->
-							<div class="px-7 py-5" data-kt-student-list-filter="form">
+							<!-- <div class="px-7 py-5" data-kt-faculty-list-filter="form"> -->
 								<!--begin::Input group-->
-								<div class="mb-10">
+								<!-- <div class="mb-10">
 									<label class="form-label fs-6 fw-bold">Strand:</label>
-									<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select Option" data-allow-clear="true" data-kt-student-list-filter="strand" data-hide-search="true">
+									<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select Option" data-allow-clear="true" data-kt-faculty-list-filter="strand" data-hide-search="true">
 										<option></option>
 										<option value="ABM">ABM (Accountancy and Business Management)</option>
 										<option value="STEM">STEM (Science, Technology, Engineering and Mathematics)</option>
@@ -112,26 +111,26 @@
 										<option value="ICT">ICT (Information and Communications Technology)</option>
 										<option value="HE">HE (Home Economics)</option>
 									</select>
-								</div>
+								</div> -->
 								<!--end::Input group-->
-								<div class="mb-10">
+								<!-- <div class="mb-10">
 									<label class="form-label fs-6 fw-bold">Grade Level:</label>
-									<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select Option" data-allow-clear="true" data-kt-student-list-filter="grade-level" data-hide-search="true">
+									<select class="form-select form-select-solid fw-bolder" data-kt-select2="true" data-placeholder="Select Option" data-allow-clear="true" data-kt-faculty-list-filter="grade-level" data-hide-search="true">
 										<option></option>
 										<option value="Grade 11">Grade 11</option>
 										<option value="Grade 12">Grade 12</option>
 									</select>
-								</div>
+								</div> -->
 								<!--end::Input group-->
 								<!--begin::Actions-->
-								<div class="d-flex justify-content-end">
-									<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-student-list-filter="reset">Reset</button>
-									<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-student-list-filter="filter">Apply</button>
-								</div>
+								<!-- <div class="d-flex justify-content-end">
+									<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-faculty-list-filter="reset">Reset</button>
+									<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-faculty-list-filter="filter">Apply</button>
+								</div> -->
 								<!--end::Actions-->
-							</div>
+							<!-- </div> -->
 							<!--end::Content-->
-						</div>
+						<!-- </div> -->
 						<!--end::Menu 1-->
 					</div>
 					<!--end::Filter-->
@@ -150,33 +149,33 @@
 							Export
 						</button>
 						<!--begin::Menu-->
-						<div id="kt_report_student_list_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px py-4" data-kt-menu="true">
+						<div id="kt_report_faculty_list_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px py-4" data-kt-menu="true">
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-student-export="copy">Copy to clipboard</a>
+								<a href="#" class="menu-link px-3" data-kt-faculty-export="copy">Copy to clipboard</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-student-export="excel">Export as Excel</a>
+								<a href="#" class="menu-link px-3" data-kt-faculty-export="excel">Export as Excel</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-student-export="csv">Export as CSV</a>
+								<a href="#" class="menu-link px-3" data-kt-faculty-export="csv">Export as CSV</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-student-export="pdf">Export as PDF</a>
+								<a href="#" class="menu-link px-3" data-kt-faculty-export="pdf">Export as PDF</a>
 							</div>
 							<!--end::Menu item-->
 						</div>
 						<!--end::Menu-->
 					</div>
 					<!--end::Export dropdown-->
-					<!--begin::Add student-->
-					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_create_student">
+					<!--begin::Add faculty-->
+					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_create_faculty">
 						<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 						<span class="svg-icon svg-icon-2">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -185,18 +184,18 @@
 							</svg>
 						</span>
 						<!--end::Svg Icon-->
-						Add Student
+						Add faculty
 					</button>
-					<!--end::Add student-->
+					<!--end::Add faculty-->
 				</div>
 				<!--end::Card toolbar-->
 				<!--begin::Group actions-->
-				<div class="d-flex justify-content-end gap-5 align-items-center d-none" data-kt-student-list-toolbar="selected">
+				<div class="d-flex justify-content-end gap-5 align-items-center d-none" data-kt-faculty-list-toolbar="selected">
 					<div class="fw-bolder me-5">
-						<span class="me-2" data-kt-student-list-select="selected_count"></span>
+						<span class="me-2" data-kt-faculty-list-select="selected_count"></span>
 						Selected
 					</div>
-					<button type="button" class="btn btn-danger w-200px" data-kt-student-list-select="delete_selected">Delete Selected</button>
+					<button type="button" class="btn btn-danger w-200px" data-kt-faculty-list-select="delete_selected">Delete Selected</button>
 				</div>
 				<!--end::Group actions-->
 			</div>
@@ -204,27 +203,24 @@
 			<!--begin::Card body-->
 			<div class="card-body pt-0">
 				<!--begin::Table-->
-				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_student_list_table">
+				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_faculty_list_table">
 					<!--begin::Table head-->
 					<thead>
 						<!--begin::Table row-->
 						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
 							<th class="w-10px pe-2">
 								<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-									<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_report_student_list_table .form-check-input" value="1" />
+									<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_report_faculty_list_table .form-check-input" value="1" />
 								</div>
 							</th>
-							<th class="min-w-100px">Student Name</th>
-							<th class="min-w-100px">Student Number</th>
-							<th class="min-w-75px">Strand</th>
-							<th class="min-w-75px">Grade Level</th>
-							<th class="min-w-75px">Section</th>
+							<th class="min-w-100px">Faculty Name</th>
+							<th class="min-w-100px">Faculty ID</th>
 							<th class="min-w-75px d-none">Gender</th>
 							<th class="min-w-75px d-none">Birth Date</th>
 							<th class="min-w-75px d-none">Age</th>
 							<th class="min-w-200px d-none">Address</th>
-							<th class="min-w-100px d-none">Contact Email</th>
-							<th class="min-w-100px d-none">Contact Number</th>
+							<th class="min-w-100px">Contact Email</th>
+							<th class="min-w-100px">Contact Number</th>
 							<th class="text-end min-w-70px"></th>
 						</tr>
 						<!--end::Table row-->
@@ -232,7 +228,7 @@
 					<!--end::Table head-->
 					<!--begin::Table body-->
 					<tbody class="fw-bold text-gray-600">
-						<?php for($i = 0; $i < count($student); $i++): ?>
+						<?php for($i = 0; $i < count($faculty); $i++): ?>
 							<!--begin::Table row-->
 							<tr>
 								<!--begin::Checkbox-->
@@ -242,47 +238,38 @@
 									</div>
 								</td>
 								<!--end::Checkbox-->
-								<!--begin::Student name=-->
+								<!--begin::Faculty name=-->
 								<td>
-									<a href="?page=student-info" class="text-dark text-hover-primary"><?=$student[$i]['student_name']?></a>
+									<a href="?page=faculty-info" class="text-dark text-hover-primary"><?=$faculty[$i]['faculty_name']?></a>
 								</td>
-								<!--end::Student name=-->
-								<!--begin::Student number=-->
-								<td><?=$student[$i]['student_number']?></td>
-								<!--end::Student number=-->
-								<!--begin::Strand=-->
-								<td><?=$student[$i]['strand']?></td>
-								<!--begin::Strand=-->
-								<!--begin::Grade level=-->
-								<td><?=$student[$i]['grade_level']?></td>
-								<!--end::Grade level=-->
-								<!--begin::Section=-->
-								<td><?=$student[$i]['section']?></td>
-								<!--end::Section=-->
+								<!--end::Faculty name=-->
+								<!--begin::Faculty id=-->
+								<td><?=$faculty[$i]['staff_id']?></td>
+								<!--end::Faculty id=-->
 								<!--begin::Gender=-->
-								<td class="d-none"><?=$student[$i]['gender']?></td>
+								<td class="d-none"><?=$faculty[$i]['gender']?></td>
 								<!--end::Gender=-->
 								<!--begin::Birth date=-->
-								<td class="d-none"><?=$student[$i]['birth_date']?></td>
+								<td class="d-none"><?=$faculty[$i]['birth_date']?></td>
 								<!--end::Birth date=-->
 								<!--begin::Age=-->
-								<td class="d-none"><?=$student[$i]['age']?></td>
+								<td class="d-none"><?=$faculty[$i]['age']?></td>
 								<!--end::Age=-->
 								<!--begin::Address=-->
-								<td class="d-none"><?=$student[$i]['address']?></td>
+								<td class="d-none"><?=$faculty[$i]['address']?></td>
 								<!--end::Address=-->
 								<!--begin::Contact email=-->
-								<td class="d-none"><?=$student[$i]['contact_email']?></td>
+								<td><?=$faculty[$i]['contact_email']?></td>
 								<!--end::Contact email=-->
 								<!--begin::Contact number=-->
-								<td class="d-none"><?=$student[$i]['contact_number']?></td>
+								<td><?=$faculty[$i]['contact_number']?></td>
 								<!--end::Contact number=-->
 								<!--begin::Contact number=-->
 								<td class="text-end">
-									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_create_student">
+									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_create_faculty">
 										<i class="fa fa-edit" aria-hidden="true"></i>
 									</a>
-									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-student-list-filter="delete_row">
+									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-faculty-list-filter="delete_row">
 										<i class="fa fa-trash" aria-hidden="true"></i>
 									</a>
 								</td>
@@ -296,8 +283,8 @@
 				<!--end::Table-->
 			</div>
 			<!--end::Card body-->
-			<!--begin::Modal - Create Student-->
-			<div class="modal fade" id="kt_modal_create_student" tabindex="-1" aria-hidden="true">
+			<!--begin::Modal - Create faculty-->
+			<div class="modal fade" id="kt_modal_create_faculty" tabindex="-1" aria-hidden="true">
 				<!--begin::Modal dialog-->
 				<div class="modal-dialog modal-dialog-centered mw-900px">
 					<!--begin::Modal content-->
@@ -324,7 +311,7 @@
 						<!--begin::Modal body-->
 						<div class="modal-body py-lg-10 px-lg-10">
 							<!--begin::Stepper-->
-							<div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_student_stepper">
+							<div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_faculty_stepper">
 								<!--begin::Aside-->
 								<div class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px">
 									<!--begin::Nav-->
@@ -399,8 +386,8 @@
 											<!--end::Icon-->
 											<!--begin::Label-->
 											<div class="stepper-label">
-												<h3 class="stepper-title">Student</h3>
-												<div class="stepper-desc fw-bold">Setup Your Student Information</div>
+												<h3 class="stepper-title">Faculty</h3>
+												<div class="stepper-desc fw-bold">Setup Your Faculty Information</div>
 											</div>
 											<!--end::Label-->
 										</div>
@@ -419,7 +406,7 @@
 											<!--begin::Label-->
 											<div class="stepper-label">
 												<h3 class="stepper-title">Completed</h3>
-												<div class="stepper-desc fw-bold">Your Registration Has Been Completed</div>
+												<div class="stepper-desc fw-bold">Faculty Has Been Created</div>
 											</div>
 											<!--end::Label-->
 										</div>
@@ -431,7 +418,7 @@
 								<!--begin::Content-->
 								<div class="flex-row-fluid py-lg-5 px-lg-15">
 									<!--begin::Form-->
-									<form class="form" novalidate="novalidate" id="kt_modal_create_student_form">
+									<form class="form" novalidate="novalidate" id="kt_modal_create_faculty_form">
 										<!--begin::Step 1-->
 										<div class="current" data-kt-stepper-element="content">
 											<!--begin::Wrapper-->
@@ -612,63 +599,17 @@
 												<!--begin::Heading-->
 												<div class="pb-10 pb-lg-15">
 													<!--begin::Title-->
-													<h2 class="fw-bolder text-dark">Setup Your Student Information</h2>
+													<h2 class="fw-bolder text-dark">Setup Your Faculty Information</h2>
 													<!--end::Title-->
 												</div>
 												<!--end::Heading-->
 												<!--begin::Input group-->
 												<div class="mb-10 fv-row">
 													<!--begin::Label-->
-													<label class="form-label required">Student Number</label>
+													<label class="form-label required">Faculty ID</label>
 													<!--end::Label-->
 													<!--begin::Input-->
-													<input type="text" class="form-control form-control-solid" placeholder="Student Number" name="student_number"/>
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="fv-row mb-10">
-													<!--begin::Label-->
-													<label class="form-label required">Grade</label>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<select name="grade" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Grade" data-allow-clear="true" data-hide-search="true">
-														<option></option>
-														<option>Grade 11</option>
-														<option>Grade 12</option>
-													</select>
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="fv-row mb-10">
-													<!--begin::Label-->
-													<label class="form-label required">Section</label>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<select name="section" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Section" data-allow-clear="true" data-hide-search="true">
-														<option></option>
-														<option>Section 1</option>
-														<option>section 2</option>
-													</select>
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="fv-row mb-10">
-													<!--begin::Label-->
-													<label class="form-label required">Strand</label>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<select name="strand" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Strand" data-allow-clear="true" data-hide-search="true">
-														<option></option>
-														<option>ABM (Accountancy and Business Management)</option>
-														<option>STEM (Science, Technology, Engineering and Mathematics)</option>
-														<option>HUMSS (Humanities and Social Sciences)</option>
-														<option>GAS (General Academic Strand)</option>
-														<option>ICT (Information and Communications Technology)</option>
-														<option>HE (Home Economics)</option>
-													</select>
+													<input type="text" class="form-control form-control-solid" placeholder="Faculty ID" name="staff_id"/>
 													<!--end::Input-->
 												</div>
 												<!--end::Input group-->
@@ -758,9 +699,9 @@
 				</div>
 				<!--end::Modal dialog-->
 			</div>
-			<!--end::Modal - Create Student-->
+			<!--end::Modal - Create faculty-->
 		</div>
-		<!--end::Students-->
+		<!--end::Faculty-->
 	</div>
 	<!--end::Container-->
 </div>

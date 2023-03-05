@@ -364,7 +364,8 @@ $email = $_SESSION['email'];
 		<!-- <script src="../assets/js/custom/account/settings/signin-methods.js"></script> -->
 		<!-- <script src="../assets/js/custom/account/settings/deactivate-account.js"></script> -->
 		<script src="../assets/js/edited/admin/student/table.js"></script>
-		<script src="../assets/js/edited/admin/student/create-student.js"></script>
+		<script src="../assets/js/edited/admin/student/add-student.js"></script>
+		<script src="../assets/js/edited/admin/student/edit-student.js"></script>
 		<script src="../assets/js/edited/component/calendar.js"></script>
 		<script src="../assets/js/edited/component/address.js"></script>
 		<!--end::Page Custom Javascript-->

@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTCreateStudent = function () {
+var KTEditStudent = function () {
 	// Elements
 	var modal;	
 	var modalEl;
@@ -337,11 +337,20 @@ var KTCreateStudent = function () {
 		));
 	}
 
+	// Handle change region
+   	const handleResetModal = () => {
+		modalEl.addEventListener('hidden.bs.modal', function () {
+    		form.reset();
+    		stepperObj.goTo(1);
+		});
+   	}
+
+
 	return {
 		// Public Functions
 		init: function () {
 			// Elements
-			modalEl = document.querySelector('#kt_modal_create_student');
+			modalEl = document.querySelector('#kt_modal_edit_student');
 
 			if (!modalEl) {
 				return;
@@ -349,19 +358,20 @@ var KTCreateStudent = function () {
 
 			modal = new bootstrap.Modal(modalEl);
 
-			stepper = document.querySelector('#kt_modal_create_student_stepper');
-			form = document.querySelector('#kt_modal_create_student_form');
+			stepper = document.querySelector('#kt_modal_edit_student_stepper');
+			form = document.querySelector('#kt_modal_edit_student_form');
 			formSubmitButton = stepper.querySelector('[data-kt-stepper-action="submit"]');
 			formContinueButton = stepper.querySelector('[data-kt-stepper-action="next"]');
 			formPreviousButton = stepper.querySelector('[data-kt-stepper-action="previous"]');
 
 			initStepper();
 			initValidation();
+			handleResetModal();
 		}
 	};
 }();
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    KTCreateStudent.init();
+    KTEditStudent.init();
 });
