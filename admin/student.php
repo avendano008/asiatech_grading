@@ -341,7 +341,7 @@
 					</div>
 					<!--end::Export dropdown-->
 					<!--begin::Add student-->
-					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_create_student">
 						<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 						<span class="svg-icon svg-icon-2">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -390,6 +390,7 @@
 							<th class="min-w-200px d-none">Address</th>
 							<th class="min-w-100px d-none">Contact Email</th>
 							<th class="min-w-100px d-none">Contact Number</th>
+							<th class="text-end min-w-70px"></th>
 						</tr>
 						<!--end::Table row-->
 					</thead>
@@ -441,6 +442,16 @@
 								<!--begin::Contact number=-->
 								<td class="d-none"><?=$student[$i]['contact_number']?></td>
 								<!--end::Contact number=-->
+								<!--begin::Contact number=-->
+								<td class="text-end">
+									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_create_student">
+										<i class="fa fa-edit" aria-hidden="true"></i>
+									</a>
+									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-student-list-filter="delete_row">
+										<i class="fa fa-trash" aria-hidden="true"></i>
+									</a>
+								</td>
+								<!--end::Contact number=-->
 							</tr>
 							<!--end::Table row-->
     					<?php endfor; ?>
@@ -451,18 +462,18 @@
 			</div>
 			<!--end::Card body-->
 			<!--begin::Modal - Add Student-->
-			<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+			<div class="modal fade" id="kt_modal_create_student" tabindex="-1" aria-hidden="true">
 				<!--begin::Modal dialog-->
-				<div class="modal-dialog modal-dialog-centered mw-650px">
+				<div class="modal-dialog modal-dialog-centered mw-900px">
 					<!--begin::Modal content-->
 					<div class="modal-content">
 						<!--begin::Modal header-->
-						<div class="modal-header" id="kt_modal_add_user_header">
+						<div class="modal-header">
 							<!--begin::Modal title-->
-							<h2 class="fw-bolder">Add User</h2>
+							<h2></h2>
 							<!--end::Modal title-->
 							<!--begin::Close-->
-							<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+							<div class="btn btn-sm btn-icon btn-active-color-primary" data-bs-dismiss="modal">
 								<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 								<span class="svg-icon svg-icon-1">
 									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -476,386 +487,435 @@
 						</div>
 						<!--end::Modal header-->
 						<!--begin::Modal body-->
-						<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-							<!--begin::Form-->
-							<form id="kt_modal_add_user_form" class="form" action="#">
-								<!--begin::Scroll-->
-								<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="d-block fw-bold fs-6 mb-5">Avatar</label>
-										<!--end::Label-->
-										<!--begin::Image input-->
-										<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('../assets/media/svg/avatars/blank.svg')">
-											<!--begin::Preview existing avatar-->
-											<div class="image-input-wrapper w-125px h-125px" style="background-image: url(../assets/media/avatars/300-6.jpg);"></div>
-											<!--end::Preview existing avatar-->
+						<div class="modal-body py-lg-10 px-lg-10">
+							<!--begin::Stepper-->
+							<div class="stepper stepper-pills stepper-column d-flex flex-column flex-xl-row flex-row-fluid" id="kt_modal_create_student_stepper">
+								<!--begin::Aside-->
+								<div class="d-flex justify-content-center justify-content-xl-start flex-row-auto w-100 w-xl-300px">
+									<!--begin::Nav-->
+									<div class="stepper-nav">
+										<!--begin::Step 1-->
+										<div class="stepper-item current" data-kt-stepper-element="nav">
+											<!--begin::Line-->
+											<div class="stepper-line w-40px"></div>
+											<!--end::Line-->
+											<!--begin::Icon-->
+											<div class="stepper-icon w-40px h-40px">
+												<i class="stepper-check fas fa-check"></i>
+												<span class="stepper-number">1</span>
+											</div>
+											<!--end::Icon-->
 											<!--begin::Label-->
-											<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-												<i class="bi bi-pencil-fill fs-7"></i>
-												<!--begin::Inputs-->
-												<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-												<input type="hidden" name="avatar_remove" />
-												<!--end::Inputs-->
-											</label>
+											<div class="stepper-label">
+												<h3 class="stepper-title">General</h3>
+												<div class="stepper-desc fw-bold">Setup Your General Information</div>
+											</div>
 											<!--end::Label-->
-											<!--begin::Cancel-->
-											<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-												<i class="bi bi-x fs-2"></i>
-											</span>
-											<!--end::Cancel-->
-											<!--begin::Remove-->
-											<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-												<i class="bi bi-x fs-2"></i>
-											</span>
-											<!--end::Remove-->
 										</div>
-										<!--end::Image input-->
-										<!--begin::Hint-->
-										<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-										<!--end::Hint-->
+										<!--end::Step 1-->
+										<!--begin::Step 2-->
+										<div class="stepper-item" data-kt-stepper-element="nav">
+											<!--begin::Line-->
+											<div class="stepper-line w-40px"></div>
+											<!--end::Line-->
+											<!--begin::Icon-->
+											<div class="stepper-icon w-40px h-40px">
+												<i class="stepper-check fas fa-check"></i>
+												<span class="stepper-number">2</span>
+											</div>
+											<!--end::Icon-->
+											<!--begin::Label-->
+											<div class="stepper-label">
+												<h3 class="stepper-title">Residence</h3>
+												<div class="stepper-desc fw-bold">Setup Your Residence Information</div>
+											</div>
+											<!--end::Label-->
+										</div>
+										<!--end::Step 2-->
+										<!--begin::Step 3-->
+										<div class="stepper-item" data-kt-stepper-element="nav">
+											<!--begin::Line-->
+											<div class="stepper-line w-40px"></div>
+											<!--end::Line-->
+											<!--begin::Icon-->
+											<div class="stepper-icon w-40px h-40px">
+												<i class="stepper-check fas fa-check"></i>
+												<span class="stepper-number">3</span>
+											</div>
+											<!--end::Icon-->
+											<!--begin::Label-->
+											<div class="stepper-label">
+												<h3 class="stepper-title">Contact</h3>
+												<div class="stepper-desc fw-bold">Setup Your Contact Information</div>
+											</div>
+											<!--end::Label-->
+										</div>
+										<!--end::Step 3-->
+										<!--begin::Step 4-->
+										<div class="stepper-item" data-kt-stepper-element="nav">
+											<!--begin::Line-->
+											<div class="stepper-line w-40px"></div>
+											<!--end::Line-->
+											<!--begin::Icon-->
+											<div class="stepper-icon w-40px h-40px">
+												<i class="stepper-check fas fa-check"></i>
+												<span class="stepper-number">4</span>
+											</div>
+											<!--end::Icon-->
+											<!--begin::Label-->
+											<div class="stepper-label">
+												<h3 class="stepper-title">Student</h3>
+												<div class="stepper-desc fw-bold">Setup Your Student Information</div>
+											</div>
+											<!--end::Label-->
+										</div>
+										<!--end::Step 4-->
+										<!--begin::Step 5-->
+										<div class="stepper-item" data-kt-stepper-element="nav">
+											<!--begin::Line-->
+											<div class="stepper-line w-40px"></div>
+											<!--end::Line-->
+											<!--begin::Icon-->
+											<div class="stepper-icon w-40px h-40px">
+												<i class="stepper-check fas fa-check"></i>
+												<span class="stepper-number">5</span>
+											</div>
+											<!--end::Icon-->
+											<!--begin::Label-->
+											<div class="stepper-label">
+												<h3 class="stepper-title">Completed</h3>
+												<div class="stepper-desc fw-bold">Your Registration Has Been Completed</div>
+											</div>
+											<!--end::Label-->
+										</div>
+										<!--end::Step 5-->
 									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-2">Full Name</label>
-										<!--end::Label-->
-										<!--begin::Input-->
-										<input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="Emma Smith" />
-										<!--end::Input-->
-									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-2">Email</label>
-										<!--end::Label-->
-										<!--begin::Input-->
-										<input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="smith@kpmg.com" />
-										<!--end::Input-->
-									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-5">Role</label>
-										<!--end::Label-->
-										<!--begin::Roles-->
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_0">
-													<div class="fw-bolder text-gray-800">Administrator</div>
-													<div class="text-gray-600">Best for business owners and company administrators</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_1">
-													<div class="fw-bolder text-gray-800">Developer</div>
-													<div class="text-gray-600">Best for developers or people primarily using the API</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="2" id="kt_modal_update_role_option_2" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_2">
-													<div class="fw-bolder text-gray-800">Analyst</div>
-													<div class="text-gray-600">Best for people who need full access to analytics data, but don't need to update business settings</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="3" id="kt_modal_update_role_option_3" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_3">
-													<div class="fw-bolder text-gray-800">Support</div>
-													<div class="text-gray-600">Best for employees who regularly refund payments and respond to disputes</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_4">
-													<div class="fw-bolder text-gray-800">Trial</div>
-													<div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<!--end::Roles-->
-									</div>
-									<!--end::Input group-->
+									<!--end::Nav-->
 								</div>
-								<!--end::Scroll-->
-								<!--begin::Actions-->
-								<div class="text-center pt-15">
-									<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-									<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-										<span class="indicator-label">Submit</span>
-										<span class="indicator-progress">Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-									</button>
+								<!--begin::Aside-->
+								<!--begin::Content-->
+								<div class="flex-row-fluid py-lg-5 px-lg-15">
+									<!--begin::Form-->
+									<form class="form" novalidate="novalidate" id="kt_modal_create_student_form">
+										<!--begin::Step 1-->
+										<div class="current" data-kt-stepper-element="content">
+											<!--begin::Wrapper-->
+											<div class="w-100">
+												<!--begin::Heading-->
+												<div class="pb-10 pb-lg-15">
+													<!--begin::Title-->
+													<h2 class="fw-bolder text-dark">Setup Your General Information</h2>
+													<!--end::Title-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Full Name</label>
+													<!--end::Label-->
+													<div class="row fv-row">
+														<!--begin::Col-->
+														<div class="col-lg-4">
+															<input type="text" class="form-control form-control-solid" placeholder="First Name" name="first_name"/>
+														</div>
+														<!--end::Col-->
+														<!--begin::Col-->
+														<div class="col-lg-4">
+															<input type="text" class="form-control form-control-solid" placeholder="Middle Name" name="middle_name"/>
+														</div>
+														<!--end::Col-->
+														<!--begin::Col-->
+														<div class="col-lg-4">
+															<input type="text" class="form-control form-control-solid" placeholder="Last Name" name="last_name"/>
+														</div>
+														<!--end::Col-->
+													</div>
+													<!--end::Row-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Gender</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select name="gender" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Gender" data-allow-clear="true" data-hide-search="true">
+														<option></option>
+														<option>Male</option>
+														<option>Female</option>
+													</select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Birth Date</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" name="birth_date" id="birth_date" placeholder="Select Birth Date" />
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Age</label>
+													<!--begin::Input-->
+													<input type="number" class="form-control form-control-solid" min="1" max="99" name="age" placeholder="Age" />
+													<!--end::Input-->									
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Step 1-->
+										<!--begin::Step 2-->
+										<div class="" data-kt-stepper-element="content">
+											<!--begin::Wrapper-->
+											<div class="w-100">
+												<!--begin::Heading-->
+												<div class="pb-10 pb-lg-15">
+													<!--begin::Title-->
+													<h2 class="fw-bolder text-dark">Setup Your Residence Information</h2>
+													<!--end::Title-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label">Street Address</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="Street Address" name="street_address"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Region</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select id="region" name="region" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Region" data-allow-clear="true" data-hide-search="true"></select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Province</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select id="province" name="province" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Province" data-allow-clear="true" data-hide-search="true"></select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">City</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select id="city" name="city" class="form-select form-select-solid" data-control="select2" data-placeholder="Select City" data-allow-clear="true" data-hide-search="true"></select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Barangay</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select id="barangay" name="barangay" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Barangay" data-allow-clear="true" data-hide-search="true"></select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Step 2-->
+										<!--begin::Step 3-->
+										<div class="" data-kt-stepper-element="content">
+											<!--begin::Wrapper-->
+											<div class="w-100">
+												<!--begin::Heading-->
+												<div class="pb-10 pb-lg-15">
+													<!--begin::Title-->
+													<h2 class="fw-bolder text-dark">Setup Your Contact Information</h2>
+													<!--end::Title-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Contact Email</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="email" class="form-control form-control-solid" placeholder="@gmail.com" name="contact_email"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label required">Contact Number</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" maxlength="11" placeholder="09" name="contact_number"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Step 3-->
+										<!--begin::Step 4-->
+										<div class="" data-kt-stepper-element="content">
+											<!--begin::Wrapper-->
+											<div class="w-100">
+												<!--begin::Heading-->
+												<div class="pb-10 pb-lg-15">
+													<!--begin::Title-->
+													<h2 class="fw-bolder text-dark">Setup Your Student Information</h2>
+													<!--end::Title-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label required">Student Number</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="Student Number" name="student_number"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Grade</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select name="grade" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Grade" data-allow-clear="true" data-hide-search="true">
+														<option></option>
+														<option>Grade 11</option>
+														<option>Grade 12</option>
+													</select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Section</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select name="section" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Section" data-allow-clear="true" data-hide-search="true">
+														<option></option>
+														<option>Section 1</option>
+														<option>section 2</option>
+													</select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="fv-row mb-10">
+													<!--begin::Label-->
+													<label class="form-label required">Strand</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<select name="strand" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Strand" data-allow-clear="true" data-hide-search="true">
+														<option></option>
+														<option>ABM (Accountancy and Business Management)</option>
+														<option>STEM (Science, Technology, Engineering and Mathematics)</option>
+														<option>HUMSS (Humanities and Social Sciences)</option>
+														<option>GAS (General Academic Strand)</option>
+														<option>ICT (Information and Communications Technology)</option>
+														<option>HE (Home Economics)</option>
+													</select>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Step 4-->
+										<!--begin::Step 5-->
+										<div class="" data-kt-stepper-element="content">
+											<!--begin::Wrapper-->
+											<div class="w-100">
+												<!--begin::Heading-->
+												<div class="pb-8 pb-lg-10">
+													<!--begin::Title-->
+													<h2 class="fw-bolder text-dark">Your Registration Has Been Completed!</h2>
+													<!--end::Title-->
+													<!--begin::Notice-->
+													<div class="text-muted fw-bold fs-6">If you need more info, please
+													<a href="index.php" class="link-primary fw-bolder">Sign In</a>.</div>
+													<!--end::Notice-->
+												</div>
+												<!--end::Heading-->
+												<!--begin::Body-->
+												<div class="mb-0">
+													<!--begin::Text-->
+													<div class="fs-6 text-gray-600 mb-5">Congratulations! Your registration for our online grading system has been completed. We look forward to continuing our great relationships with Asia Technological School of Science and Arts and all of our community partners who support us. Thanks again for taking the time to register!</div>
+													<!--end::Text-->
+												</div>
+												<!--end::Body-->
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Step 5-->
+										<!--begin::Actions-->
+										<div class="d-flex flex-stack pt-10">
+											<!--begin::Wrapper-->
+											<div class="me-2">
+												<button type="button" class="btn btn-lg btn-light-primary me-3" data-kt-stepper-action="previous">
+												<!--begin::Svg Icon | path: icons/duotune/arrows/arr063.svg-->
+												<span class="svg-icon svg-icon-3 me-1">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.5" x="6" y="11" width="13" height="2" rx="1" fill="currentColor" />
+														<path d="M8.56569 11.4343L12.75 7.25C13.1642 6.83579 13.1642 6.16421 12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75L5.70711 11.2929C5.31658 11.6834 5.31658 12.3166 5.70711 12.7071L11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25C13.1642 17.8358 13.1642 17.1642 12.75 16.75L8.56569 12.5657C8.25327 12.2533 8.25327 11.7467 8.56569 11.4343Z" fill="currentColor" />
+													</svg>
+												</span>
+												<!--end::Svg Icon-->Back</button>
+											</div>
+											<!--end::Wrapper-->
+											<!--begin::Wrapper-->
+											<div>
+												<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="submit">
+													<span class="indicator-label">Submit
+													<!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+													<span class="svg-icon svg-icon-3 ms-2 me-0">
+														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+															<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+															<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+														</svg>
+													</span>
+													<!--end::Svg Icon--></span>
+													<span class="indicator-progress">Please wait...
+													<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+												</button>
+												<button type="button" class="btn btn-lg btn-primary" data-kt-stepper-action="next">Continue
+												<!--begin::Svg Icon | path: icons/duotune/arrows/arr064.svg-->
+												<span class="svg-icon svg-icon-3 ms-1 me-0">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.5" x="18" y="13" width="13" height="2" rx="1" transform="rotate(-180 18 13)" fill="currentColor" />
+														<path d="M15.4343 12.5657L11.25 16.75C10.8358 17.1642 10.8358 17.8358 11.25 18.25C11.6642 18.6642 12.3358 18.6642 12.75 18.25L18.2929 12.7071C18.6834 12.3166 18.6834 11.6834 18.2929 11.2929L12.75 5.75C12.3358 5.33579 11.6642 5.33579 11.25 5.75C10.8358 6.16421 10.8358 6.83579 11.25 7.25L15.4343 11.4343C15.7467 11.7467 15.7467 12.2533 15.4343 12.5657Z" fill="currentColor" />
+													</svg>
+												</span>
+												<!--end::Svg Icon--></button>
+											</div>
+											<!--end::Wrapper-->
+										</div>
+										<!--end::Actions-->
+									</form>
+									<!--end::Form-->
 								</div>
-								<!--end::Actions-->
-							</form>
-							<!--end::Form-->
-						</div>
-						<!--end::Modal body-->
-					</div>
-					<!--end::Modal content-->
-				</div>
-				<!--end::Modal dialog-->
-			</div>
-			<!--end::Modal - Add Student-->
-			<!--begin::Modal - Edit Student-->
-			<div class="modal fade" id="kt_modal_edit_user" tabindex="-1" aria-hidden="true">
-				<!--begin::Modal dialog-->
-				<div class="modal-dialog modal-dialog-centered mw-650px">
-					<!--begin::Modal content-->
-					<div class="modal-content">
-						<!--begin::Modal header-->
-						<div class="modal-header" id="kt_modal_edit_user_header">
-							<!--begin::Modal title-->
-							<h2 class="fw-bolder">Edit User</h2>
-							<!--end::Modal title-->
-							<!--begin::Close-->
-							<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-								<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-								<span class="svg-icon svg-icon-1">
-									<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-										<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="currentColor" />
-										<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="currentColor" />
-									</svg>
-								</span>
-								<!--end::Svg Icon-->
+								<!--end::Content-->
 							</div>
-							<!--end::Close-->
-						</div>
-						<!--end::Modal header-->
-						<!--begin::Modal body-->
-						<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-							<!--begin::Form-->
-							<form id="kt_modal_edit_user_form" class="form" action="#">
-								<!--begin::Scroll-->
-								<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_edit_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_edit_user_header" data-kt-scroll-wrappers="#kt_modal_edit_user_scroll" data-kt-scroll-offset="300px">
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="d-block fw-bold fs-6 mb-5">Avatar</label>
-										<!--end::Label-->
-										<!--begin::Image input-->
-										<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('../assets/media/svg/avatars/blank.svg')">
-											<!--begin::Preview existing avatar-->
-											<div class="image-input-wrapper w-125px h-125px" style="background-image: url(../assets/media/avatars/300-6.jpg);"></div>
-											<!--end::Preview existing avatar-->
-											<!--begin::Label-->
-											<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-												<i class="bi bi-pencil-fill fs-7"></i>
-												<!--begin::Inputs-->
-												<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-												<input type="hidden" name="avatar_remove" />
-												<!--end::Inputs-->
-											</label>
-											<!--end::Label-->
-											<!--begin::Cancel-->
-											<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-												<i class="bi bi-x fs-2"></i>
-											</span>
-											<!--end::Cancel-->
-											<!--begin::Remove-->
-											<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-												<i class="bi bi-x fs-2"></i>
-											</span>
-											<!--end::Remove-->
-										</div>
-										<!--end::Image input-->
-										<!--begin::Hint-->
-										<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-										<!--end::Hint-->
-									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-2">Full Name</label>
-										<!--end::Label-->
-										<!--begin::Input-->
-										<input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="Emma Smith" />
-										<!--end::Input-->
-									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="fv-row mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-2">Email</label>
-										<!--end::Label-->
-										<!--begin::Input-->
-										<input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="smith@kpmg.com" />
-										<!--end::Input-->
-									</div>
-									<!--end::Input group-->
-									<!--begin::Input group-->
-									<div class="mb-7">
-										<!--begin::Label-->
-										<label class="required fw-bold fs-6 mb-5">Role</label>
-										<!--end::Label-->
-										<!--begin::Roles-->
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_0">
-													<div class="fw-bolder text-gray-800">Administrator</div>
-													<div class="text-gray-600">Best for business owners and company administrators</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_1">
-													<div class="fw-bolder text-gray-800">Developer</div>
-													<div class="text-gray-600">Best for developers or people primarily using the API</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="2" id="kt_modal_update_role_option_2" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_2">
-													<div class="fw-bolder text-gray-800">Analyst</div>
-													<div class="text-gray-600">Best for people who need full access to analytics data, but don't need to update business settings</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="3" id="kt_modal_update_role_option_3" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_3">
-													<div class="fw-bolder text-gray-800">Support</div>
-													<div class="text-gray-600">Best for employees who regularly refund payments and respond to disputes</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<div class='separator separator-dashed my-5'></div>
-										<!--begin::Input row-->
-										<div class="d-flex fv-row">
-											<!--begin::Radio-->
-											<div class="form-check form-check-custom form-check-solid">
-												<!--begin::Input-->
-												<input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
-												<!--end::Input-->
-												<!--begin::Label-->
-												<label class="form-check-label" for="kt_modal_update_role_option_4">
-													<div class="fw-bolder text-gray-800">Trial</div>
-													<div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
-												</label>
-												<!--end::Label-->
-											</div>
-											<!--end::Radio-->
-										</div>
-										<!--end::Input row-->
-										<!--end::Roles-->
-									</div>
-									<!--end::Input group-->
-								</div>
-								<!--end::Scroll-->
-								<!--begin::Actions-->
-								<div class="text-center pt-15">
-									<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-									<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-										<span class="indicator-label">Submit</span>
-										<span class="indicator-progress">Please wait...
-										<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-									</button>
-								</div>
-								<!--end::Actions-->
-							</form>
-							<!--end::Form-->
+							<!--end::Stepper-->
 						</div>
 						<!--end::Modal body-->
 					</div>
@@ -863,7 +923,7 @@
 				</div>
 				<!--end::Modal dialog-->
 			</div>
-			<!--end::Modal - Edit Student-->
+			<!--end::Modal - Create App-->
 		</div>
 		<!--end::Students-->
 	</div>

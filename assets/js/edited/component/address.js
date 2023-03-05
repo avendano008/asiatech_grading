@@ -15,7 +15,7 @@ var KTAppLocation = function () {
 			removeOptions(provSelect);
 			removeOptions(citySelect);
 			removeOptions(brgySelect);
-			fetch('./assets/js/edited/sign-up/json/refregion.json')
+			fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refregion.json')
 			.then(response => response.json())
 			.then(data => {
 				data.RECORDS.forEach(obj => {
@@ -37,7 +37,7 @@ var KTAppLocation = function () {
 		removeOptions(provSelect);
 		removeOptions(citySelect);
 		removeOptions(brgySelect);
-		fetch('./assets/js/edited/sign-up/json/refprovince.json')
+		fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refprovince.json')
 		.then(response => response.json())
 		.then(data => {
 			data.RECORDS.forEach(obj => {
@@ -57,7 +57,7 @@ var KTAppLocation = function () {
 		console.log("Fetch City");
 		removeOptions(citySelect);
 		removeOptions(brgySelect);
-		fetch('./assets/js/edited/sign-up/json/refcitymun.json')
+		fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refcitymun.json')
 		.then(response => response.json())
 		.then(data => {
 			data.RECORDS.forEach(obj => {
@@ -76,7 +76,7 @@ var KTAppLocation = function () {
 	const initBarangay = () => {
 		console.log("Fetch Barangay");
 		removeOptions(brgySelect);
-		fetch('./assets/js/edited/sign-up/json/refbrgy.json')
+		fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refbrgy.json')
 		.then(response => response.json())
 		.then(data => {
 			data.RECORDS.forEach(obj => {

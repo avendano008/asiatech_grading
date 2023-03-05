@@ -492,8 +492,8 @@
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Custom Javascript(used by this page)-->
 		<script src="assets/js/edited/sign-up/create-account.js"></script>
-		<script src="assets/js/edited/sign-up/calendar.js"></script>
-		<script src="assets/js/edited/sign-up/location.js"></script>
+		<script src="assets/js/edited/component/calendar.js"></script>
+		<script src="assets/js/edited/component/address.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
