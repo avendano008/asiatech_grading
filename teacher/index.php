@@ -71,7 +71,7 @@ $email = $_SESSION['email'];
 							<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
 								<div class="menu-item">
 									<div class="menu-content">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">STUDENT</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">TEACHER</span>
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -94,6 +94,29 @@ $email = $_SESSION['email'];
 										</span>
 									</a>
 								</div>
+								<div class="menu-item">
+									<div class="menu-content">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">STUDENT SECTION</span>
+									</div>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=student">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z" fill="currentColor"/>
+														<path opacity="0.5" d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Student</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 									<a href="?page=subject">
 										<span class="menu-link">
@@ -112,21 +135,27 @@ $email = $_SESSION['email'];
 										</span>
 									</a>
 								</div>
+								<div class="menu-item">
+									<div class="menu-content">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">GRADING & RESULT</span>
+									</div>
+								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<a href="?page=result">
+									<a href="?page=grading">
 										<span class="menu-link">
 											<span class="menu-icon">
 												<!--begin::Svg Icon-->
 												<span class="svg-icon svg-icon-1">
 													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-														<path opacity="0.5" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM11.7 17.7L16 14C16.4 13.6 16.4 12.9 16 12.5C15.6 12.1 15.4 12.6 15 13L11 16L9 15C8.6 14.6 8.4 14.1 8 14.5C7.6 14.9 8.1 15.6 8.5 16L10.3 17.7C10.5 17.9 10.8 18 11 18C11.2 18 11.5 17.9 11.7 17.7Z" fill="currentColor"/>
-														<path d="M10.4343 15.4343L9.25 14.25C8.83579 13.8358 8.16421 13.8358 7.75 14.25C7.33579 14.6642 7.33579 15.3358 7.75 15.75L10.2929 18.2929C10.6834 18.6834 11.3166 18.6834 11.7071 18.2929L16.25 13.75C16.6642 13.3358 16.6642 12.6642 16.25 12.25C15.8358 11.8358 15.1642 11.8358 14.75 12.25L11.5657 15.4343C11.2533 15.7467 10.7467 15.7467 10.4343 15.4343Z" fill="currentColor"/>
+														<path opacity="0.5" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13.5L12.5 13V10C12.5 9.4 12.6 9.5 12 9.5C11.4 9.5 11.5 9.4 11.5 10L11 13L8 13.5C7.4 13.5 7 13.4 7 14C7 14.6 7.4 14.5 8 14.5H11V18C11 18.6 11.4 19 12 19C12.6 19 12.5 18.6 12.5 18V14.5L16 14C16.6 14 17 14.6 17 14C17 13.4 16.6 13.5 16 13.5Z" fill="currentColor"/>
+														<rect x="11" y="19" width="10" height="2" rx="1" transform="rotate(-90 11 19)" fill="currentColor"/>
+														<rect x="7" y="13" width="10" height="2" rx="1" fill="currentColor"/>
 														<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"/>
 													</svg>
 												</span>
 												<!--end::Svg Icon-->
 											</span>
-											<span class="menu-title">Result</span>
+											<span class="menu-title">Grading</span>
 											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
@@ -274,6 +303,13 @@ $email = $_SESSION['email'];
 		<!--begin::Page Custom Javascript(used by this page)-->
 		<!-- <script src="../assets/js/custom/account/settings/signin-methods.js"></script> -->
 		<!-- <script src="../assets/js/custom/account/settings/deactivate-account.js"></script> -->
+		<script src="../assets/js/edited/admin/student/table.js"></script>
+		<script src="../assets/js/edited/admin/student/add-student.js"></script>
+		<script src="../assets/js/edited/admin/student/edit-student.js"></script>
+		<?php if(isset($_GET['page']) && $_GET['page']=='student') : ?>
+		<script src="../assets/js/edited/component/calendar.js"></script>
+		<script src="../assets/js/edited/component/address.js"></script>
+		<?php endif; ?>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

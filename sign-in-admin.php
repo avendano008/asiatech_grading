@@ -4,29 +4,30 @@
 
     $email=$conn->real_escape_string($_POST['email']);
     $password=md5($_POST['password']);
-    $sql = "SELECT * FROM admin WHERE email='$email' OR staff_id='$email'";
-    $result = $conn->query($sql);
+    $sql = array("admin"=>"SELECT * FROM admin WHERE email='$email' OR staff_id='$email'", 
+                "registrar"=>"SELECT * FROM registrar WHERE email='$email' OR staff_id='$email'", 
+                "teacher"=>"SELECT * FROM teacher WHERE email='$email' OR staff_id='$email'");
 
-    //Find username and password from database
-    if ($result->num_rows > 0) {
-      while ($row = $result->fetch_assoc()) {
-        if ($row['password']==$password){
-          $_SESSION['staff_id']=$row['staff_id'];
-          $_SESSION['email']=$row['email'];
-          $_SESSION['f_name']=$row['f_name'];
-          $_SESSION['l_name']=$row['l_name'];
-          $_SESSION['status']=$row['status'];
-          header('Location:admin/');
-        }else{
-          ?>
-            <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
-          <?php
+    foreach($sql as $key => $value) {
+      $result = $conn->query($value);
+      //Find username and password from database
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          if ($row['password']==$password){
+            $_SESSION['staff_id']=$row['staff_id'];
+            $_SESSION['email']=$row['email'];
+            $_SESSION['f_name']=$row['f_name'];
+            $_SESSION['l_name']=$row['l_name'];
+            $_SESSION['status']=$row['status'];
+            header('Location:' . $key . '/');
+            break;
+          }else{
+            ?><script type="text/javascript">alert("Incorrect email or password, please try again.");</script><?php
+          }
         }
+      }else{
+        ?><script type="text/javascript">alert("Incorrect email or password, please try again.");</script><?php
       }
-    }else{
-      ?>
-        <script type="text/javascript">alert("Incorrect email or password, please try again.");</script>
-      <?php
     }
   }
 ?>

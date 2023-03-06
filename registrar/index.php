@@ -71,7 +71,7 @@ $email = $_SESSION['email'];
 							<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
 								<div class="menu-item">
 									<div class="menu-content">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">STUDENT</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">REGISTRAR</span>
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -95,6 +95,88 @@ $email = $_SESSION['email'];
 									</a>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=semester">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+													<path opacity="0.5" d="M21 22H3C2.4 22 2 21.6 2 21V5C2 4.4 2.4 4 3 4H21C21.6 4 22 4.4 22 5V21C22 21.6 21.6 22 21 22Z" fill="currentColor"/>
+													<path d="M6 6C5.4 6 5 5.6 5 5V3C5 2.4 5.4 2 6 2C6.6 2 7 2.4 7 3V5C7 5.6 6.6 6 6 6ZM11 5V3C11 2.4 10.6 2 10 2C9.4 2 9 2.4 9 3V5C9 5.6 9.4 6 10 6C10.6 6 11 5.6 11 5ZM15 5V3C15 2.4 14.6 2 14 2C13.4 2 13 2.4 13 3V5C13 5.6 13.4 6 14 6C14.6 6 15 5.6 15 5ZM19 5V3C19 2.4 18.6 2 18 2C17.4 2 17 2.4 17 3V5C17 5.6 17.4 6 18 6C18.6 6 19 5.6 19 5Z" fill="currentColor"/>
+												</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Semester</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div class="menu-item">
+									<div class="menu-content">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">DEPARTMENT & FACULTY</span>
+									</div>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=department">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z" fill="currentColor"/>
+														<path opacity="0.5" d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Department</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=faculty">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M6 7H3C2.4 7 2 6.6 2 6V3C2 2.4 2.4 2 3 2H6C6.6 2 7 2.4 7 3V6C7 6.6 6.6 7 6 7Z" fill="currentColor"/>
+														<path opacity="0.5" d="M13 7H10C9.4 7 9 6.6 9 6V3C9 2.4 9.4 2 10 2H13C13.6 2 14 2.4 14 3V6C14 6.6 13.6 7 13 7ZM21 6V3C21 2.4 20.6 2 20 2H17C16.4 2 16 2.4 16 3V6C16 6.6 16.4 7 17 7H20C20.6 7 21 6.6 21 6ZM7 13V10C7 9.4 6.6 9 6 9H3C2.4 9 2 9.4 2 10V13C2 13.6 2.4 14 3 14H6C6.6 14 7 13.6 7 13ZM14 13V10C14 9.4 13.6 9 13 9H10C9.4 9 9 9.4 9 10V13C9 13.6 9.4 14 10 14H13C13.6 14 14 13.6 14 13ZM21 13V10C21 9.4 20.6 9 20 9H17C16.4 9 16 9.4 16 10V13C16 13.6 16.4 14 17 14H20C20.6 14 21 13.6 21 13ZM7 20V17C7 16.4 6.6 16 6 16H3C2.4 16 2 16.4 2 17V20C2 20.6 2.4 21 3 21H6C6.6 21 7 20.6 7 20ZM14 20V17C14 16.4 13.6 16 13 16H10C9.4 16 9 16.4 9 17V20C9 20.6 9.4 21 10 21H13C13.6 21 14 20.6 14 20ZM21 20V17C21 16.4 20.6 16 20 16H17C16.4 16 16 16.4 16 17V20C16 20.6 16.4 21 17 21H20C20.6 21 21 20.6 21 20Z" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Faculty</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div class="menu-item">
+									<div class="menu-content">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">STUDENT SECTION</span>
+									</div>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=student">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path d="M20 14H18V10H20C20.6 10 21 10.4 21 11V13C21 13.6 20.6 14 20 14ZM21 19V17C21 16.4 20.6 16 20 16H18V20H20C20.6 20 21 19.6 21 19ZM21 7V5C21 4.4 20.6 4 20 4H18V8H20C20.6 8 21 7.6 21 7Z" fill="currentColor"/>
+														<path opacity="0.5" d="M17 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H17C17.6 2 18 2.4 18 3V21C18 21.6 17.6 22 17 22ZM10 7C8.9 7 8 7.9 8 9C8 10.1 8.9 11 10 11C11.1 11 12 10.1 12 9C12 7.9 11.1 7 10 7ZM13.3 16C14 16 14.5 15.3 14.3 14.7C13.7 13.2 12 12 10.1 12C8.10001 12 6.49999 13.1 5.89999 14.7C5.59999 15.3 6.19999 16 7.39999 16H13.3Z" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Student</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 									<a href="?page=subject">
 										<span class="menu-link">
 											<span class="menu-icon">
@@ -108,6 +190,31 @@ $email = $_SESSION['email'];
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Subject</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div class="menu-item">
+									<div class="menu-content">
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">GRADING & RESULT</span>
+									</div>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=grading">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-1">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<path opacity="0.5" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM16 13.5L12.5 13V10C12.5 9.4 12.6 9.5 12 9.5C11.4 9.5 11.5 9.4 11.5 10L11 13L8 13.5C7.4 13.5 7 13.4 7 14C7 14.6 7.4 14.5 8 14.5H11V18C11 18.6 11.4 19 12 19C12.6 19 12.5 18.6 12.5 18V14.5L16 14C16.6 14 17 14.6 17 14C17 13.4 16.6 13.5 16 13.5Z" fill="currentColor"/>
+														<rect x="11" y="19" width="10" height="2" rx="1" transform="rotate(-90 11 19)" fill="currentColor"/>
+														<rect x="7" y="13" width="10" height="2" rx="1" fill="currentColor"/>
+														<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Grading</span>
 											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
@@ -274,6 +381,13 @@ $email = $_SESSION['email'];
 		<!--begin::Page Custom Javascript(used by this page)-->
 		<!-- <script src="../assets/js/custom/account/settings/signin-methods.js"></script> -->
 		<!-- <script src="../assets/js/custom/account/settings/deactivate-account.js"></script> -->
+		<script src="../assets/js/edited/admin/student/table.js"></script>
+		<script src="../assets/js/edited/admin/student/add-student.js"></script>
+		<script src="../assets/js/edited/admin/student/edit-student.js"></script>
+		<?php if(isset($_GET['page']) && $_GET['page']=='student') : ?>
+		<script src="../assets/js/edited/component/calendar.js"></script>
+		<script src="../assets/js/edited/component/address.js"></script>
+		<?php endif; ?>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
