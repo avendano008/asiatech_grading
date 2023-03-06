@@ -140,10 +140,11 @@ var KTAppAddress = function () {
    	// Public Functions
    	init: function () {
          // Define variables
-			regSelect = document.getElementById("region");
-			provSelect = document.getElementById("province");
-			citySelect = document.getElementById("city");
-			brgySelect = document.getElementById("barangay");
+			regSelect = document.querySelector('[data-kt-address-select="region"]');
+			provSelect = document.querySelector('[data-kt-address-select="province"]');
+			citySelect = document.querySelector('[data-kt-address-select="city"]');
+			brgySelect = document.querySelector('[data-kt-address-select="barangay"]');
+
 			initRegion();
          handleChangeRegion();
          handleChangeProvince();

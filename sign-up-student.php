@@ -126,7 +126,7 @@
 									<!--end::Icon-->
 									<!--begin::Label-->
 									<div class="stepper-label">
-										<h3 class="stepper-title">Registration Complete</h3>
+										<h3 class="stepper-title">Complete</h3>
 										<div class="stepper-desc fw-bold">Your Registration Has Been Completed</div>
 									</div>
 									<!--end::Label-->
@@ -318,9 +318,9 @@
 															<span class="symbol-label">
 																<!--begin::Svg Icon-->
 																<span class="svg-icon svg-icon-1 svg-icon-gray-600">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<path d="M13 5.91517C15.8 6.41517 18 8.81519 18 11.8152C18 12.5152 17.9 13.2152 17.6 13.9152L20.1 15.3152C20.6 15.6152 21.4 15.4152 21.6 14.8152C21.9 13.9152 22.1 12.9152 22.1 11.8152C22.1 7.01519 18.8 3.11521 14.3 2.01521C13.7 1.91521 13.1 2.31521 13.1 3.01521V5.91517H13Z" fill="currentColor" />
-																		<path opacity="0.3" d="M19.1 17.0152C19.7 17.3152 19.8 18.1152 19.3 18.5152C17.5 20.5152 14.9 21.7152 12 21.7152C9.1 21.7152 6.50001 20.5152 4.70001 18.5152C4.30001 18.0152 4.39999 17.3152 4.89999 17.0152L7.39999 15.6152C8.49999 16.9152 10.2 17.8152 12 17.8152C13.8 17.8152 15.5 17.0152 16.6 15.6152L19.1 17.0152ZM6.39999 13.9151C6.19999 13.2151 6 12.5152 6 11.8152C6 8.81517 8.2 6.41515 11 5.91515V3.01519C11 2.41519 10.4 1.91519 9.79999 2.01519C5.29999 3.01519 2 7.01517 2 11.8152C2 12.8152 2.2 13.8152 2.5 14.8152C2.7 15.4152 3.4 15.7152 4 15.3152L6.39999 13.9151Z" fill="currentColor" />
+																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																		<path opacity="0.3" d="M2.10001 10C3.00001 5.6 6.69998 2.3 11.2 2L8.79999 4.39999L11.1 7C9.60001 7.3 8.30001 8.19999 7.60001 9.59999L4.5 12.4L2.10001 10ZM19.3 11.5L16.4 14C15.7 15.5 14.4 16.6 12.7 16.9L15 19.5L12.6 21.9C17.1 21.6 20.8 18.2 21.7 13.9L19.3 11.5Z" fill="currentColor"/>
+																		<path d="M13.8 2.09998C18.2 2.99998 21.5 6.69998 21.8 11.2L19.4 8.79997L16.8 11C16.5 9.39998 15.5 8.09998 14 7.39998L11.4 4.39998L13.8 2.09998ZM12.3 19.4L9.69998 16.4C8.29998 15.7 7.3 14.4 7 12.8L4.39999 15.1L2 12.7C2.3 17.2 5.7 20.9 10 21.8L12.3 19.4Z" fill="currentColor"/>
 																	</svg>
 																</span>
 																<!--end::Svg Icon-->
@@ -417,9 +417,9 @@
 															<span class="symbol-label">
 																<!--begin::Svg Icon-->
 																<span class="svg-icon svg-icon-1 svg-icon-gray-600">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																    <path d="M17.2718029,8.68536757 C16.8932864,8.28319382 16.9124644,7.65031935 17.3146382,7.27180288 C17.7168119,6.89328641 18.3496864,6.91246442 18.7282029,7.31463817 L22.7282029,11.5646382 C23.0906029,11.9496882 23.0906029,12.5503176 22.7282029,12.9353676 L18.7282029,17.1853676 C18.3496864,17.5875413 17.7168119,17.6067193 17.3146382,17.2282029 C16.9124644,16.8496864 16.8932864,16.2168119 17.2718029,15.8146382 L20.6267538,12.2500029 L17.2718029,8.68536757 Z M6.72819712,8.6853647 L3.37324625,12.25 L6.72819712,15.8146353 C7.10671359,16.2168091 7.08753558,16.8496835 6.68536183,17.2282 C6.28318808,17.6067165 5.65031361,17.5875384 5.27179713,17.1853647 L1.27179713,12.9353647 C0.909397125,12.5503147 0.909397125,11.9496853 1.27179713,11.5646353 L5.27179713,7.3146353 C5.65031361,6.91246155 6.28318808,6.89328354 6.68536183,7.27180001 C7.08753558,7.65031648 7.10671359,8.28319095 6.72819712,8.6853647 Z" fill="currentColor"/>
-																    <rect fill="currentColor" transform="translate(12.000000, 12.000000) rotate(-345.000000) translate(-12.000000, -12.000000) " x="11" y="4" width="2" height="16" rx="1"/>
+																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M16.95 18.9688C16.75 18.9688 16.55 18.8688 16.35 18.7688C15.85 18.4688 15.75 17.8688 16.05 17.3688L19.65 11.9688L16.05 6.56876C15.75 6.06876 15.85 5.46873 16.35 5.16873C16.85 4.86873 17.45 4.96878 17.75 5.46878L21.75 11.4688C21.95 11.7688 21.95 12.2688 21.75 12.5688L17.75 18.5688C17.55 18.7688 17.25 18.9688 16.95 18.9688ZM7.55001 18.7688C8.05001 18.4688 8.15 17.8688 7.85 17.3688L4.25001 11.9688L7.85 6.56876C8.15 6.06876 8.05001 5.46873 7.55001 5.16873C7.05001 4.86873 6.45 4.96878 6.15 5.46878L2.15 11.4688C1.95 11.7688 1.95 12.2688 2.15 12.5688L6.15 18.5688C6.35 18.8688 6.65 18.9688 6.95 18.9688C7.15 18.9688 7.35001 18.8688 7.55001 18.7688Z" fill="currentColor"/>
+																	<path opacity="0.3" d="M10.45 18.9687C10.35 18.9687 10.25 18.9687 10.25 18.9687C9.75 18.8687 9.35 18.2688 9.55 17.7688L12.55 5.76878C12.65 5.26878 13.25 4.8687 13.75 5.0687C14.25 5.1687 14.65 5.76878 14.45 6.26878L11.45 18.2688C11.35 18.6688 10.85 18.9687 10.45 18.9687Z" fill="currentColor"/>
 																	</svg>
 																</span>
 																<!--end::Svg Icon-->
@@ -450,8 +450,8 @@
 															<span class="symbol-label">
 																<!--begin::Svg Icon-->
 																<span class="svg-icon svg-icon-1 svg-icon-gray-600">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														        <path d="M3.95709826,8.41510662 L11.47855,3.81866389 C11.7986624,3.62303967 12.2013376,3.62303967 12.52145,3.81866389 L20.0429,8.41510557 C20.6374094,8.77841684 21,9.42493654 21,10.1216692 L21,19.0000642 C21,20.1046337 20.1045695,21.0000642 19,21.0000642 L4.99998155,21.0000673 C3.89541205,21.0000673 2.99998155,20.1046368 2.99998155,19.0000673 L2.99999828,10.1216672 C2.99999935,9.42493561 3.36258984,8.77841732 3.95709826,8.41510662 Z M10,13 C9.44771525,13 9,13.4477153 9,14 L9,17 C9,17.5522847 9.44771525,18 10,18 L14,18 C14.5522847,18 15,17.5522847 15,17 L15,14 C15,13.4477153 14.5522847,13 14,13 L10,13 Z" fill="currentColor"/>
+																	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+																	<path d="M11 2.375L2 9.575V20.575C2 21.175 2.4 21.575 3 21.575H9C9.6 21.575 10 21.175 10 20.575V14.575C10 13.975 10.4 13.575 11 13.575H13C13.6 13.575 14 13.975 14 14.575V20.575C14 21.175 14.4 21.575 15 21.575H21C21.6 21.575 22 21.175 22 20.575V9.575L13 2.375C12.4 1.875 11.6 1.875 11 2.375Z" fill="currentColor"/>
 																	</svg>
 																</span>
 																<!--end::Svg Icon-->
@@ -541,7 +541,7 @@
 											<label class="form-label required">Birth Date</label>
 											<!--end::Label-->
 											<!--begin::Input-->
-											<input type="text" class="form-control form-control-solid" name="birth_date" id="birth_date" placeholder="Select Birth Date" />
+											<input type="text" class="form-control form-control-solid" name="birth_date" id="birth_date" placeholder="Select Birth Date" data-kt-calendar-input="birth_date"/>
 											<!--end::Input-->
 										</div>
 										<!--end::Input group-->
@@ -580,7 +580,7 @@
 											<label class="form-label required">Region</label>
 											<!--end::Label-->
 											<!--begin::Input-->
-											<select id="region" name="region" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Region" data-allow-clear="true" data-hide-search="true">
+											<select id="region" name="region" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Region" data-allow-clear="true" data-hide-search="true" data-kt-address-select="region">
 												<option></option>
 											</select>
 											<!--end::Input-->
@@ -592,7 +592,7 @@
 											<label class="form-label required">Province</label>
 											<!--end::Label-->
 											<!--begin::Input-->
-											<select id="province" name="province" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Province" data-allow-clear="true" data-hide-search="true">
+											<select id="province" name="province" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Province" data-allow-clear="true" data-hide-search="true"data-kt-address-select="province">
 												<option></option>
 											</select>
 											<!--end::Input-->
@@ -604,7 +604,7 @@
 											<label class="form-label required">City</label>
 											<!--end::Label-->
 											<!--begin::Input-->
-											<select id="city" name="city" class="form-select form-select-solid" data-control="select2" data-placeholder="Select City" data-allow-clear="true" data-hide-search="true">
+											<select id="city" name="city" class="form-select form-select-solid" data-control="select2" data-placeholder="Select City" data-allow-clear="true" data-hide-search="true" data-kt-address-select="city">
 												<option></option>
 											</select>
 											<!--end::Input-->
@@ -616,7 +616,7 @@
 											<label class="form-label required">Barangay</label>
 											<!--end::Label-->
 											<!--begin::Input-->
-											<select id="barangay" name="barangay" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Barangay" data-allow-clear="true" data-hide-search="true">
+											<select id="barangay" name="barangay" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Barangay" data-allow-clear="true" data-hide-search="true"data-kt-address-select="barangay">
 												<option></option>
 											</select>
 											<!--end::Input-->

@@ -19,7 +19,7 @@ var KTAppCalendar = function () {
         // Public Functions
         init: function () {
             // Define variables
-            startDatepicker = document.getElementById('birth_date');
+            startDatepicker = document.querySelectorAll('[data-kt-calendar-input="birth_date"]');
             initDatepickers();
         }
     };

@@ -133,7 +133,63 @@ var KTAddStudent = function () {
 		// Step 1
 		validations.push(FormValidation.formValidation(
 			form,
-			{ 
+			{
+				fields: {
+					registration_type: {
+						validators: {
+							notEmpty: {
+								message: 'Registration type is required'
+							}
+						}
+					}
+				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger(),
+					bootstrap: new FormValidation.plugins.Bootstrap5({
+						rowSelector: '.fv-row',
+                        eleInvalidClass: '',
+                        eleValidClass: ''
+					})
+				}
+			}
+		));
+
+		// Step 2
+		validations.push(FormValidation.formValidation(
+			form,
+			{
+				fields: {
+					'grade_level': {
+						validators: {
+							notEmpty: {
+								message: 'Grade level is required'
+							}
+						}
+					},
+					'strand': {
+						validators: {
+							notEmpty: {
+								message: 'Strand is required'
+							}
+						}
+					}
+				},
+				plugins: {
+					trigger: new FormValidation.plugins.Trigger(),
+					// Bootstrap Framework Integration
+					bootstrap: new FormValidation.plugins.Bootstrap5({
+						rowSelector: '.fv-row',
+                        eleInvalidClass: '',
+                        eleValidClass: ''
+					})
+				}
+			}
+		));
+
+		// Step 3
+		validations.push(FormValidation.formValidation(
+			form,
+			{
 				fields: {
 					'first_name': {
 						validators: {
@@ -169,28 +225,11 @@ var KTAddStudent = function () {
 								message: 'Birth date is required'
 							}
 						}
-					},
-					'age': {
-						validators: {
-							notEmpty: {
-								message: 'Age is required'
-							},
-							stringLength: {
-								min: 1,
-								max: 2,
-								message: 'Age must contain 1 to 2 digits only'
-							},
-							between: {
-								min: 1,
-								max: 99,
-								message: 'Age must be greater than 0 and less than 99'
-							}
-						}
 					}
-
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
+					// Bootstrap Framework Integration
 					bootstrap: new FormValidation.plugins.Bootstrap5({
 						rowSelector: '.fv-row',
                         eleInvalidClass: '',
@@ -200,7 +239,7 @@ var KTAddStudent = function () {
 			}
 		));
 
-		// Step 2
+		// Step 4
 		validations.push(FormValidation.formValidation(
 			form,
 			{
@@ -232,97 +271,14 @@ var KTAddStudent = function () {
 								message: 'Barangay is required'
 							}
 						}
-					}
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-					})
-				}
-			}
-		));
-
-		// Step 3
-		validations.push(FormValidation.formValidation(
-			form,
-			{
-				fields: {
-					'contact_email': {
-						validators: {
-							notEmpty: {
-								message: 'Contact email is required'
-							},
-							emailAddress: {
-								message: 'The value is not a valid contact email'
-							}
-						}
 					},
-					'contact_number': {
-						validators: {
-							notEmpty: {
-								message: 'Contact number is required'
-							},
-							stringLength: {
-								min: 11,
-								max: 11,
-								message: 'Contact number must contain 11 digits only'
-							},
-							digits: {
-								message: 'The value is not a valid contact number'
-							}
-						}
-					}
-
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					// Bootstrap Framework Integration
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-					})
-				}
-			}
-		));
-
-		// Step 4
-		validations.push(FormValidation.formValidation(
-			form,
-			{
-				fields: {
-					'student_number': {
-						validators: {
-							notEmpty: {
-								message: 'Student number is required'
-							}
-						}
-					},
-					'grade': {
-						validators: {
-							notEmpty: {
-								message: 'Grade level is required'
-							}
-						}
-					},
-					'section': {
-						validators: {
-							notEmpty: {
-								message: 'Section is required'
-							}
-						}
-					},
-					'strand': {
-						validators: {
-							notEmpty: {
-								message: 'Strand is required'
-							}
-						}
-					}
+                    'toc': {
+                        validators: {
+                            notEmpty: {
+                                message: 'You must accept the terms and conditions'
+                            }
+                        }
+                    }
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
