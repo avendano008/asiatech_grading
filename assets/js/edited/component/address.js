@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTAppLocation = function () {
+var KTAppAddress = function () {
 	var regEmpty = true;
 	var regSelect;
 	var provSelect;
@@ -11,7 +11,6 @@ var KTAppLocation = function () {
     // Initialize Region
 	const initRegion = () => {
 		if(regEmpty){
-			console.log("Fetch Region");
 			removeOptions(provSelect);
 			removeOptions(citySelect);
 			removeOptions(brgySelect);
@@ -19,21 +18,21 @@ var KTAppLocation = function () {
 			.then(response => response.json())
 			.then(data => {
 				data.RECORDS.forEach(obj => {
-			    var regCode = obj['regCode'];
-			    var regDesc = obj['regDesc'];
-			    let newOption = new Option(regDesc, regCode);
+			   	var regCode = obj['regCode'];
+			   	var regDesc = obj['regDesc'];
+			   	let newOption = new Option(regDesc, regCode);
 					regSelect.add(newOption, undefined);
 					sortOptions(regSelect);
-		  	})
+		  		})
 			})
 			.catch(error => console.log(error));
 			regEmpty = false;
+			regSelect.selectedValue = '';
 		}
 	}
 
 
 	const initProvince = () => {
-		console.log("Fetch Province");
 		removeOptions(provSelect);
 		removeOptions(citySelect);
 		removeOptions(brgySelect);
@@ -48,13 +47,13 @@ var KTAppLocation = function () {
 					provSelect.add(newOption, undefined);
 					sortOptions(provSelect);
 				}
-	  	})
+	  		})
 		})
 		.catch(error => console.log(error));
+		provSelect.selectedValue = '';
 	}
 
 	const initCity = () => {
-		console.log("Fetch City");
 		removeOptions(citySelect);
 		removeOptions(brgySelect);
 		fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refcitymun.json')
@@ -71,10 +70,10 @@ var KTAppLocation = function () {
 	  	})
 		})
 		.catch(error => console.log(error));
+		citySelect.selectedValue = '';
 	}
 
 	const initBarangay = () => {
-		console.log("Fetch Barangay");
 		removeOptions(brgySelect);
 		fetch('http://localhost/asiatech_grading/assets/js/edited/component/json/refbrgy.json')
 		.then(response => response.json())
@@ -90,6 +89,7 @@ var KTAppLocation = function () {
 	  	})
 		})
 		.catch(error => console.log(error));
+		brgySelect.selectedValue = '';
 	}
 
 	const sortOptions = (elem) => {
@@ -109,7 +109,9 @@ var KTAppLocation = function () {
 
 	const removeOptions = (elem) => {
 	   for(var i = elem.options.length - 1; i >= 0; i--) {
-	      elem.remove(i);
+	   	if(i !== 0){
+	      	elem.remove(i);
+	   	}
 	   }
 	}
 
@@ -152,5 +154,5 @@ var KTAppLocation = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
-	KTAppLocation.init();
+	KTAppAddress.init();
 });

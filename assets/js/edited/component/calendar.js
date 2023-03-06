@@ -7,9 +7,11 @@ var KTAppCalendar = function () {
 
     // Initialize datepickers --- more info: https://flatpickr.js.org/
     const initDatepickers = () => {
+        var maximumDate = new Date();
         startFlatpickr = flatpickr(startDatepicker, {
             enableTime: false,
             dateFormat: "Y-m-d",
+            maxDate: maximumDate.setFullYear(maximumDate.getFullYear() - 15)
         });
     }
 
