@@ -1,12 +1,13 @@
 <?php
   //POST method for login
   if(isset($_POST['email'])){
-
     $email=$conn->real_escape_string($_POST['email']);
     $password=md5($_POST['password']);
-    $sql = array("admin"=>"SELECT * FROM admin WHERE email='$email' OR staff_id='$email'", 
-                "registrar"=>"SELECT * FROM registrar WHERE email='$email' OR staff_id='$email'", 
-                "teacher"=>"SELECT * FROM teacher WHERE email='$email' OR staff_id='$email'");
+    $sql = array(
+      "admin"=>"SELECT * FROM admin WHERE email='$email' OR staff_id='$email'", 
+      "registrar"=>"SELECT * FROM registrar WHERE email='$email' OR staff_id='$email'", 
+      "teacher"=>"SELECT * FROM teacher WHERE email='$email' OR staff_id='$email'"
+    );
 
     foreach($sql as $key => $value) {
       $result = $conn->query($value);
@@ -14,16 +15,22 @@
       //Find user from database
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-          if ($row['password']==$password){
-            $_SESSION['admin']=array(
-              'staff_id'=>$row['staff_id'],
-              'f_name'=>$row['f_name'],
-              'm_name'=>$row['m_name'],
-              'l_name'=>$row['l_name'],
-              'contact_number'=>$row['contact_number'],
-              'email'=>$row['email'],
-              'status'=>$row['status']
-            );
+          if ($row['password']===$password){
+
+            if($key === 'admin'){
+              $_SESSION['admin']=array(
+                'staff_id'=>$row['staff_id'],
+                'f_name'=>$row['f_name'],
+                'm_name'=>$row['m_name'],
+                'l_name'=>$row['l_name'],
+                'contact_number'=>$row['contact_number'],
+                'email'=>$row['email'],
+                'status'=>$row['status']
+              );
+            }
+
+            $_SESSION['email']=$row['email'];
+            $_SESSION['user']=$key;
             header('Location:' . $key . '/');
             break;
           }else{
