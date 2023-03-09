@@ -1,12 +1,32 @@
 <!--begin::Toolbar-->
 <div class="toolbar" id="kt_toolbar">
 	<!--begin::Container-->
-	<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+	<div id="kt_toolbar_container" class="container-fluid d-flex">
 		<!--begin::Page title-->
-		<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+		<div class="page-title d-flex align-items-center flex-wrap me-3 my-5">
 			<!--begin::Title-->
-			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">Account Settings</h1>
+			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">ACCOUNT SETTINGS</h1>
 			<!--end::Title-->
+			<!--begin::Separator-->
+			<span class="h-20px border-gray-300 border-start mx-4"></span>
+			<!--end::Separator-->
+			<!--begin::Breadcrumb-->
+			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">
+					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+				</li>
+				<!--end::Item-->
+				<!--begin::Item-->
+				<li class="breadcrumb-item">
+					<span class="bullet bg-gray-300 w-5px h-2px"></span>
+				</li>
+				<!--end::Item-->
+				<!--begin::Item-->
+				<li class="breadcrumb-item text-muted">Account Settings</li>
+				<!--end::Item-->
+			</ul>
+			<!--end::Breadcrumb-->
 		</div>
 		<!--end::Page title-->
 	</div>
@@ -65,17 +85,17 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First Name" value="Max" />
+										<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First Name" value="<?=$f_name?>" />
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="mname" class="form-control form-control-lg form-control-solid" placeholder="Middle Name" value="" />
+										<input type="text" name="mname" class="form-control form-control-lg form-control-solid" placeholder="Middle Name" value="<?=$m_name?>" />
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last Name" value="Smith" />
+										<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last Name" value="<?=$l_name?>" />
 									</div>
 									<!--end::Col-->
 								</div>
@@ -87,26 +107,14 @@
 						<!--begin::Input group-->
 						<div class="row mb-6">
 							<!--begin::Label-->
-							<label class="col-lg-4 col-form-label required fw-bold fs-6">User Type</label>
-							<!--end::Label-->
-							<!--begin::Col-->
-							<div class="col-lg-8 fv-row">
-								<input type="text" name="user" class="form-control form-control-lg form-control-solid" placeholder="User Type" value="Administrator" />
-							</div>
-							<!--end::Col-->
-						</div>
-						<!--end::Input group-->
-						<!--begin::Input group-->
-						<div class="row mb-6">
-							<!--begin::Label-->
 							<label class="col-lg-4 col-form-label fw-bold fs-6">
-								<span class="required">Contact Phone</span>
+								<span class="required">Contact Number</span>
 								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i>
 							</label>
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" value="09432764549" />
+								<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$contact_number?>" />
 							</div>
 							<!--end::Col-->
 						</div>
@@ -115,7 +123,6 @@
 					<!--end::Card body-->
 					<!--begin::Actions-->
 					<div class="card-footer d-flex justify-content-end py-6 px-9">
-						<button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
 						<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
 					</div>
 					<!--end::Actions-->
@@ -143,7 +150,7 @@
 						<!--begin::Label-->
 						<div id="kt_signin_email">
 							<div class="fs-6 fw-bolder mb-1">Email Address</div>
-							<div class="fw-bold text-gray-600">ms@gmail.com</div>
+							<div class="fw-bold text-gray-600"><?=$email?></div>
 						</div>
 						<!--end::Label-->
 						<!--begin::Edit-->
@@ -269,7 +276,7 @@
 								<!--begin::Content-->
 								<div class="fw-bold">
 									<h4 class="text-gray-900 fw-bolder">You Are Deactivating Your Account</h4>
-									<div class="fs-6 text-gray-700">For extra security, this requires you to confirm your email or phone number when you reset yousignr password.
+									<div class="fs-6 text-gray-700">For extra security, this requires you to confirm your email or contact number.
 									<br />
 									<a class="fw-bolder" href="#">Learn more</a></div>
 								</div>

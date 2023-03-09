@@ -80,7 +80,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8">
-						<span class="fw-bold fs-6 text-gray-800">Max Smith</span>
+						<span class="fw-bold fs-6 text-gray-800"><?=$fullName?></span>
 					</div>
 					<!--end::Col-->
 				</div>
@@ -104,7 +104,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<span class="fw-bold fs-6 text-gray-800">ms@gmail.com</span>
+						<span class="fw-bold fs-6 text-gray-800"><?=$email?></span>
 					</div>
 					<!--end::Col-->
 				</div>
@@ -112,12 +112,12 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Contact Phone
-					<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i></label>
+					<label class="col-lg-4 fw-bold text-muted">Contact Number
+					<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Contact number must be active"></i></label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 d-flex align-items-center">
-						<span class="fw-bold fs-6 text-gray-800">09432764549</span>
+						<span class="fw-bold fs-6 text-gray-800"><?=$contact_number?></span>
 					</div>
 					<!--end::Col-->
 				</div>
@@ -129,7 +129,7 @@
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8">
-						<a href="#" class="fw-bold fs-6 text-gray-800">ID-1234567</a>
+						<a href="#" class="fw-bold fs-6 text-gray-800"><?=$staff_id?></a>
 					</div>
 					<!--end::Col-->
 				</div>
@@ -137,11 +137,11 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Date Created</label>
+					<label class="col-lg-4 fw-bold text-muted">Status</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8">
-						<span class="fw-bold fs-6 text-gray-800">02/25/2023</span>
+						<span class="fw-bold fs-6 text-gray-800"><?=$status?></span>
 					</div>
 					<!--end::Col-->
 				</div>

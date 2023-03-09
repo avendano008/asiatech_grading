@@ -49,8 +49,7 @@ var KTSigninGeneral = function() {
                     // Show loading indication
                     submitButton.setAttribute('data-kt-indicator', 'on');
                     // Disable button to avoid multiple click 
-                    submitButton.disabled = true;
-                    form.submit();					
+                    submitButton.disabled = true;				
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                     Swal.fire({

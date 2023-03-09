@@ -2,10 +2,11 @@
   include'connect/connect.php';
   session_start();
   //Prevent going back to sign in when authenticated.
-  if(isset($_SESSION['email'])){
+  if(isset($_SESSION['admin'])){
     header('Location:admin/');
   }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <!--begin::Head-->

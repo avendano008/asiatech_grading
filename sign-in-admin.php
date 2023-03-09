@@ -10,15 +10,20 @@
 
     foreach($sql as $key => $value) {
       $result = $conn->query($value);
-      //Find username and password from database
+
+      //Find user from database
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           if ($row['password']==$password){
-            $_SESSION['staff_id']=$row['staff_id'];
-            $_SESSION['email']=$row['email'];
-            $_SESSION['f_name']=$row['f_name'];
-            $_SESSION['l_name']=$row['l_name'];
-            $_SESSION['status']=$row['status'];
+            $_SESSION['admin']=array(
+              'staff_id'=>$row['staff_id'],
+              'f_name'=>$row['f_name'],
+              'm_name'=>$row['m_name'],
+              'l_name'=>$row['l_name'],
+              'contact_number'=>$row['contact_number'],
+              'email'=>$row['email'],
+              'status'=>$row['status']
+            );
             header('Location:' . $key . '/');
             break;
           }else{

@@ -545,6 +545,26 @@
 											<!--end::Input-->
 										</div>
 										<!--end::Input group-->
+										<!--begin::Input group-->
+										<div class="mb-10 fv-row">
+											<!--begin::Label-->
+											<label class="form-label">Email</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<input type="text" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email"/>
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
+										<!--begin::Input group-->
+										<div class="mb-10 fv-row">
+											<!--begin::Label-->
+											<label class="form-label">Contact Number</label>
+											<!--end::Label-->
+											<!--begin::Input-->
+											<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" name="contact_number" maxlength="11" />
+											<!--end::Input-->
+										</div>
+										<!--end::Input group-->
 									</div>
 									<!--end::Wrapper-->
 								</div>

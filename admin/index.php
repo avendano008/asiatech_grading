@@ -1,14 +1,19 @@
 <?php
-include'../connect/connect.php';
-session_start();
+	include'../connect/connect.php';
+	session_start();
 
-if(!isset($_SESSION['email'])){
-    header('Location:../');
-}
+	if(!isset($_SESSION['admin'])){
+	    header('Location:../');
+	}
 
-$fullName = $_SESSION['f_name'] . " " . $_SESSION['l_name'];
-$email = $_SESSION['email'];
-
+	$staff_id = $_SESSION['admin']['m_name'];
+	$f_name = $_SESSION['admin']['f_name'];
+	$m_name = $_SESSION['admin']['m_name'];
+	$l_name = $_SESSION['admin']['l_name'];
+	$contact_number = $_SESSION['admin']['contact_number'];
+	$email = $_SESSION['admin']['email'];
+	$status = $_SESSION['admin']['status'];
+	$fullName = $f_name . (!empty($m_name) ? ' ' . $m_name . ' ' : ' ') . $l_name;
 ?>
 
 <!DOCTYPE html>
@@ -45,7 +50,7 @@ $email = $_SESSION['email'];
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="?page=dashboard">
+						<a href="../">
 							<img alt="Logo" src="../image/asia-tech-logo-3.png" class="h-35px logo" />
 						</a>
 						<!--end::Logo-->
@@ -379,11 +384,12 @@ $email = $_SESSION['email'];
 		<script src="../assets/plugins/custom/datatables/datatables.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<!-- <script src="../assets/js/custom/account/settings/signin-methods.js"></script> -->
-		<!-- <script src="../assets/js/custom/account/settings/deactivate-account.js"></script> -->
-		<script src="../assets/js/edited/admin/student/table.js"></script>
-		<script src="../assets/js/edited/admin/student/add-student.js"></script>
-		<script src="../assets/js/edited/admin/student/edit-student.js"></script>
+		<script src="../assets/js/edited/account/settings/profile-details.js"></script>
+		<script src="../assets/js/edited/account/settings/signin-methods.js"></script>
+		<script src="../assets/js/edited/account/settings/deactivate-account.js"></script>
+		<script src="../assets/js/edited/student/table.js"></script>
+		<script src="../assets/js/edited/student/add-student.js"></script>
+		<script src="../assets/js/edited/student/edit-student.js"></script>
 		<script src="../assets/js/edited/component/calendar.js"></script>
 		<script src="../assets/js/edited/component/address.js"></script>
 		<!--end::Page Custom Javascript-->

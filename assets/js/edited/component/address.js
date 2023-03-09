@@ -141,14 +141,13 @@ var KTAppAddress = function () {
    	init: function () {
          // Define variables
 			regSelect = document.querySelector('[data-kt-address-select="region"]');
+			provSelect = document.querySelector('[data-kt-address-select="province"]');
+			citySelect = document.querySelector('[data-kt-address-select="city"]');
+			brgySelect = document.querySelector('[data-kt-address-select="barangay"]');
 
          if (!regSelect) {
          	return;
          }
-
-			provSelect = document.querySelector('[data-kt-address-select="province"]');
-			citySelect = document.querySelector('[data-kt-address-select="city"]');
-			brgySelect = document.querySelector('[data-kt-address-select="barangay"]');
 
 			initRegion();
          handleChangeRegion();

@@ -45,7 +45,7 @@ $email = $_SESSION['email'];
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="?page=dashboard">
+						<a href="../">
 							<img alt="Logo" src="../image/asia-tech-logo-3.png" class="h-35px logo" />
 						</a>
 						<!--end::Logo-->
