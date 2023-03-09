@@ -1,17 +1,17 @@
 <?php
 	$student = array (
-			  array("student_name"=>"Emma Smith", 
+			  array("student_name"=>"Rodney Stanford", 
 			  	"student_number"=>"SID-15263728", 
 			  	"strand"=>"ABM", 
 			  	"grade_level"=>"Grade 11", 
 			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
+			  	"gender"=>"Male", 
 			  	"birth_date"=>"12/17/2002", 
 			  	"age"=>"20", 
 			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
+			  	"contact_email"=>"rodstan@gmail.com", 
 			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
+			  array("student_name"=>"Zia Lee", 
 			  	"student_number"=>"SID-15264442", 
 			  	"strand"=>"STEM", 
 			  	"grade_level"=>"Grade 12", 
@@ -20,161 +20,7 @@
 			  	"birth_date"=>"06/10/2002", 
 			  	"age"=>"20", 
 			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
-			  	"contact_number"=>"09321556789"),
-			  array("student_name"=>"Emma Smith", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"12/17/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"emmasmith@gmail.com", 
-			  	"contact_number"=>"09123456789"),
-			  array("student_name"=>"Sam Greenhills", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
-			  	"gender"=>"Female", 
-			  	"birth_date"=>"06/10/2002", 
-			  	"age"=>"20", 
-			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"samgreenhills@gmail.com", 
+			  	"contact_email"=>"zl0610@gmail.com", 
 			  	"contact_number"=>"09321556789")
 			);
 ?>
@@ -444,7 +290,7 @@
 								<!--begin::Contact number=-->
 								<td class="d-none"><?=$student[$i]['contact_number']?></td>
 								<!--end::Contact number=-->
-								<!--begin::Contact number=-->
+								<!--begin::Actions=-->
 								<td class="text-end">
 									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_student">
 										<i class="fa fa-edit" aria-hidden="true"></i>
@@ -453,7 +299,7 @@
 										<i class="fa fa-trash" aria-hidden="true"></i>
 									</a>
 								</td>
-								<!--end::Contact number=-->
+								<!--end::Actions=-->
 							</tr>
 							<!--end::Table row-->
     					<?php endfor; ?>
@@ -981,6 +827,26 @@
 													<!--end::Label-->
 													<!--begin::Input-->
 													<input type="text" class="form-control form-control-solid" name="birth_date" id="birth_date" placeholder="Select Birth Date" data-kt-calendar-input="birth_date"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label">Email</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label">Contact Number</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" name="contact_number" maxlength="11" />
 													<!--end::Input-->
 												</div>
 												<!--end::Input group-->
@@ -1667,6 +1533,26 @@
 													<!--end::Label-->
 													<!--begin::Input-->
 													<input type="text" class="form-control form-control-solid" name="birth_date" id="birth_date" placeholder="Select Birth Date" data-kt-calendar-input="birth_date"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label">Email</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email"/>
+													<!--end::Input-->
+												</div>
+												<!--end::Input group-->
+												<!--begin::Input group-->
+												<div class="mb-10 fv-row">
+													<!--begin::Label-->
+													<label class="form-label">Contact Number</label>
+													<!--end::Label-->
+													<!--begin::Input-->
+													<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" name="contact_number" maxlength="11" />
 													<!--end::Input-->
 												</div>
 												<!--end::Input group-->

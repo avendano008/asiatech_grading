@@ -2,7 +2,7 @@
 	include'../connect/connect.php';
 	session_start();
 
-	if(!isset($_SESSION['admin'])){
+	if(!isset($_SESSION['email'])){
 	    header('Location:../');
 	}
 
@@ -387,11 +387,13 @@
 		<script src="../assets/js/edited/account/settings/profile-details.js"></script>
 		<script src="../assets/js/edited/account/settings/signin-methods.js"></script>
 		<script src="../assets/js/edited/account/settings/deactivate-account.js"></script>
+		<script src="../assets/js/edited/department/table.js"></script>
+		<script src="../assets/js/edited/component/calendar.js"></script>
+		<script src="../assets/js/edited/component/address.js"></script>
 		<script src="../assets/js/edited/student/table.js"></script>
 		<script src="../assets/js/edited/student/add-student.js"></script>
 		<script src="../assets/js/edited/student/edit-student.js"></script>
-		<script src="../assets/js/edited/component/calendar.js"></script>
-		<script src="../assets/js/edited/component/address.js"></script>
+		<script src="../assets/js/edited/faculty/table.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>

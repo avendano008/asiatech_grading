@@ -225,6 +225,31 @@ var KTEditStudent = function () {
 								message: 'Birth date is required'
 							}
 						}
+					},
+					'email': {
+						validators: {
+							notEmpty: {
+								message: 'Email address is required'
+							},
+                            emailAddress: {
+								message: 'The value is not a valid email address'
+							}
+						}
+					},
+					'contact_number': {
+						validators: {
+							notEmpty: {
+								message: 'Contact number is required'
+							},
+							digits: {
+								message: 'Contact number must contain only digits'
+							},
+							stringLength: {
+								min: 11,
+								max: 11,
+								message: 'Contact number must contain 11 digits'
+							}
+						}
 					}
 				},
 				plugins: {

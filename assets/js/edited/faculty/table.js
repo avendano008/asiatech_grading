@@ -145,65 +145,67 @@ var KTAppFacultyList = function () {
 
     // Filter Datatable
     var handleFilterDatatable = () => {
-        // // Select filter options
-        // const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
-        // const filterButton = filterForm.querySelector('[data-kt-faculty-list-filter="filter"]');
-        // const selectOptions = filterForm.querySelectorAll('select');
+        // Select filter options
+        const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
+        const filterButton = filterForm.querySelector('[data-kt-faculty-list-filter="filter"]');
+        const selectOptions = filterForm.querySelectorAll('select');
 
-        // // Filter datatable on submit
-        // filterButton.addEventListener('click', function () {
-        //     var filterString = '';
-        //     var isSecondSelect = false;
-        //     var secondString = '';
+        // Filter datatable on submit
+        filterButton.addEventListener('click', function () {
+            var filterString = '';
+            var isSecondSelect = false;
+            var secondString = '';
 
-        //     // Get filter values
-        //     selectOptions.forEach((item, index) => {
-        //         if (item.value && item.value !== '') {
-        //             if (index !== 0) {
-        //                 filterString += ' ';
-        //                 isSecondSelect = true;
-        //                 secondString += item.value;
-        //             }
+            // Get filter values
+            selectOptions.forEach((item, index) => {
+                if (item.value && item.value !== '') {
+                    if (index !== 0) {
+                        filterString += ' ';
+                        isSecondSelect = true;
+                        secondString += item.value;
+                    }
 
-        //             // Build filter value options
-        //             filterString += item.value;
-        //         }
-        //     });
+                    // Build filter value options
+                    filterString += item.value;
+                }
+            });
 
-        //     // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
-        //     if(filterString === ''){
-        //         datatable.search('').draw();
-        //         datatable.column(4).search('').draw();
-        //     }
-        //     else{
-        //         datatable.search(filterString).draw();
-        //         if(isSecondSelect){
-        //             datatable.column(4).search(secondString).draw();
-        //         }
-        //     }
-        // });
+            datatable.search('').draw();
+            datatable.column(4).search('').draw();
+            // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
+            if(filterString === ''){
+                datatable.search('').draw();
+                datatable.column(4).search('').draw();
+            }
+            else{
+                datatable.search(filterString).draw();
+                if(isSecondSelect){
+                    datatable.column(4).search(secondString).draw();
+                }
+            }
+        });
     }
 
     // Reset Filter
     var handleResetForm = () => {
-        // // Select reset button
-        // const resetButton = document.querySelector('[data-kt-faculty-list-filter="reset"]');
+        // Select reset button
+        const resetButton = document.querySelector('[data-kt-faculty-list-filter="reset"]');
 
-        // // Reset datatable
-        // resetButton.addEventListener('click', function () {
-        //     // Select filter options
-        //     const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
-        //     const selectOptions = filterForm.querySelectorAll('select');
+        // Reset datatable
+        resetButton.addEventListener('click', function () {
+            // Select filter options
+            const filterForm = document.querySelector('[data-kt-faculty-list-filter="form"]');
+            const selectOptions = filterForm.querySelectorAll('select');
 
-        //     // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
-        //     selectOptions.forEach(select => {
-        //         $(select).val('').trigger('change');
-        //     });
+            // Reset select2 values -- more info: https://select2.org/programmatic-control/add-select-clear-items
+            selectOptions.forEach(select => {
+                $(select).val('').trigger('change');
+            });
 
-        //     // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
-        //     datatable.search('').draw();
-        //     datatable.column(4).search('').draw();
-        // });
+            // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
+            datatable.search('').draw();
+            datatable.column(4).search('').draw();
+        });
     }
 
     // Hook export buttons
