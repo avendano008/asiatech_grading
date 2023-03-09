@@ -306,10 +306,8 @@ $email = $_SESSION['email'];
 		<script src="../assets/js/edited/admin/student/table.js"></script>
 		<script src="../assets/js/edited/admin/student/add-student.js"></script>
 		<script src="../assets/js/edited/admin/student/edit-student.js"></script>
-		<?php if(isset($_GET['page']) && $_GET['page']=='student') : ?>
 		<script src="../assets/js/edited/component/calendar.js"></script>
 		<script src="../assets/js/edited/component/address.js"></script>
-		<?php endif; ?>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
