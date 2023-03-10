@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTEditStudent = function () {
+var KTAddFaculty = function () {
 	// Elements
 	var modal;	
 	var modalEl;
@@ -23,11 +23,11 @@ var KTEditStudent = function () {
 
 		// Stepper change event(handle hiding submit button for the last step)
 		stepperObj.on('kt.stepper.changed', function (stepper) {
-			if (stepperObj.getCurrentStepIndex() === 4) {
+			if (stepperObj.getCurrentStepIndex() === 3) {
 				formSubmitButton.classList.remove('d-none');
 				formSubmitButton.classList.add('d-inline-block');
 				formContinueButton.classList.add('d-none');
-			} else if (stepperObj.getCurrentStepIndex() === 5) {
+			} else if (stepperObj.getCurrentStepIndex() === 4) {
 				formSubmitButton.classList.add('d-none');
 				formContinueButton.classList.add('d-none');
 				formPreviousButton.classList.add('d-none');
@@ -85,7 +85,7 @@ var KTEditStudent = function () {
 
 		formSubmitButton.addEventListener('click', function (e) {
 			// Validate form before change stepper step
-			var validator = validations[3]; // get validator for last form
+			var validator = validations[2]; // get validator for last form
 
 			validator.validate().then(function (status) {
 				console.log('validated!');
@@ -135,41 +135,17 @@ var KTEditStudent = function () {
 			form,
 			{
 				fields: {
-					registration_type: {
+					'user_type': {
 						validators: {
 							notEmpty: {
-								message: 'Registration type is required'
-							}
-						}
-					}
-				},
-				plugins: {
-					trigger: new FormValidation.plugins.Trigger(),
-					bootstrap: new FormValidation.plugins.Bootstrap5({
-						rowSelector: '.fv-row',
-                        eleInvalidClass: '',
-                        eleValidClass: ''
-					})
-				}
-			}
-		));
-
-		// Step 2
-		validations.push(FormValidation.formValidation(
-			form,
-			{
-				fields: {
-					'grade_level': {
-						validators: {
-							notEmpty: {
-								message: 'Grade level is required'
+								message: 'User type is required'
 							}
 						}
 					},
-					'strand': {
+					'department': {
 						validators: {
 							notEmpty: {
-								message: 'Strand is required'
+								message: 'Department is required'
 							}
 						}
 					}
@@ -186,7 +162,7 @@ var KTEditStudent = function () {
 			}
 		));
 
-		// Step 3
+		// Step 2
 		validations.push(FormValidation.formValidation(
 			form,
 			{
@@ -264,7 +240,7 @@ var KTEditStudent = function () {
 			}
 		));
 
-		// Step 4
+		// Step 3
 		validations.push(FormValidation.formValidation(
 			form,
 			{
@@ -296,14 +272,7 @@ var KTEditStudent = function () {
 								message: 'Barangay is required'
 							}
 						}
-					},
-                    'toc': {
-                        validators: {
-                            notEmpty: {
-                                message: 'You must accept the terms and conditions'
-                            }
-                        }
-                    }
+					}
 				},
 				plugins: {
 					trigger: new FormValidation.plugins.Trigger(),
@@ -326,12 +295,11 @@ var KTEditStudent = function () {
 		});
    	}
 
-
 	return {
 		// Public Functions
 		init: function () {
 			// Elements
-			modalEl = document.querySelector('#kt_modal_edit_student');
+			modalEl = document.querySelector('#kt_modal_add_faculty');
 
 			if (!modalEl) {
 				return;
@@ -339,8 +307,8 @@ var KTEditStudent = function () {
 
 			modal = new bootstrap.Modal(modalEl);
 
-			stepper = document.querySelector('#kt_modal_edit_student_stepper');
-			form = document.querySelector('#kt_modal_edit_student_form');
+			stepper = document.querySelector('#kt_modal_add_faculty_stepper');
+			form = document.querySelector('#kt_modal_add_faculty_form');
 			formSubmitButton = stepper.querySelector('[data-kt-stepper-action="submit"]');
 			formContinueButton = stepper.querySelector('[data-kt-stepper-action="next"]');
 			formPreviousButton = stepper.querySelector('[data-kt-stepper-action="previous"]');
@@ -354,5 +322,5 @@ var KTEditStudent = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function() {
-    KTEditStudent.init();
+    KTAddFaculty.init();
 });

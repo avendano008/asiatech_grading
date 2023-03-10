@@ -70,7 +70,7 @@
 									<!--begin::Label-->
 									<div class="stepper-label">
 										<h3 class="stepper-title">Registration Info</h3>
-										<div class="stepper-desc fw-bold">Setup Your Registration Information</div>
+										<div class="stepper-desc fw-bold">Setup Your Student Information</div>
 									</div>
 									<!--end::Label-->
 								</div>
@@ -228,7 +228,7 @@
 										<!--begin::Heading-->
 										<div class="pb-10 pb-lg-15">
 											<!--begin::Title-->
-											<h2 class="fw-bolder text-dark">Setup Your Registration Information</h2>
+											<h2 class="fw-bolder text-dark">Setup Your Student Information</h2>
 											<!--end::Title-->
 											<!--begin::Notice-->
 											<div class="text-muted fw-bold fs-6">Want to go back? 
@@ -271,7 +271,7 @@
 										<!--begin::Input group-->
 										<div class="mb-0 fv-row">
 											<!--begin::Label-->
-											<label class="d-flex align-items-center form-label mb-5">Select Strand
+											<label class="d-flex align-items-center form-label mb-5">Strand
 											<i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title="Please select your current strand"></i></label>
 											<!--end::Label-->
 											<!--begin::Options-->
