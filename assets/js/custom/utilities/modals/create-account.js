@@ -29,6 +29,7 @@ var KTCreateAccount = function () {
 			} else if (stepperObj.getCurrentStepIndex() === 5) {
 				formSubmitButton.classList.add('d-none');
 				formContinueButton.classList.add('d-none');
+				
 			} else {
 				formSubmitButton.classList.remove('d-inline-block');
 				formSubmitButton.classList.remove('d-none');
@@ -333,7 +334,7 @@ var KTCreateAccount = function () {
 	}
 
 	var handleFormSubmit = function() {
-		
+		alert('info');
 	}
 
 	return {

@@ -217,10 +217,15 @@
 			<!--begin::Card body-->
 			<div class="card-body pt-0">
 				<!--begin::Table-->
-				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_student_list_table">
+				<table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_report_student_list_table">
 					<!--begin::Table head-->
 					<thead>
 						<!--begin::Table row-->
+						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
+							<th></th>
+							<th></th>
+							<th colspan="2"><center>Written work</center></th>
+						</tr>
 						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
 							<th class="w-10px pe-2">
 								<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
