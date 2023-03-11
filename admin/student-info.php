@@ -14,7 +14,7 @@
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
 				<li class="breadcrumb-item text-muted">
-					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+					<a href="?page=dashboard" class="text-muted text-hover-primary">Home</a>
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
@@ -23,7 +23,9 @@
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">Student List</li>
+				<li class="breadcrumb-item text-muted">
+					<a href="?page=student" class="text-muted text-hover-primary">Student List</a>
+				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
 				<li class="breadcrumb-item">
@@ -52,7 +54,12 @@
 				<ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bolder">
 					<!--begin::Nav item-->
 					<li class="nav-item mt-2">
-						<a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="#">Overview</a>
+						<a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="?page=student-info">Overview</a>
+					</li>
+					<!--end::Nav item-->
+					<!--begin::Nav item-->
+					<li class="nav-item mt-2">
+						<a class="nav-link text-active-primary ms-0 me-10 py-5" href="?page=student-edit">Edit</a>
 					</li>
 					<!--end::Nav item-->
 				</ul>
@@ -71,12 +78,12 @@
 				<!--end::Card title-->
 				<div class="card-toolbar d-flex justify-content-end gap-5">
 					<!--begin::Action-->
-					<a href="#" class="btn btn-light-primary align-self-center"  data-bs-toggle="modal" data-bs-target="#kt_modal_create_student">
+					<a href="?page=student-edit" class="btn btn-light-primary align-self-center">
 						<i class="fa fa-edit" aria-hidden="true"></i> Edit
 					</a>
 					<!--end::Action-->
 					<!--begin::Action-->
-					<a href="?page=student" class="btn btn-primary justify-content-end align-self-center">
+					<a href="?page=student" class="btn btn-primary align-self-center">
 						<i class="fa fa-arrow-left" aria-hidden="true"></i> Back
 					</a>
 					<!--end::Action-->
@@ -88,55 +95,7 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Student Name</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8">
-						<span class="fw-bold fs-6 text-gray-800"></span>
-					</div>
-					<!--end::Col-->
-				</div>
-				<!--end::Input group-->
-				<!--begin::Input group-->
-				<div class="row mb-7">
-					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Student Number</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8">
-						<a href="#" class="fw-bold fs-6 text-gray-800"></a>
-					</div>
-					<!--end::Col-->
-				</div>
-				<!--end::Input group-->
-				<!--begin::Input group-->
-				<div class="row mb-7">
-					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Strand</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8">
-						<span class="fw-bold fs-6 text-gray-800"></span>
-					</div>
-					<!--end::Col-->
-				</div>
-				<!--end::Input group-->
-				<!--begin::Input group-->
-				<div class="row mb-7">
-					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Grade Level</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8">
-						<span class="fw-bold fs-6 text-gray-800"></span>
-					</div>
-					<!--end::Col-->
-				</div>
-				<!--end::Input group-->
-				<!--begin::Input group-->
-				<div class="row mb-7">
-					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Section</label>
+					<label class="col-lg-4 fw-bold text-muted">Full Name</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8">
@@ -196,7 +155,7 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Contact Email</label>
+					<label class="col-lg-4 fw-bold text-muted">Phone Number</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
@@ -208,11 +167,46 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Contact Number
-					<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Contact number must be active"></i></label>
+					<label class="col-lg-4 fw-bold text-muted">Email</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
+						<span class="fw-bold fs-6 text-gray-800"></span>
+					</div>
+					<!--end::Col-->
+				</div>
+				<!--end::Input group-->
+				<!--begin::Input group-->
+				<div class="row mb-7">
+					<!--begin::Label-->
+					<label class="col-lg-4 fw-bold text-muted">Strand</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8">
+						<span class="fw-bold fs-6 text-gray-800"></span>
+					</div>
+					<!--end::Col-->
+				</div>
+				<!--end::Input group-->
+				<!--begin::Input group-->
+				<div class="row mb-7">
+					<!--begin::Label-->
+					<label class="col-lg-4 fw-bold text-muted">Grade Level</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8">
+						<span class="fw-bold fs-6 text-gray-800"></span>
+					</div>
+					<!--end::Col-->
+				</div>
+				<!--end::Input group-->
+				<!--begin::Input group-->
+				<div class="row mb-7">
+					<!--begin::Label-->
+					<label class="col-lg-4 fw-bold text-muted">Section</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8">
 						<span class="fw-bold fs-6 text-gray-800"></span>
 					</div>
 					<!--end::Col-->

@@ -20,7 +20,8 @@ var KTAppStudentList = function () {
             'order': [],
             'pageLength': 10,
             'columnDefs': [
-                { orderable: false, targets: 0 } // Disable ordering on column 0 (checkbox)            
+                { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox) 
+                { orderable: false, targets: 11 } // Disable ordering on column 0 (actions)            
             ]
         });
 
@@ -171,16 +172,16 @@ var KTAppStudentList = function () {
             });
 
             datatable.search('').draw();
-            datatable.column(4).search('').draw();
+            datatable.column(9).search('').draw();
             // Filter datatable --- official docs reference: https://datatables.net/reference/api/search()
             if(filterString === ''){
                 datatable.search('').draw();
-                datatable.column(4).search('').draw();
+                datatable.column(9).search('').draw();
             }
             else{
                 datatable.search(filterString).draw();
                 if(isSecondSelect){
-                    datatable.column(4).search(secondString).draw();
+                    datatable.column(9).search(secondString).draw();
                 }
             }
         });
@@ -204,7 +205,7 @@ var KTAppStudentList = function () {
 
             // Reset datatable --- official docs reference: https://datatables.net/reference/api/search()
             datatable.search('').draw();
-            datatable.column(4).search('').draw();
+            datatable.column(9).search('').draw();
         });
     }
 

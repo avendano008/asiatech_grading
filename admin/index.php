@@ -394,6 +394,7 @@
 		<script src="../assets/js/edited/faculty/add.js"></script>
 		<script src="../assets/js/edited/student/table.js"></script>
 		<script src="../assets/js/edited/student/add.js"></script>
+		<script src="../assets/js/edited/student/edit.js"></script>
 		<script src="../assets/js/edited/component/calendar.js"></script>
 		<script src="../assets/js/edited/component/address.js"></script>
 		<!--end::Page Custom Javascript-->

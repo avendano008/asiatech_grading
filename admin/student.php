@@ -37,7 +37,9 @@
 			<!--begin::Breadcrumb-->
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">Home</li>
+				<li class="breadcrumb-item text-muted">
+					<a href="?page=dashboard" class="text-muted text-hover-primary">Home</a>
+				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
 				<li class="breadcrumb-item">
@@ -284,7 +286,7 @@
 								<!--end::Section=-->
 								<!--begin::Actions=-->
 								<td class="text-end">
-									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit">
+									<a href="?page=student-edit" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit">
 										<i class="fa fa-edit" aria-hidden="true"></i>
 									</a>
 									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-student-list-filter="delete_row">
