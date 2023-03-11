@@ -1,27 +1,25 @@
 <?php
 	$student = array (
 			  array("student_name"=>"Rodney Stanford", 
-			  	"student_number"=>"SID-15263728", 
-			  	"strand"=>"ABM", 
-			  	"grade_level"=>"Grade 11", 
-			  	"section"=>"Section 1", 
 			  	"gender"=>"Male", 
 			  	"birth_date"=>"12/17/2002", 
 			  	"age"=>"20", 
 			  	"address"=>"Brgy. Caingin, City of Santa Rosa, Laguna", 
-			  	"contact_email"=>"rodstan@gmail.com", 
-			  	"contact_number"=>"09123456789"),
+			  	"phone_number"=>"09123456789", 
+			  	"email"=>"rodstan@gmail.com",  
+			  	"strand"=>"ABM", 
+			  	"grade_level"=>"Grade 11", 
+			  	"section"=>"Section 1"),
 			  array("student_name"=>"Zia Lee", 
-			  	"student_number"=>"SID-15264442", 
-			  	"strand"=>"STEM", 
-			  	"grade_level"=>"Grade 12", 
-			  	"section"=>"Section 2", 
 			  	"gender"=>"Female", 
 			  	"birth_date"=>"06/10/2002", 
 			  	"age"=>"20", 
 			  	"address"=>"Brgy. Malia, GMA, Cavite", 
-			  	"contact_email"=>"zl0610@gmail.com", 
-			  	"contact_number"=>"09321556789")
+			  	"phone_number"=>"09321556789", 
+			  	"email"=>"zl0610@gmail.com",
+			  	"strand"=>"STEM", 
+			  	"grade_level"=>"Grade 12", 
+			  	"section"=>"Section 2")
 			);
 ?>
 <!--begin::Toolbar-->
@@ -39,9 +37,7 @@
 			<!--begin::Breadcrumb-->
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">
-					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
-				</li>
+				<li class="breadcrumb-item text-muted">Home</li>
 				<!--end::Item-->
 				<!--begin::Item-->
 				<li class="breadcrumb-item">
@@ -63,7 +59,7 @@
 <div class="post d-flex flex-column-fluid" id="kt_post">
 	<!--begin::Container-->
 	<div id="kt_content_container" class="container-xxl">
-		<!--begin::Students-->
+		<!--begin::Student-->
 		<div class="card card-flush">
 			<!--begin::Card header-->
 			<div class="card-header align-items-center py-5 gap-2 gap-md-5">
@@ -217,15 +213,10 @@
 			<!--begin::Card body-->
 			<div class="card-body pt-0">
 				<!--begin::Table-->
-				<table class="table align-middle table-row-dashed fs-6 gy-5 table-striped" id="kt_report_student_list_table">
+				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_student_list_table">
 					<!--begin::Table head-->
 					<thead>
 						<!--begin::Table row-->
-						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
-							<th></th>
-							<th></th>
-							<th colspan="2"><center>Written work</center></th>
-						</tr>
 						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
 							<th class="w-10px pe-2">
 								<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
@@ -233,16 +224,15 @@
 								</div>
 							</th>
 							<th class="min-w-100px">Student Name</th>
-							<th class="min-w-100px">Student Number</th>
-							<th class="min-w-75px">Strand</th>
-							<th class="min-w-75px">Grade Level</th>
-							<th class="min-w-75px">Section</th>
 							<th class="min-w-75px d-none">Gender</th>
 							<th class="min-w-75px d-none">Birth Date</th>
 							<th class="min-w-75px d-none">Age</th>
 							<th class="min-w-200px d-none">Address</th>
-							<th class="min-w-100px d-none">Contact Email</th>
-							<th class="min-w-100px d-none">Contact Number</th>
+							<th class="min-w-100px d-none">Phone Number</th>
+							<th class="min-w-100px">Email</th>
+							<th class="min-w-75px">Strand</th>
+							<th class="min-w-75px">Grade Level</th>
+							<th class="min-w-75px">Section</th>
 							<th class="text-end min-w-70px"></th>
 						</tr>
 						<!--end::Table row-->
@@ -265,18 +255,6 @@
 									<a href="?page=student-info" class="text-dark text-hover-primary"><?=$student[$i]['student_name']?></a>
 								</td>
 								<!--end::Student name=-->
-								<!--begin::Student number=-->
-								<td><?=$student[$i]['student_number']?></td>
-								<!--end::Student number=-->
-								<!--begin::Strand=-->
-								<td><?=$student[$i]['strand']?></td>
-								<!--begin::Strand=-->
-								<!--begin::Grade level=-->
-								<td><?=$student[$i]['grade_level']?></td>
-								<!--end::Grade level=-->
-								<!--begin::Section=-->
-								<td><?=$student[$i]['section']?></td>
-								<!--end::Section=-->
 								<!--begin::Gender=-->
 								<td class="d-none"><?=$student[$i]['gender']?></td>
 								<!--end::Gender=-->
@@ -289,12 +267,21 @@
 								<!--begin::Address=-->
 								<td class="d-none"><?=$student[$i]['address']?></td>
 								<!--end::Address=-->
-								<!--begin::Contact email=-->
-								<td class="d-none"><?=$student[$i]['contact_email']?></td>
-								<!--end::Contact email=-->
-								<!--begin::Contact number=-->
-								<td class="d-none"><?=$student[$i]['contact_number']?></td>
-								<!--end::Contact number=-->
+								<!--begin::Phone number=-->
+								<td class="d-none"><?=$student[$i]['phone_number']?></td>
+								<!--end::Phone number=-->
+								<!--begin::Email=-->
+								<td><?=$student[$i]['email']?></td>
+								<!--end::Email=-->
+								<!--begin::Strand=-->
+								<td><?=$student[$i]['strand']?></td>
+								<!--begin::Strand=-->
+								<!--begin::Grade level=-->
+								<td><?=$student[$i]['grade_level']?></td>
+								<!--end::Grade level=-->
+								<!--begin::Section=-->
+								<td><?=$student[$i]['section']?></td>
+								<!--end::Section=-->
 								<!--begin::Actions=-->
 								<td class="text-end">
 									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit">
@@ -315,7 +302,7 @@
 			</div>
 			<!--end::Card body-->
 		</div>
-		<!--end::Students-->
+		<!--end::Student-->
 	</div>
 	<!--end::Container-->
 </div>

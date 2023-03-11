@@ -18,7 +18,10 @@ var KTSigninGeneral = function() {
                         validators: {
 							notEmpty: {
 								message: 'Email address is required'
-							}
+							},
+                            emailAddress: {
+                                message: 'The value is not a valid email address'
+                            }
 						}
 					},
                     'password': {
@@ -49,7 +52,8 @@ var KTSigninGeneral = function() {
                     // Show loading indication
                     submitButton.setAttribute('data-kt-indicator', 'on');
                     // Disable button to avoid multiple click 
-                    submitButton.disabled = true;				
+                    submitButton.disabled = true;
+                    form.submit();
                 } else {
                     // Show error popup. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                     Swal.fire({

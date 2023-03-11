@@ -69,7 +69,7 @@
     <script src="assets/js/scripts.bundle.js"></script>
     <!--end::Global Javascript Bundle-->
     <!--begin::Page Custom Javascript(used by this page)-->
-    <!-- <script src="assets/js/edited/sign-in/general.js"></script> -->
+    <script src="assets/js/edited/sign-in/general.js"></script>
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
   </body>
