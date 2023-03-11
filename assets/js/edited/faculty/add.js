@@ -202,17 +202,7 @@ var KTAddFaculty = function () {
 							}
 						}
 					},
-					'email': {
-						validators: {
-							notEmpty: {
-								message: 'Email address is required'
-							},
-                            emailAddress: {
-								message: 'The value is not a valid email address'
-							}
-						}
-					},
-					'contact_number': {
+					'phone_number': {
 						validators: {
 							notEmpty: {
 								message: 'Contact number is required'
@@ -224,6 +214,16 @@ var KTAddFaculty = function () {
 								min: 11,
 								max: 11,
 								message: 'Contact number must contain 11 digits'
+							}
+						}
+					},
+					'email': {
+						validators: {
+							notEmpty: {
+								message: 'Email address is required'
+							},
+                            emailAddress: {
+								message: 'The value is not a valid email address'
 							}
 						}
 					}

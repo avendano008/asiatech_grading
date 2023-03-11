@@ -833,20 +833,20 @@
 									<!--begin::Input group-->
 									<div class="mb-10 fv-row">
 										<!--begin::Label-->
-										<label class="form-label">Email</label>
+										<label class="form-label">Phone Number</label>
 										<!--end::Label-->
 										<!--begin::Input-->
-										<input type="text" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email"/>
+										<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" name="phone_number" maxlength="11" />
 										<!--end::Input-->
 									</div>
 									<!--end::Input group-->
 									<!--begin::Input group-->
 									<div class="mb-10 fv-row">
 										<!--begin::Label-->
-										<label class="form-label">Contact Number</label>
+										<label class="form-label">Email</label>
 										<!--end::Label-->
 										<!--begin::Input-->
-										<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" name="contact_number" maxlength="11" />
+										<input type="text" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email"/>
 										<!--end::Input-->
 									</div>
 									<!--end::Input group-->
@@ -893,7 +893,7 @@
 										<label class="form-label required">Province</label>
 										<!--end::Label-->
 										<!--begin::Input-->
-										<select id="province" name="province" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Province" data-allow-clear="true" data-hide-search="true"data-kt-address-select="province">
+										<select id="province" name="province" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Province" data-allow-clear="true" data-hide-search="true" data-kt-address-select="province">
 											<option></option>
 										</select>
 										<!--end::Input-->
@@ -917,7 +917,7 @@
 										<label class="form-label required">Barangay</label>
 										<!--end::Label-->
 										<!--begin::Input-->
-										<select id="barangay" name="barangay" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Barangay" data-allow-clear="true" data-hide-search="true"data-kt-address-select="barangay">
+										<select id="barangay" name="barangay" class="form-select form-select-solid" data-control="select2" data-placeholder="Select Barangay" data-allow-clear="true" data-hide-search="true" data-kt-address-select="barangay">
 											<option></option>
 										</select>
 										<!--end::Input-->

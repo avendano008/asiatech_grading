@@ -198,13 +198,6 @@ var KTAddStudent = function () {
 							}
 						}
 					},
-					'middle_name': {
-						validators: {
-							notEmpty: {
-								message: 'Middle name is required'
-							}
-						}
-					},
 					'last_name': {
 						validators: {
 							notEmpty: {
@@ -226,6 +219,21 @@ var KTAddStudent = function () {
 							}
 						}
 					},
+					'phone_number': {
+						validators: {
+							notEmpty: {
+								message: 'Phone number is required'
+							},
+							digits: {
+								message: 'Phone number must contain only digits'
+							},
+							stringLength: {
+								min: 11,
+								max: 11,
+								message: 'Phone number must contain 11 digits'
+							}
+						}
+					},
 					'email': {
 						validators: {
 							notEmpty: {
@@ -233,21 +241,6 @@ var KTAddStudent = function () {
 							},
                             emailAddress: {
 								message: 'The value is not a valid email address'
-							}
-						}
-					},
-					'contact_number': {
-						validators: {
-							notEmpty: {
-								message: 'Contact number is required'
-							},
-							digits: {
-								message: 'Contact number must contain only digits'
-							},
-							stringLength: {
-								min: 11,
-								max: 11,
-								message: 'Contact number must contain 11 digits'
 							}
 						}
 					}
