@@ -14,7 +14,7 @@
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
 				<li class="breadcrumb-item text-muted">
-					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+					<a href="?page=dashboard" class="text-muted text-hover-primary">Home</a>
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
@@ -67,7 +67,7 @@
 				</div>
 				<!--end::Card title-->
 				<!--begin::Action-->
-				<a href="?page=settings" class="btn btn-success align-self-center">Edit Profile</a>
+				<a href="?page=settings" class="btn btn-primary align-self-center">Edit Profile</a>
 				<!--end::Action-->
 			</div>
 			<!--begin::Card header-->
@@ -112,24 +112,12 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Contact Number
+					<label class="col-lg-4 fw-bold text-muted">Phone Number
 					<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Contact number must be active"></i></label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 d-flex align-items-center">
-						<span class="fw-bold fs-6 text-gray-800"><?=$contact_number?></span>
-					</div>
-					<!--end::Col-->
-				</div>
-				<!--end::Input group-->
-				<!--begin::Input group-->
-				<div class="row mb-7">
-					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Staff ID</label>
-					<!--end::Label-->
-					<!--begin::Col-->
-					<div class="col-lg-8">
-						<a href="#" class="fw-bold fs-6 text-gray-800"><?=$staff_id?></a>
+						<span class="fw-bold fs-6 text-gray-800"><?=$phone_number?></span>
 					</div>
 					<!--end::Col-->
 				</div>

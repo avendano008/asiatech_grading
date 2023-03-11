@@ -24,7 +24,7 @@
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
 				<li class="breadcrumb-item text-muted">
-					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+					<a href="?page=dashboard" class="text-muted text-hover-primary">Home</a>
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->

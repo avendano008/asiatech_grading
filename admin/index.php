@@ -10,7 +10,7 @@
 	$f_name = $_SESSION['admin']['f_name'];
 	$m_name = $_SESSION['admin']['m_name'];
 	$l_name = $_SESSION['admin']['l_name'];
-	$contact_number = $_SESSION['admin']['contact_number'];
+	$phone_number = $_SESSION['admin']['contact_number'];
 	$email = $_SESSION['admin']['email'];
 	$status = $_SESSION['admin']['status'];
 	$fullName = $f_name . (!empty($m_name) ? ' ' . $m_name . ' ' : ' ') . $l_name;

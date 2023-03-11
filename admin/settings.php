@@ -14,7 +14,7 @@
 			<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 				<!--begin::Item-->
 				<li class="breadcrumb-item text-muted">
-					<a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+					<a href="?page=dashboard" class="text-muted text-hover-primary">Home</a>
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
@@ -108,13 +108,13 @@
 						<div class="row mb-6">
 							<!--begin::Label-->
 							<label class="col-lg-4 col-form-label fw-bold fs-6">
-								<span class="required">Contact Number</span>
+								<span class="required">Phone Number</span>
 								<i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i>
 							</label>
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$contact_number?>" />
+								<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$phone_number?>" />
 							</div>
 							<!--end::Col-->
 						</div>
