@@ -100,11 +100,11 @@
 				<!--begin::Input group-->
 				<div class="row mb-7">
 					<!--begin::Label-->
-					<label class="col-lg-4 fw-bold text-muted">Email</label>
+					<label class="col-lg-4 fw-bold text-muted">Staff ID</label>
 					<!--end::Label-->
 					<!--begin::Col-->
 					<div class="col-lg-8 fv-row">
-						<span class="fw-bold fs-6 text-gray-800"><?=$email?></span>
+						<span class="fw-bold fs-6 text-gray-800"><?=$staff_id?></span>
 					</div>
 					<!--end::Col-->
 				</div>
@@ -118,6 +118,18 @@
 					<!--begin::Col-->
 					<div class="col-lg-8 d-flex align-items-center">
 						<span class="fw-bold fs-6 text-gray-800"><?=$phone_number?></span>
+					</div>
+					<!--end::Col-->
+				</div>
+				<!--end::Input group-->
+				<!--begin::Input group-->
+				<div class="row mb-7">
+					<!--begin::Label-->
+					<label class="col-lg-4 fw-bold text-muted">Email</label>
+					<!--end::Label-->
+					<!--begin::Col-->
+					<div class="col-lg-8 fv-row">
+						<span class="fw-bold fs-6 text-gray-800"><?=$email?></span>
 					</div>
 					<!--end::Col-->
 				</div>

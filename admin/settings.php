@@ -71,7 +71,7 @@
 			<!--begin::Content-->
 			<div id="kt_account_settings_profile_details" class="collapse show">
 				<!--begin::Form-->
-				<form id="kt_account_profile_details_form" class="form">
+				<form id="kt_account_profile_details_form" class="form" method="POST">
 					<!--begin::Card body-->
 					<div class="card-body border-top p-9">
 						<!--begin::Input group-->
@@ -85,21 +85,35 @@
 								<div class="row">
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First Name" value="<?=$f_name?>" />
+										<input type="text" name="first_name" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First Name" value="<?=$f_name?>" />
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="mname" class="form-control form-control-lg form-control-solid" placeholder="Middle Name" value="<?=$m_name?>" />
+										<input type="text" name="middle_name" class="form-control form-control-lg form-control-solid" placeholder="Middle Name" value="<?=$m_name?>" />
 									</div>
 									<!--end::Col-->
 									<!--begin::Col-->
 									<div class="col-lg-4 fv-row">
-										<input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last Name" value="<?=$l_name?>" />
+										<input type="text" name="last_name" class="form-control form-control-lg form-control-solid" placeholder="Last Name" value="<?=$l_name?>" />
 									</div>
 									<!--end::Col-->
 								</div>
 								<!--end::Row-->
+							</div>
+							<!--end::Col-->
+						</div>
+						<!--end::Input group-->
+						<!--begin::Input group-->
+						<div class="row mb-6">
+							<!--begin::Label-->
+							<label class="col-lg-4 col-form-label fw-bold fs-6">
+								<span class="required">Staff ID</span>
+							</label>
+							<!--end::Label-->
+							<!--begin::Col-->
+							<div class="col-lg-8 fv-row">
+								<input type="tel" name="staff_id" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$staff_id?>" />
 							</div>
 							<!--end::Col-->
 						</div>
@@ -114,7 +128,7 @@
 							<!--end::Label-->
 							<!--begin::Col-->
 							<div class="col-lg-8 fv-row">
-								<input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$phone_number?>" />
+								<input type="tel" name="phone_number" class="form-control form-control-lg form-control-solid" placeholder="Phone Number" maxlength="11" value="<?=$phone_number?>" />
 							</div>
 							<!--end::Col-->
 						</div>
@@ -123,7 +137,12 @@
 					<!--end::Card body-->
 					<!--begin::Actions-->
 					<div class="card-footer d-flex justify-content-end py-6 px-9">
-						<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+						<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">
+							<span class="indicator-label">Save Changes</span>
+      				<span class="indicator-progress">Please wait...
+      					<span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+      				</span>
+						</button>
 					</div>
 					<!--end::Actions-->
 				</form>
@@ -308,3 +327,36 @@
 	<!--end::Container-->
 </div>
 <!--end::Post-->
+<?php
+  //POST method for login
+  if(isset($_POST['staff_id'])){
+  	$acc_f_name = $_POST['first_name'];
+  	$acc_m_name = $_POST['middle_name'];
+  	$acc_l_name = $_POST['last_name'];
+  	$acc_staff_id = $_POST['staff_id'];
+  	$acc_phone_number = $_POST['phone_number'];
+
+  	$sql = "UPDATE admin SET f_name='$acc_f_name', m_name='$acc_m_name', l_name='$acc_l_name', staff_id='$acc_staff_id', phone_number='$acc_phone_number' WHERE email='$email'";
+  	$result = $conn->query($sql);
+
+  	if($result === true){
+		  ?>
+        <script type="text/javascript">
+          setTimeout(function() {
+            swal.fire({
+              text: "Thank you! You've updated your basic information.",
+              icon: "success",
+              buttonsStyling: false,
+              confirmButtonText: "Ok, got it!",
+              customClass: {
+                confirmButton: "btn fw-bold btn-light-primary"
+              }
+          	});
+          }, 500);  
+        </script>
+      <?php
+		}else{
+		  echo "Connection Error: " . $conn->error;
+		}
+	}
+?>

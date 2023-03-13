@@ -6,13 +6,14 @@
 	    header('Location:../');
 	}
 
-	$staff_id = $_SESSION['admin']['m_name'];
 	$f_name = $_SESSION['admin']['f_name'];
 	$m_name = $_SESSION['admin']['m_name'];
 	$l_name = $_SESSION['admin']['l_name'];
-	$phone_number = $_SESSION['admin']['contact_number'];
+	$staff_id = $_SESSION['admin']['staff_id'];
+	$phone_number = $_SESSION['admin']['phone_number'];
 	$email = $_SESSION['admin']['email'];
 	$status = $_SESSION['admin']['status'];
+	$profileName = $f_name . ' ' . $l_name;
 	$fullName = $f_name . (!empty($m_name) ? ' ' . $m_name . ' ' : ' ') . $l_name;
 ?>
 
@@ -299,7 +300,7 @@
 												<div class="menu-content d-flex align-items-center px-3">
 													<!--begin::Username-->
 													<div class="d-flex flex-column">
-														<div class="fw-bolder d-flex align-items-center fs-5"><?=$fullName?></div>
+														<div class="fw-bolder d-flex align-items-center fs-5"><?=$profileName?></div>
 														<a href="#" class="fw-bold text-muted fs-7"><?=$email?></a>
 													</div>
 													<!--end::Username-->

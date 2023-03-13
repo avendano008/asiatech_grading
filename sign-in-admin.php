@@ -40,7 +40,8 @@
     <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-success w-100 mb-5">
       <span class="indicator-label">LOGIN</span>
       <span class="indicator-progress">Please wait...
-      <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+        <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+      </span>
     </button>
     <!--end::Submit button-->
     <!--begin::Student Login link-->
@@ -64,30 +65,30 @@
       "teacher"=>"SELECT * FROM teacher WHERE email='$email'"
     );
 
-    foreach($sql as $key => $value) {
-      $result = $conn->query($value);
+    foreach($sql as $user => $table) {
+      $result = $conn->query($table);
 
       //Find user from database
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           if ($row['password']===$password){
 
-            if($key === 'admin'){
+            if($user === 'admin'){
               $_SESSION['admin']=array(
-                'staff_id'=>$row['staff_id'],
                 'f_name'=>$row['f_name'],
                 'm_name'=>$row['m_name'],
                 'l_name'=>$row['l_name'],
-                'contact_number'=>$row['contact_number'],
+                'staff_id'=>$row['staff_id'],
+                'phone_number'=>$row['phone_number'],
                 'email'=>$row['email'],
                 'status'=>$row['status']
               );
             }
 
             $_SESSION['email']=$row['email'];
-            $_SESSION['user']=$key;
+            $_SESSION['user']=$user;
             $isValid = true;
-            header('Location:' . $key . '/');
+            header('Location:' . $user . '/');
             break;
           }
         }

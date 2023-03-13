@@ -14,32 +14,39 @@ var KTAccountSettingsProfileDetails = function () {
             form,
             {
                 fields: {
-                    'fname': {
+                    'first_name': {
                         validators: {
                             notEmpty: {
                                 message: 'First name is required'
                             }
                         }
                     },
-                    'lname': {
+                    'last_name': {
                         validators: {
                             notEmpty: {
                                 message: 'Last name is required'
                             }
                         }
                     },
-                    'phone': {
+                    'staff_id': {
                         validators: {
                             notEmpty: {
-                                message: 'Contact number is required'
+                                message: 'Staff ID is required'
+                            }
+                        }
+                    },
+                    'phone_number': {
+                        validators: {
+                            notEmpty: {
+                                message: 'Phone number is required'
                             },
                             digits: {
-                                message: 'Contact number must contain only digits'
+                                message: 'Phone number must contain only digits'
                             },
                             stringLength: {
                                 min: 11,
                                 max: 11,
-                                message: 'Contact number must contain 11 digits'
+                                message: 'Phone number must contain 11 digits'
                             }
                         }
                     }
@@ -61,20 +68,13 @@ var KTAccountSettingsProfileDetails = function () {
     var handleForm = function () {
         submitButton.addEventListener('click', function (e) {
             e.preventDefault();
-
             validation.validate().then(function (status) {
                 if (status == 'Valid') {
-                    form.submit();
-                    swal.fire({
-                        text: "Thank you! You've updated your basic info",
-                        icon: "success",
-                        buttonsStyling: false,
-                        confirmButtonText: "Ok, got it!",
-                        customClass: {
-                            confirmButton: "btn fw-bold btn-light-primary"
-                        }
-                    });
-
+                    // Show loading indication
+                    submitButton.setAttribute('data-kt-indicator', 'on');
+                    // Disable button to avoid multiple click 
+                    submitButton.disabled = true;
+                    form.submit(); 
                 } else {
                     swal.fire({
                         text: "Sorry, looks like there are some errors detected, please try again.",
@@ -101,6 +101,7 @@ var KTAccountSettingsProfileDetails = function () {
 
             submitButton = form.querySelector('#kt_account_profile_details_submit');
             initValidation();
+            handleForm();
         }
     }
 }();
