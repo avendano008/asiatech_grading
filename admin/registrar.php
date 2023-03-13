@@ -1,22 +1,18 @@
 <?php
 	$list = array (
 		array(
-			"name"=>"1st Semester",
-			"school_year_from"=>"2023",
-			"school_year_to"=>"2023",
-			"region"=>"Region 1",
-			"division"=>"Division 1",
-			"school_name"=>"ASIATECH",
-			"school_id"=>"SCHOOL-01"
+			"name"=>"Megan Evergreen",
+			"staff_id"=>"REG-0001",
+			"phone_number"=>"09495633586",
+			"email"=>"megan28@gmail.com",
+			"status"=>"active"
 		),
 		array(
-			"name"=>"2nd Semester",
-			"school_year_from"=>"2024",
-			"school_year_to"=>"2024",
-			"region"=>"Region 2",
-			"division"=>"Division 2",
-			"school_name"=>"ASIATECH",
-			"school_id"=>"SCHOOL-01"
+			"name"=>"Ronald Schwarzenegger",
+			"staff_id"=>"REG-0002",
+			"phone_number"=>"09225688416",
+			"email"=>"schwarzenegger@gmail.com",
+			"status"=>"active"
 		)
 	);
 ?>
@@ -27,7 +23,7 @@
 		<!--begin::Page title-->
 		<div class="page-title d-flex align-items-center flex-wrap me-3 my-5">
 			<!--begin::Title-->
-			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">SEMESTER LIST</h1>
+			<h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">REGISTRAR LIST</h1>
 			<!--end::Title-->
 			<!--begin::Separator-->
 			<span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -45,7 +41,7 @@
 				</li>
 				<!--end::Item-->
 				<!--begin::Item-->
-				<li class="breadcrumb-item text-muted">Semester List</li>
+				<li class="breadcrumb-item text-muted">Registrar List</li>
 				<!--end::Item-->
 			</ul>
 			<!--end::Breadcrumb-->
@@ -59,7 +55,7 @@
 <div class="post d-flex flex-column-fluid" id="kt_post">
 	<!--begin::Container-->
 	<div id="kt_content_container" class="container-xxl">
-		<!--begin::Semester-->
+		<!--begin::Registrar-->
 		<div class="card card-flush">
 			<!--begin::Card header-->
 			<div class="card-header align-items-center py-5 gap-2 gap-md-5">
@@ -75,16 +71,16 @@
 							</svg>
 						</span>
 						<!--end::Svg Icon-->
-						<input type="text" data-kt-semester-list-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Semester" />
+						<input type="text" data-kt-registrar-list-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Search Registrar" />
 					</div>
 					<!--end::Search-->
 					<!--begin::Export buttons-->
-					<div id="kt_report_semester_list_export" class="d-none"></div>
+					<div id="kt_report_registrar_list_export" class="d-none"></div>
 					<!--end::Export buttons-->
 				</div>
 				<!--end::Card title-->
 				<!--begin::Card toolbar-->
-				<div class="card-toolbar d-flex justify-content-end gap-5" data-kt-semester-list-toolbar="base"/>
+				<div class="card-toolbar d-flex justify-content-end gap-5" data-kt-registrar-list-toolbar="base"/>
 					<!--begin::Export dropdown-->
 					<div>
 						<button type="button" class="btn btn-light-primary w-200px" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
@@ -100,33 +96,33 @@
 							Export
 						</button>
 						<!--begin::Menu-->
-						<div id="kt_report_semester_list_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px py-4" data-kt-menu="true">
+						<div id="kt_report_registrar_list_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-200px py-4" data-kt-menu="true">
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-semester-export="copy">Copy to clipboard</a>
+								<a href="#" class="menu-link px-3" data-kt-registrar-export="copy">Copy to clipboard</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-semester-export="excel">Export as Excel</a>
+								<a href="#" class="menu-link px-3" data-kt-registrar-export="excel">Export as Excel</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-semester-export="csv">Export as CSV</a>
+								<a href="#" class="menu-link px-3" data-kt-registrar-export="csv">Export as CSV</a>
 							</div>
 							<!--end::Menu item-->
 							<!--begin::Menu item-->
 							<div class="menu-item px-3">
-								<a href="#" class="menu-link px-3" data-kt-semester-export="pdf">Export as PDF</a>
+								<a href="#" class="menu-link px-3" data-kt-registrar-export="pdf">Export as PDF</a>
 							</div>
 							<!--end::Menu item-->
 						</div>
 						<!--end::Menu-->
 					</div>
 					<!--end::Export dropdown-->
-					<!--begin::Add Semester-->
-					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_add_semester">
+					<!--begin::Add Registrar-->
+					<button type="button" class="btn btn-primary w-200px" data-bs-toggle="modal" data-bs-target="#kt_modal_add_registrar">
 						<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 						<span class="svg-icon svg-icon-2">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -135,18 +131,18 @@
 							</svg>
 						</span>
 						<!--end::Svg Icon-->
-						Add Semester
+						Add Registrar
 					</button>
-					<!--end::Add Semester-->
+					<!--end::Add Registrar-->
 				</div>
 				<!--end::Card toolbar-->
 				<!--begin::Group actions-->
-				<div class="d-flex justify-content-end gap-5 align-items-center d-none" data-kt-semester-list-toolbar="selected">
+				<div class="d-flex justify-content-end gap-5 align-items-center d-none" data-kt-registrar-list-toolbar="selected">
 					<div class="fw-bolder me-5">
-						<span class="me-2" data-kt-semester-list-select="selected_count"></span>
+						<span class="me-2" data-kt-registrar-list-select="selected_count"></span>
 						Selected
 					</div>
-					<button type="button" class="btn btn-danger w-200px" data-kt-semester-list-select="delete_selected">Delete Selected</button>
+					<button type="button" class="btn btn-danger w-200px" data-kt-registrar-list-select="delete_selected">Delete Selected</button>
 				</div>
 				<!--end::Group actions-->
 			</div>
@@ -154,22 +150,21 @@
 			<!--begin::Card body-->
 			<div class="card-body pt-0">
 				<!--begin::Table-->
-				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_semester_list_table">
+				<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_report_registrar_list_table">
 					<!--begin::Table head-->
 					<thead>
 						<!--begin::Table row-->
 						<tr class="text-start text-gray-400 fw-bolder fs-7 text-uppercase gs-0">
 							<th class="w-10px pe-2">
 								<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-									<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_report_semester_list_table .form-check-input" value="1" />
+									<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_report_registrar_list_table .form-check-input" value="1" />
 								</div>
 							</th>
 							<th class="min-w-75px">Name</th>
-							<th class="min-w-75px">School Year</th>
-							<th class="min-w-75px">Region</th>
-							<th class="min-w-75px">Division</th>
-							<th class="min-w-75px">School Name</th>
-							<th class="min-w-75px">School ID</th>
+							<th class="min-w-75px">Staff ID</th>
+							<th class="min-w-75px">Phone Number</th>
+							<th class="min-w-75px">Email</th>
+							<th class="min-w-75px">Status</th>
 							<th class="text-end min-w-70px"></th>
 						</tr>
 						<!--end::Table row-->
@@ -190,27 +185,26 @@
 								<!--begin::Name=-->
 								<td><?=$list[$i]['name']?></td>
 								<!--end::Name=-->
-								<!--begin::School year=-->
-								<td><?=$list[$i]['school_year_from'] . '-' . $list[$i]['school_year_to']?></td>
-								<!--end::School year=-->
-								<!--begin::Region=-->
-								<td><?=$list[$i]['region']?></td>
-								<!--end::Region=-->
-								<!--begin::Division=-->
-								<td><?=$list[$i]['division']?></td>
-								<!--end::Division=-->
-								<!--begin::School name=-->
-								<td><?=$list[$i]['school_name']?></td>
-								<!--end::School name=-->
-								<!--begin::School id=-->
-								<td><?=$list[$i]['school_id']?></td>
-								<!--end::School id=-->
+								<!--begin::Staff id=-->
+								<td><?=$list[$i]['staff_id']?></td>
+								<!--end::Staff id=-->
+								<!--begin::Phone number=-->
+								<td><?=$list[$i]['phone_number']?></td>
+								<!--end::Phone number=-->
+								<!--begin::Email=-->
+								<td><?=$list[$i]['email']?></td>
+								<!--end::Email=-->
+								<!--begin::Status=-->
+								<td>
+									<div class="badge badge-light-success fw-bolder"><?=$list[$i]['status']?></div>
+								</td>
+								<!--end::Status=-->
 								<!--begin::Actions=-->
 								<td class="text-end">
-									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_semester">
+									<a href="#" class="px-3 text-hover-primary" data-toggle="tooltip" data-placement="top" title="Edit" data-bs-toggle="modal" data-bs-target="#kt_modal_edit_registrar">
 										<i class="fa fa-edit" aria-hidden="true"></i>
 									</a>
-									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-semester-list-filter="delete_row">
+									<a href="#" class="px-3 text-hover-danger" data-toggle="tooltip" data-placement="top" title="Delete" data-kt-registrar-list-filter="delete_row">
 										<i class="fa fa-trash" aria-hidden="true"></i>
 									</a>
 								</td>
@@ -225,26 +219,26 @@
 			</div>
 			<!--end::Card body-->
 		</div>
-		<!--end::Semester-->
+		<!--end::Registrar-->
 	</div>
 	<!--end::Container-->
 </div>
 <!--end::Post-->
-<!--begin::Modal - Semester - Add-->
-<div class="modal fade" id="kt_modal_add_semester" tabindex="-1" aria-hidden="true">
+<!--begin::Modal - Registrar - Add-->
+<div class="modal fade" id="kt_modal_add_registrar" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
 		<div class="modal-content">
 			<!--begin::Form-->
-			<form class="form" action="#" id="kt_modal_add_semester_form" data-kt-redirect="?page=semester">
+			<form class="form" action="#" id="kt_modal_add_registrar_form" data-kt-redirect="?page=registrar">
 				<!--begin::Modal header-->
-				<div class="modal-header" id="kt_modal_add_semester_header">
+				<div class="modal-header" id="kt_modal_add_registrar_header">
 					<!--begin::Modal title-->
-					<h2 class="fw-bolder">Add Semester</h2>
+					<h2 class="fw-bolder">Add Registrar</h2>
 					<!--end::Modal title-->
 					<!--begin::Close-->
-					<div id="kt_modal_add_semester_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+					<div id="kt_modal_add_registrar_close" class="btn btn-icon btn-sm btn-active-icon-primary">
 						<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 						<span class="svg-icon svg-icon-1">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -260,32 +254,27 @@
 				<!--begin::Modal body-->
 				<div class="modal-body py-10 px-lg-17">
 					<!--begin::Scroll-->
-					<div class="scroll-y me-n7 pe-7" id="kt_modal_add_semester_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_semester_header" data-kt-scroll-wrappers="#kt_modal_add_semester_scroll" data-kt-scroll-offset="300px">
-						<!--begin::Input group-->
-						<div class="fv-row mb-7">
-							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Name</label>
-							<!--end::Label-->
-							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Name" name="name" />
-							<!--end::Input-->
-						</div>
-						<!--end::Input group-->
+					<div class="scroll-y me-n7 pe-7" id="kt_modal_add_registrar_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_registrar_header" data-kt-scroll-wrappers="#kt_modal_add_registrar_scroll" data-kt-scroll-offset="300px">
 						<!--begin::Input group-->
 						<div class="mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School Year</label>
+							<label class="required fs-6 fw-bold mb-2">Full Name</label>
 							<!--end::Label-->
 							<!--begin::Row-->
 							<div class="row">
 								<!--begin::Input-->
-								<div class="col fv-row">
-									<input type="text" class="form-control form-control-solid" placeholder="Start Year" name="start_year" data-kt-calendar-input="year"/>
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="First Name" name="first_name" />
 								</div>
 								<!--end::Input-->
 								<!--begin::Input-->
-								<div class="col fv-row">
-									<input type="text" class="form-control form-control-solid" placeholder="End Year" name="end_year" data-kt-calendar-input="year"/>
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="Middle Name" name="middle_name" />
+								</div>
+								<!--end::Input-->
+								<!--begin::Input-->
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="Last Name" name="last_name" />
 								</div>
 								<!--end::Input-->
 							</div>
@@ -295,40 +284,30 @@
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Region</label>
+							<label class="required fs-6 fw-bold mb-2">Staff ID</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Region" name="region" />
+							<input type="text" class="form-control form-control-solid" placeholder="Staff ID" name="staff_id" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Division</label>
+							<label class="required fs-6 fw-bold mb-2">Phone Number</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Division" name="division" />
+							<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" maxlength="11" name="phone_number" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School Name</label>
+							<label class="required fs-6 fw-bold mb-2">Email</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="School Name" name="school_name" />
-							<!--end::Input-->
-						</div>
-						<!--end::Input group-->
-						<!--begin::Input group-->
-						<div class="fv-row mb-15">
-							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School ID</label>
-							<!--end::Label-->
-							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="School ID" name="school_id" />
+							<input type="email" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
@@ -339,10 +318,10 @@
 				<!--begin::Modal footer-->
 				<div class="modal-footer flex-center">
 					<!--begin::Button-->
-					<button type="reset" id="kt_modal_add_semester_cancel" class="btn btn-light me-3">Discard</button>
+					<button type="reset" id="kt_modal_add_registrar_cancel" class="btn btn-light me-3">Discard</button>
 					<!--end::Button-->
 					<!--begin::Button-->
-					<button type="submit" id="kt_modal_add_semester_submit" class="btn btn-primary">
+					<button type="submit" id="kt_modal_add_registrar_submit" class="btn btn-primary">
 						<span class="indicator-label">Submit</span>
 						<span class="indicator-progress">Please wait...
 						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -355,22 +334,22 @@
 		</div>
 	</div>
 </div>
-<!--end::Modal - Semester - Add-->
-<!--begin::Modal - Semester - Edit-->
-<div class="modal fade" id="kt_modal_edit_semester" tabindex="-1" aria-hidden="true">
+<!--end::Modal - Registrar - Add-->
+<!--begin::Modal - Registrar - Edit-->
+<div class="modal fade" id="kt_modal_edit_registrar" tabindex="-1" aria-hidden="true">
 	<!--begin::Modal dialog-->
 	<div class="modal-dialog modal-dialog-centered mw-650px">
 		<!--begin::Modal content-->
 		<div class="modal-content">
 			<!--begin::Form-->
-			<form class="form" action="#" id="kt_modal_edit_semester_form" data-kt-redirect="?page=semester">
+			<form class="form" action="#" id="kt_modal_edit_registrar_form" data-kt-redirect="?page=registrar">
 				<!--begin::Modal header-->
-				<div class="modal-header" id="kt_modal_edit_semester_header">
+				<div class="modal-header" id="kt_modal_edit_registrar_header">
 					<!--begin::Modal title-->
-					<h2 class="fw-bolder">Edit Semester</h2>
+					<h2 class="fw-bolder">Edit Registrar</h2>
 					<!--end::Modal title-->
 					<!--begin::Close-->
-					<div id="kt_modal_edit_semester_close" class="btn btn-icon btn-sm btn-active-icon-primary">
+					<div id="kt_modal_edit_registrar_close" class="btn btn-icon btn-sm btn-active-icon-primary">
 						<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 						<span class="svg-icon svg-icon-1">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -386,32 +365,27 @@
 				<!--begin::Modal body-->
 				<div class="modal-body py-10 px-lg-17">
 					<!--begin::Scroll-->
-					<div class="scroll-y me-n7 pe-7" id="kt_modal_edit_semester_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_edit_semester_header" data-kt-scroll-wrappers="#kt_modal_edit_semester_scroll" data-kt-scroll-offset="300px">
-						<!--begin::Input group-->
-						<div class="fv-row mb-7">
-							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Name</label>
-							<!--end::Label-->
-							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Name" name="name" />
-							<!--end::Input-->
-						</div>
-						<!--end::Input group-->
+					<div class="scroll-y me-n7 pe-7" id="kt_modal_edit_registrar_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_edit_registrar_header" data-kt-scroll-wrappers="#kt_modal_edit_registrar_scroll" data-kt-scroll-offset="300px">
 						<!--begin::Input group-->
 						<div class="mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School Year</label>
+							<label class="required fs-6 fw-bold mb-2">Full Name</label>
 							<!--end::Label-->
 							<!--begin::Row-->
 							<div class="row">
 								<!--begin::Input-->
-								<div class="col fv-row">
-									<input type="text" class="form-control form-control-solid" placeholder="School Year From" name="start_year" data-kt-calendar-input="year"/>
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="First Name" name="first_name" />
 								</div>
 								<!--end::Input-->
 								<!--begin::Input-->
-								<div class="col fv-row">
-									<input type="text" class="form-control form-control-solid" placeholder="School Year To" name="end_year" data-kt-calendar-input="year"/>
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="Middle Name" name="middle_name" />
+								</div>
+								<!--end::Input-->
+								<!--begin::Input-->
+								<div class="col-lg-4 fv-row mb-2">
+									<input type="text" class="form-control form-control-solid" placeholder="Last Name" name="last_name" />
 								</div>
 								<!--end::Input-->
 							</div>
@@ -421,41 +395,47 @@
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Region</label>
+							<label class="required fs-6 fw-bold mb-2">Staff ID</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Region" name="region" />
+							<input type="text" class="form-control form-control-solid" placeholder="Staff ID" name="staff_id" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">Division</label>
+							<label class="required fs-6 fw-bold mb-2">Phone Number</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="Division" name="division" />
+							<input type="text" class="form-control form-control-solid" placeholder="e.g. 09XXXXXXXXX" maxlength="11" name="phone_number" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
 						<!--begin::Input group-->
 						<div class="fv-row mb-7">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School Name</label>
+							<label class="required fs-6 fw-bold mb-2">Email</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="School Name" name="school_name" />
+							<input type="email" class="form-control form-control-solid" placeholder="e.g. email@address.com" name="email" />
 							<!--end::Input-->
 						</div>
 						<!--end::Input group-->
 						<!--begin::Input group-->
-						<div class="fv-row mb-15">
+						<div class="mb-15 row">
 							<!--begin::Label-->
-							<label class="required fs-6 fw-bold mb-2">School ID</label>
+							<label class="fs-6 fw-bold mb-2">Deactivate Account</label>
 							<!--end::Label-->
 							<!--begin::Input-->
-							<input type="text" class="form-control form-control-solid" placeholder="School ID" name="school_id" />
+							<div class="form-check form-check-solid fv-row col-lg-8 p-9">
+								<input name="deactivate" class="form-check-input ms-2" type="checkbox" value="" id="deactivate" />
+								<label class="form-check-label fw-bold ms-2" for="deactivate">I confirm my account deactivation</label>
+							</div>
 							<!--end::Input-->
+							<div class="col-lg-4 d-flex justify-content-end py-6 px-9">
+								<button id="kt_modal_edit_registrar_deactivate" type="submit" class="btn btn-danger fw-bold">Deactivate</button>
+							</div>
 						</div>
 						<!--end::Input group-->
 					</div>
@@ -465,10 +445,10 @@
 				<!--begin::Modal footer-->
 				<div class="modal-footer flex-center">
 					<!--begin::Button-->
-					<button type="reset" id="kt_modal_edit_semester_cancel" class="btn btn-light me-3">Discard</button>
+					<button type="reset" id="kt_modal_edit_registrar_cancel" class="btn btn-light me-3">Discard</button>
 					<!--end::Button-->
 					<!--begin::Button-->
-					<button type="submit" id="kt_modal_edit_semester_submit" class="btn btn-primary">
+					<button type="submit" id="kt_modal_edit_registrar_submit" class="btn btn-primary">
 						<span class="indicator-label">Submit</span>
 						<span class="indicator-progress">Please wait...
 						<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -481,4 +461,4 @@
 		</div>
 	</div>
 </div>
-<!--end::Modal - Semester - Edit-->
+<!--end::Modal - Registrar - Edit-->

@@ -1,7 +1,7 @@
 "use strict";
 
 // Class definition
-var KTAppCalendar = function () {
+var KTAppYear = function () {
     var datepicker;
     var dpFlatpickr;
 
@@ -10,8 +10,7 @@ var KTAppCalendar = function () {
         var maximumDate = new Date();
         dpFlatpickr = flatpickr(datepicker, {
             enableTime: false,
-            dateFormat: "Y-m-d",
-            maxDate: maximumDate.setFullYear(maximumDate.getFullYear() - 15)
+            dateFormat: "Y"
         });
     }
 
@@ -19,7 +18,7 @@ var KTAppCalendar = function () {
         // Public Functions
         init: function () {
             // Define variables
-            datepicker = document.querySelectorAll('[data-kt-calendar-input="birth_date"]');
+            datepicker = document.querySelectorAll('[data-kt-calendar-input="year"]');
             initDatepickers();
         }
     };
@@ -27,5 +26,5 @@ var KTAppCalendar = function () {
 
 // On document ready
 KTUtil.onDOMContentLoaded(function () {
-    KTAppCalendar.init();
+    KTAppYear.init();
 });

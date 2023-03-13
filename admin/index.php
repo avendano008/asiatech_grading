@@ -120,7 +120,7 @@
 								</div>
 								<div class="menu-item">
 									<div class="menu-content">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">DEPARTMENT & FACULTY</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">DEPARTMENT SECTION</span>
 									</div>
 								</div>
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -137,6 +137,26 @@
 												<!--end::Svg Icon-->
 											</span>
 											<span class="menu-title">Department</span>
+											<!-- <span class="menu-arrow"></span> -->
+										</span>
+									</a>
+								</div>
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<a href="?page=registrar">
+										<span class="menu-link">
+											<span class="menu-icon">
+												<!--begin::Svg Icon-->
+												<span class="svg-icon svg-icon-2">
+													<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+														<rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+														<rect opacity="0.5" x="13" y="2" width="9" height="9" rx="2" fill="currentColor"/>
+														<rect opacity="0.5" x="13" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+														<rect opacity="0.5" x="2" y="13" width="9" height="9" rx="2" fill="currentColor"/>
+													</svg>
+												</span>
+												<!--end::Svg Icon-->
+											</span>
+											<span class="menu-title">Registrar</span>
 											<!-- <span class="menu-arrow"></span> -->
 										</span>
 									</a>
@@ -388,14 +408,21 @@
 		<script src="../assets/js/edited/account/settings/profile-details.js"></script>
 		<script src="../assets/js/edited/account/settings/signin-methods.js"></script>
 		<script src="../assets/js/edited/account/settings/deactivate-account.js"></script>
+		<script src="../assets/js/edited/semester/table.js"></script>
+		<script src="../assets/js/edited/semester/add.js"></script>
+		<script src="../assets/js/edited/semester/edit.js"></script>
 		<script src="../assets/js/edited/department/table.js"></script>
 		<script src="../assets/js/edited/department/add.js"></script>
 		<script src="../assets/js/edited/department/edit.js"></script>
+		<script src="../assets/js/edited/registrar/table.js"></script>
+		<script src="../assets/js/edited/registrar/add.js"></script>
+		<script src="../assets/js/edited/registrar/edit.js"></script>
 		<script src="../assets/js/edited/faculty/table.js"></script>
 		<script src="../assets/js/edited/faculty/add.js"></script>
 		<script src="../assets/js/edited/student/table.js"></script>
 		<script src="../assets/js/edited/student/add.js"></script>
 		<script src="../assets/js/edited/student/edit.js"></script>
+		<script src="../assets/js/edited/component/year-only.js"></script>
 		<script src="../assets/js/edited/component/calendar.js"></script>
 		<script src="../assets/js/edited/component/address.js"></script>
 		<!--end::Page Custom Javascript-->
